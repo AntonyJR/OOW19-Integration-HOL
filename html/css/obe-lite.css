@@ -555,7 +555,6 @@ article p.note {
 }
 
 article ul{
-    font-size: 14px;
     line-height: 1.4;
     list-style: none;
 }
@@ -569,10 +568,10 @@ article ul li {
 article ul li::before {
     color: #4d3628;
     /*content: "\25A0 " ;    */
-    content: "\2022";
+    content: "\25CF";
     list-style: circle outside;
     padding-right: 7px;
-    font-size: 1.5em; 
+   /* font-size: 1.5em; */
 	
 }
 

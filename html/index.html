@@ -49,9 +49,11 @@
                 <div id="bookContainer">
                     <article>
                         <section>
-                            <h2>Before You Begin</h2>
-                            <ul>
-                            	<li>Enter your user number:&nbsp;<input data-bind="value: user_number" type="text"/>&nbsp;<button>OK</button></li>
+                            <h2>Before You Begin</h2>                           
+                            <ul>	                            
+                            	<li>Enter your user number:&nbsp;<input data-bind="value: user_number" type="text"/>&nbsp;<button>OK</button></br>
+                            		We'll use this user number to customize the integration names in this tutorial. If you leave this blank, these names will contain a placeholder that you can replace with your user number.
+                            	</li>
                             	<li>Some steps in this tutorial have a <img src="img/copy-to-clipboard.png" alt="Copy to Cliboard" height="19px" width="19px"> icon next to them. Click this icon to copy the name of snippet to your clipboard and then paste it in Oracle Integration.														
                         </section>
                         <section>
@@ -66,24 +68,37 @@
                         <section>
                             <hr>
                             <h2 id="section_1" role="button" style="text-align: left;"><!--img src="img/32_1.png" alt="section 1" height="32" width="32" class="num_circ"-->Log In</h2>
-                            <p></p>
+                            <p> The access to Oracle Integration is secured through Oracle Identity Cloud Service.  Users may be granted access to all the Oracle Integration environments in a cloud tenancy, or they may be restricted to specific environments. They may be assigned different roles in each environment.</p>
                             <ol>
+								<li>Click the <strong>Oracle Integration</strong> bookmark on your browser to open the Oracle Integration instance.</li>
                                 <li><p>Enter your user name and password.</p>  
                                 <ul>
                                 	<li>Your user name is <code class="allow-copy"><span>OICTraining1ic<em data-bind="text:user_number"></em></span></code><br/>
                                 	This is the prefix OICTraining1ic followed by the user number you were assigned.</li>                            
 	                                <li>Your password is listed in the document on your desktop.</li>
+	                                <li>Oracle Integration will logs all your design activities with this user name.
 	                            </ul>
+	                            <p>The <strong>Welcome</strong> page appears. Check out the tour, videos, and links to learn more. Keep scrolling to find more useful links.</p>
                                 </li>
-                                <li><p>Click <strong>Open Home</strong>.</p></li>                                                             
+                                <li><p>Click <strong>Open Home</strong>.</p>
+                                	<p>The <strong>Home</strong> page displays an overview with the current state of your instance. You can drill down to get information about available components, tasks, and instances.
+                                </li>                                                             
                         </section>
                         <hr>
-                        <section>
-                            <h2 id="section_2" role="button" style="text-align: left;"><!--img src="img/32_2.png" alt="section 2" height="32" width="32" class="num_circ"-->Create an Integration</h2>
+                        <section> <!-- ########## CREATE INTEGRATION ########## -->	
+                            <h2 id="section_2" role="button" style="text-align: left;">Create an Integration</h2>
+                            <p>We'll create an integration to connect to Oracle Engagement cloud and update the subscriptions for a specific product. For this lab, we'll create the integration from scratch but you can also create new versions of existing integrations.</p>
                             <ol>
-                                <li>In the <strong>Navigation</strong> menu, click <strong>Integrations</strong>, and then click <strong>Integrations</strong>.</li>
+                                <li><p>In the <strong>Navigation</strong> menu, click <strong>Integrations</strong>, and then click <strong>Integrations</strong>.</p>
+                                	<p>Note that the <strong>Navigation</strong> shows other capabilities such as process automation and a visual development environment. We will explore some of them later.</p>
+                                	<p>For the purpose of this lab, we've already set up the connections to remote systems.</p>
+                                	<p>The <strong>Integration</strong> page lists all the available integrations in your environment. These integrations can be in different stages of the development cycle. You can look at the status column to find out if an integration is running (<span style="color:#86BD66;">&#x25CF;</span> Active)  or under construction (<span style="color:#F6BC4F;">&#x25CF;</span> Configured).  
+                                </li>
                                 <li>Click <strong>Create</strong>.</li>
-								<li>Select <strong>App Driven Orchestration</strong>.</li>
+								<li><p>Select <strong>App Driven Orchestration</strong>.</p>
+									<p>This style lets  you run integrations on demand as opposed to scheduled orchestrations that are batch driven and run at specific times of the day.
+We also support other patterns such as publish and subscribe that let you distribute events to multiple integrations.</p>
+								</li>
 								<li>Click <strong>Select</strong>.</li>
 								<li>Name your integration:
 								<code class="allow-copy"><span><em data-bind="text:user_number"></em> Update Subscription Product Bill Lines.</span></code>
@@ -188,7 +203,7 @@
                         <hr>
                         <section>
                             <h2 id="section_5" role="button" style="text-align: left;">Update Billing Quantity</h2>
-                            <p>hThe loop we just created will update the billing lines for the request in Oracle Engagement Cloud. To do this, we will connect to Oracle Engagement Cloud.</p>
+                            <p>The loop we just created will update the billing lines for the request in Oracle Engagement Cloud. To do this, we will connect to Oracle Engagement Cloud.</p>
                             <ol>
                                 <li>Hover over the outgoing transition for the <strong>LoopBillLines</strong> activity.</li>
                                 <li>In the <strong>Search</strong> textfield, enter <code>Oracle</code>.</li>
@@ -333,7 +348,7 @@
                         </section>
                         <hr>
                         <section>
-                            <h2 id="section_10" role="button" style="text-align: left;">View Tracking Information</h2>
+                            <h2 id="section_11" role="button" style="text-align: left;">View Tracking Information</h2>
                             <ol>
 	                            <li><p>Click <img src="img/menu.png" alt="Menu icon" style="height: 15px; width: 15px;"/>.</p>
 	                            	<p>The <strong>Activity Stream</strong> panel displays the list of activities.</p>
@@ -345,6 +360,10 @@
 	                            </li>
                             </ol>
                         </section>
+                        <section>
+                            <h2 id="section_12" role="button" style="text-align: left;">Safe Harbor</h2>
+                            <p>The following is intended to outline our general product direction. It is intended for information purposes only, and may not be incorporated into any contract. It is not a commitment to deliver any material, code, or functionality, and should not be relied upon in making purchasing decisions. The development, release, timing, and pricing of any features or functionality described for Oracle’s products may change and remains at the sole discretion of Oracle Corporation.</p>
+                            <p>Statements in this presentation relating to Oracle’s future plans, expectations, beliefs, intentions and prospects are “forward-looking statements” and are subject to material risks and uncertainties. A detailed discussion of these factors and other risks that affect our business is contained in Oracle’s Securities and Exchange Commission (SEC) filings, including our most recent reports on Form 10-K and Form 10-Q under the heading “Risk Factors.” These filings are available on the SEC’s website or on Oracle’s website at <a>http://www.oracle.com/investor</a>. All information in this presentation is current as of September 2019 and Oracle undertakes no duty to update any statement in light of new information or future events.</p>
                     </article>
                 </div>
                 <br class="clearfloat">
