@@ -1,6 +1,6 @@
-var baseUrl = "https://apexapps.oracle.com/pls/apex/oll/oll";
+//var baseUrl = "https://apexapps.oracle.com/pls/apex/oll/oll";
 var windowWidth = $(window).width();
-var inLearningPath = false;
+//var inLearningPath = false;
 var appuser = '';
 var appsession = '';
 var contentid = '';
@@ -16,7 +16,7 @@ $(document).ready(function(){
     }
   
     //Check if OBE was started within a learning path
-    inLearningPath = getParameter("learningpath", location.href);
+    /*inLearningPath = getParameter("learningpath", location.href);
     if (inLearningPath == "true") {
         //Get parameters required to record completion for learning path
         inLearningPath = true;
@@ -29,6 +29,7 @@ $(document).ready(function(){
         //Check to see if this OBE is associated with any learning paths on OLL
         amIPartofALearningPath();
     }
+    */
     
     var s_prefix = "OBE";
     if (typeof (document.title) != "undefined") {
@@ -70,9 +71,9 @@ function bindEvents() {
         }	
         
         //Check OBE completion
-        if (inLearningPath == true) {
+        /*if (inLearningPath == true) {
             checkOBECompletion();
-        }
+        }*/
     });//end scroll function
     
     // Show Nav Icon Click
@@ -187,7 +188,7 @@ var closesidebar = function(){
 
 
 //Learning Path support functions
-function amIPartofALearningPath() {
+/*function amIPartofALearningPath() {
     var obeid = $('meta[name="contentid"]').attr("content");
     var content = "";
     
@@ -233,12 +234,12 @@ function amIPartofALearningPath() {
             $.each(data.items, function(i, item) {
                 content += '<li class="dialog"><a  target="_blank" href="' + item.link + '">' + item.learning_path + '</a></li>';     
                 //Uncomment to test scroller
-                /*
-                var i;
-                for (i = 0; i < 10; i++) { 
-                    content += '<li class="dialog"><a  target="_blank" href="' + item.link + '">' + item.learning_path + '</a></li>';
-                }
-                */
+                
+                //var i;
+                //for (i = 0; i < 10; i++) { 
+                //    content += '<li class="dialog"><a  target="_blank" href="' + item.link + '">' + item.learning_path + '</a></li>';
+                //}
+                
             });
 				
             //End list of links
@@ -259,10 +260,10 @@ function amIPartofALearningPath() {
         //Continue silently and let user continue standalone
     });
 }
-
+*/
 
 //If OBE is running as part of a learning path then mark it completed
-function checkOBECompletion() {
+/*function checkOBECompletion() {
     if (handled == true || OBECompleted == true) return; 
     
 	var position = $(window).scrollTop() / $(document).height();
@@ -282,10 +283,10 @@ function checkOBECompletion() {
         });
     }
 }
-
+*/
 
 //Set the height of the list of learning paths
-function sizeDialogContainer() {
+/*function sizeDialogContainer() {
     var diag = $('#obe_dialog');
     var container = $('#dialog-container');
     var diagh = diag.height();
@@ -301,6 +302,7 @@ function sizeDialogContainer() {
     }
     
 }
+*/
 
 //Gets URL parameters
 function getParameter(name, url) {

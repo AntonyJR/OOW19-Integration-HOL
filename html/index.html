@@ -271,7 +271,7 @@
                             <ol>
                                 <li><p>In the <strong>Integration</strong> canvas, click the error icon <img src="img/error.png" alt="Error icon" style="height: 15px; width: 15px;"/>&nbsp; next to the <strong>Last Saved</strong> field.</p>
                                 	<p>The icon shows the number of errors you need to fix in your integration.</p></li>
-                                <li>Click <img src="img/menu.png" alt="Menu icon" style="height: 15px; width: 15px;"/>&nbsp; next to the <strong>Last Saved</strong> field.</li>
+                                <li>Click <img src="img/menu.png" alt="Menu icon" style="height: 15px; width: 15px;"/> next to the <strong>Last Saved</strong> field.</li>
                                 <li>Select <strong>Tracking</strong>.</li>
                                 <li>In the <strong>Source</strong> tree, expand the <strong>execute</strong>, and then expand the <strong>TemplateParameters</strong> node.</li>
                                 <li>Drag the <strong>SubscriptionPUID</strong> to the first row of the <strong>Tracking Fields</strong> table.</li>
@@ -288,7 +288,14 @@
                             <h2 id="section_9" role="button" style="text-align: left;">Activate Integration</h2>
                             <p>Although we have finished building our integration, we have not yet made it available to be called.  Before it can be used, we need to activate the integration which will make it available for use.</p>
                             <ol>
-                                <li>...</li>
+                                <li>On the <strong>Integrations</strong> page, hover over <em data-bind="text:user_number"></em> Update Subscription Product Bill Lines. 
+                                <li>Click <img src="img/activate.png" alt="Activate icon" style="height: 17px; width: 17px;"/>.</li>
+                                <li>In the <strong>Activate Integration</strong> dialog select <strong>Enable Tracing</strong>, and then select <strong>Include Payload</strong>.</li>
+                                <li><p>Click <strong>Activate</strong>.</p>
+                                	<p>A confirmation message informing you that the activation is in progress briefly appears. Then your integration status will change to <strong>Action in progress</strong>.</p></li>
+                                <li><p>Click <img src="img/refresh.png" alt="Refresh icon" style="height: 17px; width: 17px;"/> to refresh the status.</p>
+                                	<p>When the status changes to <strong>Active</strong>, the integration is ready to run.</p>
+                                </li>                                
                             </ol>
                         </section>
                         <hr>
@@ -296,28 +303,48 @@
                         <section>
                             <h2 id="section_10" role="button" style="text-align: left;">Test Integration</h2>
                             <ol>
-                                <li>...</li>
+                                <li>On the <strong>Integrations</strong> page, hover over <em data-bind="text:user_number"></em> Update Subscription Product Bill Lines. 
+                                <li>Click <img src="img/menu.png" alt="Menu icon" style="height: 15px; width: 15px;"/> and select <strong>Test</strong>.</li>
+                                <li>On the <strong>Test</strong> page, configure the following URI parameters:
+                                	<ul>
+	                                	<li><strong>SubscriptionProductPUID</strong>: <code class="allow-copy"><span>26009-PRDT-35001</span></code></li>
+	                                	<li><strong>SubscriptionPUID</strong>: <code class="allow-copy"><span>26009</span></code></li>	                                	
+                                	</ul>
+                                </li>
+                                <li>Click the <strong>Body</strong> tab.</li>
+                                <li>Enter the following JSON:
+                                	<pre class="allow-copy"><code><span>
+{
+  "BillLine" : [
+    {
+      "BillLinePUID" : "26009-PRDT-35001-BILL-80616",
+      "UsageQuantity" : "5"
+    }
+  ]
+}
+                                	</span></code></pre></li>
+                                <li><p>Click <strong>Test</strong>.</p>
+                                		<p>A confirmation message informing you that the request was submitted appears.</p>
+                                </li>
+								<li>Expand the <strong>Response</strong> section to verify that you got a successful response.</li>                               		                                								<li><p>Click the <strong>Instance Id</strong> link.</p>
+										<p>The <strong>Tracking</strong> page appears. This page shows an outline of the integration you just tested with the runtime details.</p>
+								</li>                         
                             </ol>
                         </section>
-                        <hr>                        
+                        <hr>
                         <section>
-                            <h2 id="section_11" role="button" style="text-align: left;">View Tracking Information</h2>
+                            <h2 id="section_10" role="button" style="text-align: left;">View Tracking Information</h2>
                             <ol>
-                                <li>...</li>
+	                            <li><p>Click <img src="img/menu.png" alt="Menu icon" style="height: 15px; width: 15px;"/>.</p>
+	                            	<p>The <strong>Activity Stream</strong> panel displays the list of activities.</p>
+	                            </li>
+	                            <li>Click <strong>Message</strong> or <strong>Payload</strong> to view the payload data for a specific activity.
+	                            </li>
+	                            <li><p>Click <img src="img/maximize.png" alt="Maximize icon" style="height: 15px; width: 15px;"/> to maximize the payload view.</p>
+	                            	<p>You can now see a maximized view of the request payload. The request payload includes the body you entered, and the template or path parameters. </p>
+	                            </li>
                             </ol>
                         </section>
-                        <hr>
-                        <section>
-							<!-- Include the More Information section only in a standalone tutorial or in the final lab or tutorial in a series (not in a learning path) -->
-                            <h2 id="more_info" role="button" style="text-align: left;"><!--img src="img/32_more.png" alt="more information" height="32" width="32" class="num_circ"-->Want to Learn More?</h2>
-                            <ul>
-                                <li><a href=".html" target="_blank">More information link here</a></li>
-                                <li><a href=".html" target="_blank">More information link here</a></li>
-                                <li><a href=".html" target="_blank">More information link here</a></li>
-                                <li><a href=".html" target="_blank">More information link here</a></li>
-                            </ul>
-                        </section>
-                        <hr>
                     </article>
                 </div>
                 <br class="clearfloat">
