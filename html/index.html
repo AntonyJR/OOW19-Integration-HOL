@@ -24,7 +24,7 @@
         <script type="text/javascript" src="./js/libs/require/require.js"></script>
 		<script type="text/javascript" src="./js/app.js"></script> 
 		<link rel="stylesheet" href="css/copy-button.css">
-		<script src="js/copytoclipboard.js"></script>      
+		<script src="js/copytoclipboard.js"></script>     
     </head>
     <body>
 
@@ -67,7 +67,8 @@
                         <!-- ========================================================================================================================= -->
                         <section>
                             <hr>
-                            <h2 id="section_1" role="button" style="text-align: left;"><!--img src="img/32_1.png" alt="section 1" height="32" width="32" class="num_circ"-->Log In</h2>
+                            <!-- ########## CREATE INTEGRATION ########## -->
+                            <h2 id="section_1" role="button" style="text-align: left;">Log In</h2>
                             <p> The access to Oracle Integration is secured through Oracle Identity Cloud Service.  Users may be granted access to all the Oracle Integration environments in a cloud tenancy, or they may be restricted to specific environments. They may be assigned different roles in each environment.</p>
                             <ol>
 								<li>Click the <strong>Oracle Integration</strong> bookmark on your browser to open the Oracle Integration instance.</li>
@@ -81,7 +82,8 @@
 	                            <p>The <strong>Welcome</strong> page appears. Check out the tour, videos, and links to learn more. Keep scrolling to find more useful links.</p>
                                 </li>
                                 <li><p>Click <strong>Open Home</strong>.</p>
-                                	<p>The <strong>Home</strong> page displays an overview with the current state of your instance. You can drill down to get information about available components, tasks, and instances.
+                                	<p>The <strong>Home</strong> page displays an overview with the current state of your instance. You can drill down to get information about available components, tasks, and instances.</p>
+                                	<img src="img/screenshots/home-page.png" width="600px"/>
                                 </li>                                                             
                         </section>
                         <hr>
@@ -92,7 +94,8 @@
                                 <li><p>In the <strong>Navigation</strong> menu, click <strong>Integrations</strong>, and then click <strong>Integrations</strong>.</p>
                                 	<p>Note that the <strong>Navigation</strong> shows other capabilities such as process automation and a visual development environment. We will explore some of them later.</p>
                                 	<p>For the purpose of this lab, we've already set up the connections to remote systems.</p>
-                                	<p>The <strong>Integration</strong> page lists all the available integrations in your environment. These integrations can be in different stages of the development cycle. You can look at the status column to find out if an integration is running (<span style="color:#86BD66;">&#x25CF;</span> Active)  or under construction (<span style="color:#F6BC4F;">&#x25CF;</span> Configured).  
+                                	<p>The <strong>Integration</strong> page lists all the available integrations in your environment. These integrations can be in different stages of the development cycle. You can look at the status column to find out if an integration is running (<span style="color:#86BD66;">&#x25CF;</span> Active)  or under construction (<span style="color:#F6BC4F;">&#x25CF;</span> Configured).</p>
+                                	<img src="img/screenshots/integration-page.png" width="600px"/>  
                                 </li>
                                 <li>Click <strong>Create</strong>.</li>
 								<li><p>Select <strong>App Driven Orchestration</strong>.</p>
@@ -104,8 +107,8 @@ We also support other patterns such as publish and subscribe that let you distri
 								<code class="allow-copy"><span><em data-bind="text:user_number"></em> Update Subscription Product Bill Lines.</span></code>
 								</li>
 								<li>(Optional) Enter a package number. For example: com.oow.UXX.1.1</li>
-								<li>Click <strong>Create</strong>.<br/>
-									The <strong>Integration</strong> canvas appears. 
+								<li><p>Click <strong>Create</strong>.</p>
+									<p>The <strong>Integration</strong> canvas appears.</p> 
 								</li>
                             </ol>
                         </section>
