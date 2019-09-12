@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Part number: Ennnnn-01 -->
+        <!-- Published date: Month Year -->
+        <!-- Template date: October 15, 2018 -->
+        <!-- Put the content ID of this OBE between the empty quotation marks for 'content' below -->
+        <meta name="contentid" content="">
+        <meta content="text/html; charset=utf-8" http-equiv="content-type">
+        <!-- The title below is displayed on the browser tab, in search results, and in  history. It can be longer than the tutorial title in the <h1> element, below.-->
+		<!-- Use an imperative verb in the title. -->
+        <title>Oracle Integration - Oracle OpenWorld Hands-On Lab</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="robots" content="INDEX, FOLLOW">
+        <meta name="description" content="Put the description of the tutorial here.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--link rel="stylesheet" href="css/normalize.min.css"-->
+        <!--link rel="stylesheet" href="css/font-awesome.min.css"-->
+        <link rel="stylesheet" href="css/obe-lite.css">
+        <script src="js/jquery-1.11.0.min.js"></script>
+        <script src="js/jquery-ui-1.10.4.custom.js"></script>
+        <script src="js/jquery.tocify.jd.js"></script>
+        <script src="js/leftnav.js"></script>
+        <script type="text/javascript" src="./js/libs/require/require.js"></script>
+		<script type="text/javascript" src="./js/app.js"></script> 
+		<link rel="stylesheet" href="css/copy-button.css">
+		<script src="js/copytoclipboard.js"></script>      
+    </head>
+    <body>
+
+        <div id="content" style="margin-top:5px">
+
+            <!-- The title below is displayed as the title at the top of the OBE page. It can be shorter than the title in the <title> element, above. -->
+			<!-- Use an imperative verb in the title. -->
+			<h1><img src="img/o.png" align="middle" alt="Oracle">Oracle Integration - Oracle OpenWorld Hands-On Lab</h1>
+			<img src="img/header2.png" alt="Oracle Documentation" style="max-width: none;" height="10px" width="100%"></a>
+
+            <div class="w1024" style="clear:both; position:relative; margin-top:30px;">
+                <div class="navbackwide border-right"><!-- --></div>
+                <div id="shownav" title="Show Navigation" tabindex="0"><span class="fa fa-list"></span></div>
+                <div id="sidebar"><!-- -->
+                    <div class="left-nav-tut"><!-- -->
+                        <div id="hidenavw" title="Hide Navigation" tabindex="0"><span class="fa fa-close"></span></div>
+                        <div  id="navbar" class="left-nav-w"><!-- -->
+                            <div id="toc" class="tocify"><!-- --></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="bookContainer">
+                    <article>
+                        <section>
+                            <h2>Before You Begin</h2>
+                            <ul>
+                            	<li>Enter your user number:&nbsp;<input data-bind="value: user_number" type="text"/>&nbsp;<button>OK</button></li>
+                            	<li>Some steps in this tutorial have a <img src="img/copy-to-clipboard.png" alt="Copy to Cliboard" height="19px" width="19px"> icon next to them. Click this icon to copy the name of snippet to your clipboard and then paste it in Oracle Integration.														
+                        </section>
+                        <section>
+	                        <h2>Background</h2>
+	                        <p>In this hands-on lab, you'll create an integration to update an invoice in Oracle Engagement Cloud.</p>
+                            <p>We will base this lab on the subscription billing demo that we've discussed during other  Oracle OpenWorld sessions.</p>
+                            <p>The objective is to automate the update process to bill subscriptions for use of assets. The integration you'll create will update the number of subscriptions for a particular product.</p>
+                            <p>Then, in a following lab, we'll use this integration to create an automated business process.</p>	                      
+                        </section>
+
+                        <!-- ========================================================================================================================= -->
+                        <section>
+                            <hr>
+                            <h2 id="section_1" role="button" style="text-align: left;"><!--img src="img/32_1.png" alt="section 1" height="32" width="32" class="num_circ"-->Log In</h2>
+                            <p></p>
+                            <ol>
+                                <li><p>Enter your user name and password.</p>  
+                                <ul>
+                                	<li>Your user name is <code class="allow-copy"><span>OICTraining1ic<em data-bind="text:user_number"></em></span></code><br/>
+                                	This is the prefix OICTraining1ic followed by the user number you were assigned.</li>                            
+	                                <li>Your password is listed in the document on your desktop.</li>
+	                            </ul>
+                                </li>
+                                <li><p>Click <strong>Open Home</strong>.</p></li>                                                             
+                        </section>
+                        <hr>
+                        <section>
+                            <h2 id="section_2" role="button" style="text-align: left;"><!--img src="img/32_2.png" alt="section 2" height="32" width="32" class="num_circ"-->Create an Integration</h2>
+                            <ol>
+                                <li>In the <strong>Navigation</strong> menu, click <strong>Integrations</strong>, and then click <strong>Integrations</strong>.</li>
+                                <li>Click <strong>Create</strong>.</li>
+								<li>Select <strong>App Driven Orchestration</strong>.</li>
+								<li>Click <strong>Select</strong>.</li>
+								<li>Name your integration:
+								<code class="allow-copy"><span><em data-bind="text:user_number"></em> Update Subscription Product Bill Lines.</span></code>
+								</li>
+								<li>(Optional) Enter a package number. For example: com.oow.UXX.1.1</li>
+								<li>Click <strong>Create</strong>.<br/>
+									The <strong>Integration</strong> canvas appears. 
+								</li>
+                            </ol>
+                        </section>
+                        <hr>
+                        <section>
+                            <h2 id="section_3" role="button" style="text-align: left;">Create a Trigger</h2>
+                            <ol>
+                                <li>Hover over <strong>START</strong> and click the <strong>plus sign (+)</strong>.</li>
+                                <li>Click <strong>Create</strong>.</li>
+                                <li>Type REST in the <strong>Search</strong> textfield to find your rest connection.</li>
+								<li>Select the <strong>Rest Interface</strong> connection.</br>
+								The <strong>Configure REST Endpoint</strong> dialog appears.</li>
+								<li>Name your connection <code class="allow-copy"><span>UpdateSubscription</span></code>.</li>
+								<li>Click <strong>Next</strong>.</li>
+								<li>In the <strong>Resource Configuration</strong> page configure the following values:
+									<ol type="a">
+										<li>In the <strong>operation name</strong> field, enter AddLine.</li>
+										<li>In the <strong>endpoint relative resource URI</strong> field, enter <code class="allow-copy"><span>/subscriptions/{SubscriptionPUID}/child/products/</span></code></li>
+										<li>From the <strong>action to perform</strong> list, select <strong>PATCH</strong>.</li>
+										<li>Select <strong>Configure a request payload for this endpoint.</strong></li>
+										<li>Select <strong>Configure the endpoint to receive a response.</strong></li>
+									</ol>
+								</li>
+								<li>Click <strong>Next</strong>.</li>
+								<li>In the <strong>Request Parameters</strong> page, leave the default values, and click <strong>Next</strong>.</br>
+								The path or template parameters are automatically added and appears as the default values.</li>
+								<li>On the <strong>Request</strong> page, configure the following values:
+									<ol type="a">
+										<li>From the <strong>request payload</strong> format list, select <strong>JSON Sample</strong>.</li>
+										<li>Select <strong>JSON Sample</strong> for the <strong>request payload format</strong>.</li>
+										<li>Click the <strong>&lt;&lt;&lt;inline&gt;&gt;&gt;</strong> link.</li>
+										<li>Enter the following JSON sample:
+										<pre class="allow-copy"><code><span>
+{
+	"BillLine" : [
+		{
+			"BillLinePUID" : "string",
+			"UsageQuantity" : "0"
+		}
+	]
+}
+										</span></code></pre>
+										</li>
+										<li>Click <strong>OK</strong></li>
+										<li>Click <strong>Next</strong></li>
+									</ol>
+								</li>
+								<li>On the <strong>Response</strong> page, configure the following values:
+									<ol type "a">
+										<li>Select <strong>JSON Sample</strong> for the <strong>response payload format</strong>.</li>
+										<li>Click the <strong>&lt;&lt;&lt;inline&gt;&gt;&gt;</strong> link.</li>
+										<li>Enter the following JSON sample:
+										<pre class="allow-copy"><code><span>
+{
+	"BillLine" : [
+		{
+			"BillLinePUID" : "string",
+			"UsageQuantity" : "0"
+		}
+	]
+}
+										</span></code></pre>
+										</li>																				
+										<li>Click <strong>OK</strong>.</li>
+										<li>Click <strong>Next</strong>.</li>																				
+									</ol>
+								</li>
+								<li>In the <strong>Summary</strong> page, click <strong>Done</strong>.</br>
+								The canvas with the new trigger appears.</li>
+								<li>Click <strong>Save</strong>.</li>
+                            </ol>
+                        </section>
+                        <hr>
+                        <section>
+                            <h2 id="section_4" role="button" style="text-align: left;">Iterate Over Billing Lines</h2>
+                            <p>We might need to update multiple billing lines in the request. The API we'll use to connect to Oracle Engagement Cloud can only update one billing line at a time. So we'll loop over the billing lines to update a single billing line at a time.</p>
+                            <ol>
+                                <li>On the canvas, hover over the line that connects the first two activities, and click the <strong>plus sign (+)</strong>.</li>
+                                <li>In the <strong>Search</strong> field, enter <code>For</code>.</br>
+                                	The search results includes connections to other system (Invokes), and activities (Actions).
+                                </li>
+                                <li>From the <strong>Actions</strong> section, select <strong>For Each</strong>.</br>
+                                	The <strong>Create Action</strong> dialog appears.
+                                </li>
+                                <li>In the <strong>Name</strong> field, enter <code class="allow-copy"><span>LoopBillLines</span></code>.</li>
+                                <li>Drag the <strong>BillLine</strong> element from the <strong>Source</strong> tree, and drop it on the <strong>Repeating Element</strong> field.</li>
+                                <li>In the <strong>Current Element Name</strong> field, enter <code class="allow-copy"><span>CurrentBillLine</span></code>.</li>
+                                <li>Click <strong>Create</strong>.</br>
+                                The canvas now shows a loop.
+                                </li>
+                                <li>To have a better view, from the canvas toolbar, from the <strong>Layout</strong> list, select <strong>Horizontal</strong>.</li>
+                                <li>Click <strong>Save</strong>.</li>
+                            </ol>
+                        </section>
+                        <hr>
+                        <section>
+                            <h2 id="section_5" role="button" style="text-align: left;">Update Billing Quantity</h2>
+                            <p>hThe loop we just created will update the billing lines for the request in Oracle Engagement Cloud. To do this, we will connect to Oracle Engagement Cloud.</p>
+                            <ol>
+                                <li>Hover over the outgoing transition for the <strong>LoopBillLines</strong> activity.</li>
+                                <li>In the <strong>Search</strong> textfield, enter <code>Oracle</code>.</li>
+                                <li>From the <strong>Invokes</strong> section, select <strong>Oracle CRM</strong>.</br>
+                                	The <strong>Configure REST Endpoint</strong> dialog appears.
+                                </li>
+                                <li>Name the endpoint <code class="allow-copy"><span>UpdateBilling</span></code>.</li>
+                                <li>Click <strong>Next</strong>.</li>
+                                </li>
+                                <li>On the <strong>Configure the Required Operation</strong> page, leave the default values and click <strong>Next</strong>.</br>
+                                	The resource and verb are selected by default.</br>
+                                	To simplify this workshop, we've only provided a single operation. Typically, you would have to choose from multiple resources and operations.
+                                </li>
+                                <li>On the <strong>Configure the Request Query Parameters</strong>, click <strong>Next</strong></li>
+                                <li>On the <strong>Summary</strong> page, click <strong>Done</strong></br>
+                                	The <strong>Integration</strong> canvas appears.
+                                </li>
+                                <li>Click <strong>Save</strong>.</li> 
+                            </ol>
+                        </section>
+                        <hr>
+                        <section>
+                            <h2 id="section_6" role="button" style="text-align: left;">Add Request Mapping</h2>
+                            <p>The data format between applications usually do not match and that is the case here.  We can use the map that was put on the canvas to transform the data from the source format to the target Engagement Cloud, format.  We need to map each individual field.
+</p>
+                            <ol>
+                                <li>Click <strong>Map to UpdateBilling</strong>, and then click <img src="img/edit.png" alt="Edit icon" style="height: 18px; width: 18px;"/>.</br>
+                                	The <strong>Map to UpdateBilling</strong> page appears. Note that there is a tooltip that indicates that there are available recommendations for this data mapping.
+                                </li>
+                                <li>Click <img src="img/recommendations.png" alt="Edit icon" style="height: 15px; width: 15px;"/>&nbsp;<strong>Recommendations</strong>.</li>
+                                <li>Click <strong>&check; Apply Recommendations</strong></li>
+                            </ol>
+                        </section>
+                        <hr>
+                        <section>
+                            <h2 id="section_7" role="button" style="text-align: left;"><!--img src="img/32_7.png" alt="section 7" height="32" width="32" class="num_circ"-->Add Response Mapping</h2>
+                            <ol>
+                                <li>...</li>
+                            </ol>
+                        </section>
+                        <hr>
+                        <section>
+                            <h2 id="section_8" role="button" style="text-align: left;"><!--img src="img/32_8.png" alt="section 8" height="32" width="32" class="num_circ"-->Add Tracking Fields</h2>
+                            <ol>
+                                <li>...</li>
+                            </ol>
+                        </section>
+                        <hr>
+                        <section>
+                        <section>
+                            <h2 id="section_8" role="button" style="text-align: left;"><!--img src="img/32_8.png" alt="section 8" height="32" width="32" class="num_circ"-->Activate Integration</h2>
+                            <ol>
+                                <li>...</li>
+                            </ol>
+                        </section>
+                        <hr>
+                        <section>
+                        <section>
+                            <h2 id="section_8" role="button" style="text-align: left;"><!--img src="img/32_8.png" alt="section 8" height="32" width="32" class="num_circ"-->Add Tracking Fields</h2>
+                            <ol>
+                                <li>...</li>
+                            </ol>
+                        </section>
+                        <hr>
+                        <section>
+                            <!-- Include the Next section only in a lab series or tutorial series -->
+                            <!-- Don't include this section if you plan to use the tutorials in a learning path -->
+                            <h2 id="next" role="button" style="text-align: left;"><!--img src="img/32_next.png" alt="next step" height="32" width="32" class="num_circ"-->Test Integration</h2>
+                            <p>...</p>
+                        </section>
+                        <hr>
+                        <section>
+                        <section>
+                            <h2 id="section_8" role="button" style="text-align: left;"><!--img src="img/32_8.png" alt="section 8" height="32" width="32" class="num_circ"-->View Tracking Information</h2>
+                            <ol>
+                                <li>...</li>
+                            </ol>
+                        </section>
+                        <hr>
+                        <section>
+							<!-- Include the More Information section only in a standalone tutorial or in the final lab or tutorial in a series (not in a learning path) -->
+                            <h2 id="more_info" role="button" style="text-align: left;"><!--img src="img/32_more.png" alt="more information" height="32" width="32" class="num_circ"-->Want to Learn More?</h2>
+                            <ul>
+                                <li><a href=".html" target="_blank">More information link here</a></li>
+                                <li><a href=".html" target="_blank">More information link here</a></li>
+                                <li><a href=".html" target="_blank">More information link here</a></li>
+                                <li><a href=".html" target="_blank">More information link here</a></li>
+                            </ul>
+                        </section>
+                        <hr>
+                    </article>
+                </div>
+                <br class="clearfloat">
+            </div>
+        </div>
+        <!--close main--> 
+        <!--end content-->
+        <div class="footer-container ">
+            <div style="max-width: 994px; padding:10px 0 0 17px;">
+                <footer class="footer-list">
+                    <ul>
+                        <li> <a href="https://www.oracle.com/corporate/index.html" target="_blank">About Oracle</a> </li>
+                        <li> <a href="https://www.oracle.com/us/corporate/contact/index.html" target="_blank">Contact Us</a> </li>
+                        <li> <a href="https://www.oracle.com/us/legal/index.html" target="_blank">Legal Notices</a> </li>
+                        <li> <a href="https://www.oracle.com/us/legal/terms/index.html" target="_blank">Terms of Use</a> </li>
+                        <li> <a href="https://www.oracle.com/us/legal/privacy/index.html" target="_blank">Your Privacy Rights</a> </li>
+                        <li> <a href="https://www.oracle.com/pls/topic/lookup?ctx=cpyr&id=en">Copyright © 2019, Oracle and/or its affiliates. All rights reserved.</a></li>
+                    </ul>
+                </footer>
+            </div>
+            <script type="text/javascript" src="https://www.oracleimg.com/us/assets/metrics/ora_docs.js"></script>
+        </div>
+        <!-- OBE Dialog Box code 10/15/2018 -->
+        <!-- DO NOT ALTER THE CODE BELOW   -->
+        <div id="lpModal" class="modal">
+            <!-- Modal hdr and body -->
+            <div id="obe_dialog" class="modal-content">
+                <div class="modal-header">
+                    <a href="#" class="close">  
+                        <span class="close">&times;</span>
+                    </a>
+                    <h1>Associated Learning Paths</h1>
+                </div>
+                <div id="dialog-content" >
+                </div>
+                <div id="dialog-close" class="closeBtn">
+                    <a href="#" class="close2">  
+                        <p class="close2"> 
+                             <span>&nbsp;&nbsp;View&nbsp;&nbsp;</span> 
+                        </p>
+                    </a>  
+                </div>
+            </div>   
+        </div>
+        <!-- END OBE Dialog Box code -->
+    </body>
+</html>
