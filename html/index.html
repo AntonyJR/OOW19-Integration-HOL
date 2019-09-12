@@ -101,8 +101,8 @@
                                 <li>Hover over <strong>START</strong> and click the <strong>plus sign (+)</strong>.</li>
                                 <li>Click <strong>Create</strong>.</li>
                                 <li>Type REST in the <strong>Search</strong> textfield to find your rest connection.</li>
-								<li>Select the <strong>Rest Interface</strong> connection.</br>
-								The <strong>Configure REST Endpoint</strong> dialog appears.</li>
+								<li><p>Select the <strong>Rest Interface</strong> connection.</p>
+								<p>The <strong>Configure REST Endpoint</strong> dialog appears.</p></li>
 								<li>Name your connection <code class="allow-copy"><span>UpdateSubscription</span></code>.</li>
 								<li>Click <strong>Next</strong>.</li>
 								<li>In the <strong>Resource Configuration</strong> page configure the following values:
@@ -115,8 +115,8 @@
 									</ol>
 								</li>
 								<li>Click <strong>Next</strong>.</li>
-								<li>In the <strong>Request Parameters</strong> page, leave the default values, and click <strong>Next</strong>.</br>
-								The path or template parameters are automatically added and appears as the default values.</li>
+								<li><p>In the <strong>Request Parameters</strong> page, leave the default values, and click <strong>Next</strong>.</p>
+								<p>The path or template parameters are automatically added and appears as the default values.</p></li>
 								<li>On the <strong>Request</strong> page, configure the following values:
 									<ol type="a">
 										<li>From the <strong>request payload</strong> format list, select <strong>JSON Sample</strong>.</li>
@@ -158,8 +158,8 @@
 										<li>Click <strong>Next</strong>.</li>																				
 									</ol>
 								</li>
-								<li>In the <strong>Summary</strong> page, click <strong>Done</strong>.</br>
-								The canvas with the new trigger appears.</li>
+								<li><p>In the <strong>Summary</strong> page, click <strong>Done</strong>.</p>
+								<p>The canvas with the new trigger appears.</p></li>
 								<li>Click <strong>Save</strong>.</li>
                             </ol>
                         </section>
@@ -169,17 +169,17 @@
                             <p>We might need to update multiple billing lines in the request. The API we'll use to connect to Oracle Engagement Cloud can only update one billing line at a time. So we'll loop over the billing lines to update a single billing line at a time.</p>
                             <ol>
                                 <li>On the canvas, hover over the line that connects the first two activities, and click the <strong>plus sign (+)</strong>.</li>
-                                <li>In the <strong>Search</strong> field, enter <code>For</code>.</br>
-                                	The search results includes connections to other system (Invokes), and activities (Actions).
+                                <li><p>In the <strong>Search</strong> field, enter <code>For</code>.</p>
+                                	<p>The search results includes connections to other system (<strong>Invokes</strong>), and activities (<strong>Actions</strong>).</p>
                                 </li>
-                                <li>From the <strong>Actions</strong> section, select <strong>For Each</strong>.</br>
-                                	The <strong>Create Action</strong> dialog appears.
+                                <li><p>From the <strong>Actions</strong> section, select <strong>For Each</strong>.</p>
+                                	<p>The <strong>Create Action</strong> dialog appears.</p>
                                 </li>
                                 <li>In the <strong>Name</strong> field, enter <code class="allow-copy"><span>LoopBillLines</span></code>.</li>
                                 <li>Drag the <strong>BillLine</strong> element from the <strong>Source</strong> tree, and drop it on the <strong>Repeating Element</strong> field.</li>
                                 <li>In the <strong>Current Element Name</strong> field, enter <code class="allow-copy"><span>CurrentBillLine</span></code>.</li>
-                                <li>Click <strong>Create</strong>.</br>
-                                The canvas now shows a loop.
+                                <li><p>Click <strong>Create</strong>.</p>
+                                <p>The canvas now displays a loop.</p>
                                 </li>
                                 <li>To have a better view, from the canvas toolbar, from the <strong>Layout</strong> list, select <strong>Horizontal</strong>.</li>
                                 <li>Click <strong>Save</strong>.</li>
@@ -192,19 +192,19 @@
                             <ol>
                                 <li>Hover over the outgoing transition for the <strong>LoopBillLines</strong> activity.</li>
                                 <li>In the <strong>Search</strong> textfield, enter <code>Oracle</code>.</li>
-                                <li>From the <strong>Invokes</strong> section, select <strong>Oracle CRM</strong>.</br>
-                                	The <strong>Configure REST Endpoint</strong> dialog appears.
+                                <li><p>From the <strong>Invokes</strong> section, select <strong>Oracle CRM</strong>.</p>
+                                	<p>The <strong>Configure REST Endpoint</strong> dialog appears.</p>
                                 </li>
                                 <li>Name the endpoint <code class="allow-copy"><span>UpdateBilling</span></code>.</li>
                                 <li>Click <strong>Next</strong>.</li>
                                 </li>
-                                <li>On the <strong>Configure the Required Operation</strong> page, leave the default values and click <strong>Next</strong>.</br>
-                                	The resource and verb are selected by default.</br>
-                                	To simplify this workshop, we've only provided a single operation. Typically, you would have to choose from multiple resources and operations.
+                                <li><p>On the <strong>Configure the Required Operation</strong> page, leave the default values and click <strong>Next</strong>.</p>
+                                	<p>The resource and verb are selected by default.</p>
+                                	<p>To simplify this workshop, we've only provided a single operation. Typically, you would have to choose from multiple resources and operations.</p>
                                 </li>
                                 <li>On the <strong>Configure the Request Query Parameters</strong>, click <strong>Next</strong></li>
-                                <li>On the <strong>Summary</strong> page, click <strong>Done</strong></br>
-                                	The <strong>Integration</strong> canvas appears.
+                                <li><p>On the <strong>Summary</strong> page, click <strong>Done</strong></p>
+                                	<p>The <strong>Integration</strong> canvas appears.</p>
                                 </li>
                                 <li>Click <strong>Save</strong>.</li> 
                             </ol>
@@ -215,11 +215,11 @@
                             <p>The data format between applications usually do not match and that is the case here.  We can use the map that was put on the canvas to transform the data from the source format to the target Engagement Cloud, format.  We need to map each individual field.
 </p>
                             <ol>
-                                <li>Click <strong>Map to UpdateBilling</strong>, and then click <img src="img/edit.png" alt="Edit icon" style="height: 18px; width: 18px;"/>.</br>
-                                	The <strong>Map to UpdateBilling</strong> page appears. Note that there is a tooltip that indicates that there are available recommendations for this data mapping.
+                                <li><p>Click <strong>Map to UpdateBilling</strong>, and then click <img src="img/edit.png" alt="Edit icon" style="height: 18px; width: 18px;"/>.</p>
+                                	<p>The <strong>Map to UpdateBilling</strong> page appears. Note that there is a tooltip that indicates that there are available recommendations for this data mapping.</p>
                                 </li>
-                                <li>Click <img src="img/recommendations.png" alt="Edit icon" style="height: 15px; width: 15px;"/>&nbsp;<strong>Recommendations</strong>.</br>
-                                	The following recommended mapping appear:
+                                <li><p>Click <img src="img/recommendations.png" alt="Edit icon" style="height: 15px; width: 15px;"/>&nbsp;<strong>Recommendations</strong>.</p>
+                                	<p>The following recommended mappings appear:</p>
                                 	<ul class="display-item">
 	                                	<li class="display-item">SubscriptionPUID &#x27F6; SubscriptionPUID</li>
 	                                	<li class="display-item">SubscriptionProductPUID &#x27F6; SubscriptionProductPUID</li>
@@ -227,51 +227,81 @@
 	                                	<li class="display-item">UsageQuantity &#x27F6; UsageQuantity</li>
                                 	</ul>
                                 </li>
-                                <li>Click <strong>&check; Apply Recommendations</strong>.</li>
-                                <li>
+                                <li><p>Click <strong>&check; Apply Recommendations</strong>.</p>
+                                	<p>A <strong>Confirmation</strong> message appears informing you that the recommended mappings were applied.</p>
+                                	<p>The view changes back to <img src="img/design.png" alt="Design view icon" style="height: 15px; width: 15px;"/>&nbsp;<strong>Designer</strong>.</p>
+                                </li>
+                                <li><p>Click <strong>Validate</strong> and then click <strong>Close</strong>.</p>
+                                	<p>The <strong>Integration</strong> canvas appears.</p>
+                                </li>
+                                <li>Click <strong>Save</strong>.</li>
                             </ol>
                         </section>
                         <hr>
                         <section>
-                            <h2 id="section_7" role="button" style="text-align: left;"><!--img src="img/32_7.png" alt="section 7" height="32" width="32" class="num_circ"-->Add Response Mapping</h2>
+                            <h2 id="section_7" role="button" style="text-align: left;">Add Response Mapping</h2>
+                                                        <ol>
+                                <li><p>Click <strong>Map to UpdateSubscription</strong>, and then click <img src="img/edit.png" alt="Edit icon" style="height: 18px; width: 18px;"/>.</p>
+                                	<p>The <strong>Map to UpdateSubscription</strong> page appears. Note that there is a tooltip that indicates that there are available recommendations for this data mapping.</p>
+                                </li>
+                                <li><p>Click <img src="img/recommendations.png" alt="Recommendations icon" style="height: 15px; width: 15px;"/>&nbsp;<strong>Recommendations</strong>.</p>
+                                	<p>The following recommended mappings appear:</p>
+                                	<ul class="display-item">
+	                                	<li class="display-item">BillLine &#x27F6; BillLine&nbsp;(Note that this mapping automatically generates a loop to to map the repeating elements.)
+	                                	</li>
+	                                	<li class="display-item">BillLinePUID &#x27F6; BillLinePUID</li>
+	                                	<li class="display-item">UsageQuantity &#x27F6; UsageQuantity</li>
+                                	</ul>	                                
+                                </li>
+                                <li><p>Click <strong>&check; Apply Recommendations</strong>.</p>
+                                	<p>A <strong>Confirmation</strong> message appears informing you that the recommended mappings were applied.</p>
+                                	<p>The view changes back to <img src="img/design.png" alt="Design view icon" style="height: 15px; width: 15px;"/>&nbsp;<strong>Designer</strong>.</p>
+                                </li>
+                                <li><p>Click <strong>Validate</strong> and then click <strong>Close</strong>.</p>
+                                	<p>The <strong>Integration</strong> canvas appears.</p>
+                                </li>
+                                <li>Click <strong>Save</strong>.</li>
+                            </ol>
+                        </section>
+                        <hr>
+                        <section>
+                            <h2 id="section_8" role="button" style="text-align: left;">Add Tracking Fields</h2>
+                            <p>Tracking fields let you identify specific integration instances. A tracking field associates an integration instance with a business identifier. You must define at least one tracking field per integration. You can use tracking fields to track and locate instances. </p>
+                            <p>For example, for an integration that handles orders, you can track the order number. If for some reason the order is missing or delayed, you can search by the order number to locate the order and find out what caused the issue. </p>
+                            <ol>
+                                <li><p>In the <strong>Integration</strong> canvas, click the error icon <img src="img/error.png" alt="Error icon" style="height: 15px; width: 15px;"/>&nbsp; next to the <strong>Last Saved</strong> field.</p>
+                                	<p>The icon shows the number of errors you need to fix in your integration.</p></li>
+                                <li>Click <img src="img/menu.png" alt="Menu icon" style="height: 15px; width: 15px;"/>&nbsp; next to the <strong>Last Saved</strong> field.</li>
+                                <li>Select <strong>Tracking</strong>.</li>
+                                <li>In the <strong>Source</strong> tree, expand the <strong>execute</strong>, and then expand the <strong>TemplateParameters</strong> node.</li>
+                                <li>Drag the <strong>SubscriptionPUID</strong> to the first row of the <strong>Tracking Fields</strong> table.</li>
+								<li>Drag the <strong>SubscriptionProductPUID</strong> to the second row of the <strong>Tracking Fields</strong> table.</li>
+								<li><p>Click <strong>Save</strong>.</p>
+								<p>The <strong>Integration</strong> canvas appears. Note that now there aren't any errors.</p>
+								</li>
+								<li>Click <strong>Close</strong>.</li>
+                            </ol>
+                        </section>
+                        <hr>
+                        <section>
+                        <section>
+                            <h2 id="section_9" role="button" style="text-align: left;">Activate Integration</h2>
+                            <p>Although we have finished building our integration, we have not yet made it available to be called.  Before it can be used, we need to activate the integration which will make it available for use.</p>
                             <ol>
                                 <li>...</li>
                             </ol>
                         </section>
                         <hr>
                         <section>
-                            <h2 id="section_8" role="button" style="text-align: left;"><!--img src="img/32_8.png" alt="section 8" height="32" width="32" class="num_circ"-->Add Tracking Fields</h2>
+                        <section>
+                            <h2 id="section_10" role="button" style="text-align: left;">Test Integration</h2>
                             <ol>
                                 <li>...</li>
                             </ol>
                         </section>
-                        <hr>
+                        <hr>                        
                         <section>
-                        <section>
-                            <h2 id="section_8" role="button" style="text-align: left;"><!--img src="img/32_8.png" alt="section 8" height="32" width="32" class="num_circ"-->Activate Integration</h2>
-                            <ol>
-                                <li>...</li>
-                            </ol>
-                        </section>
-                        <hr>
-                        <section>
-                        <section>
-                            <h2 id="section_8" role="button" style="text-align: left;"><!--img src="img/32_8.png" alt="section 8" height="32" width="32" class="num_circ"-->Add Tracking Fields</h2>
-                            <ol>
-                                <li>...</li>
-                            </ol>
-                        </section>
-                        <hr>
-                        <section>
-                            <!-- Include the Next section only in a lab series or tutorial series -->
-                            <!-- Don't include this section if you plan to use the tutorials in a learning path -->
-                            <h2 id="next" role="button" style="text-align: left;"><!--img src="img/32_next.png" alt="next step" height="32" width="32" class="num_circ"-->Test Integration</h2>
-                            <p>...</p>
-                        </section>
-                        <hr>
-                        <section>
-                        <section>
-                            <h2 id="section_8" role="button" style="text-align: left;"><!--img src="img/32_8.png" alt="section 8" height="32" width="32" class="num_circ"-->View Tracking Information</h2>
+                            <h2 id="section_11" role="button" style="text-align: left;">View Tracking Information</h2>
                             <ol>
                                 <li>...</li>
                             </ol>
