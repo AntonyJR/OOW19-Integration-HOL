@@ -576,6 +576,12 @@ article ul li::before {
 	
 }
 
+li.display-item::before {
+    content: "\2022";
+    list-style: circle outside;
+    padding-right: 7px; 
+}
+
 article ol{
     font-size: 14px;
     list-style-position: outside;
@@ -687,7 +693,6 @@ article ol ul li::before {
 }
  
 article ul  li > p {
-
     display: block;
 }
 
