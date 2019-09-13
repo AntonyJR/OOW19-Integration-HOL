@@ -25,6 +25,10 @@ a, a:link {
 	/*color: #0572ce; DL*/	
 	color: #4d3628; /*DL*/
 }
+
+a.standalone-link {
+	color: #588656;
+}
 a:hover {
 	text-decoration: underline;
     color: #d1340f;

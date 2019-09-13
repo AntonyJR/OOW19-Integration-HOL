@@ -9,7 +9,7 @@
         <meta content="text/html; charset=utf-8" http-equiv="content-type">
         <!-- The title below is displayed on the browser tab, in search results, and in  history. It can be longer than the tutorial title in the <h1> element, below.-->
 		<!-- Use an imperative verb in the title. -->
-        <title>Oracle Integration - Oracle OpenWorld Hands-On Lab</title>
+        <title>Oracle Integration - Get Started</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <meta name="robots" content="INDEX, FOLLOW">
         <meta name="description" content="Put the description of the tutorial here.">
@@ -32,356 +32,35 @@
 
             <!-- The title below is displayed as the title at the top of the OBE page. It can be shorter than the title in the <title> element, above. -->
 			<!-- Use an imperative verb in the title. -->
-			<h1><img src="img/o.png" align="middle" alt="Oracle">Oracle Integration - Oracle OpenWorld Hands-On Lab</h1>
+			<h1><img src="img/o.png" align="middle" alt="Oracle">Oracle Integration - Get Started</h1>
 			<img src="img/header2.png" alt="Oracle Documentation" style="max-width: none;" height="10px" width="100%"></a>
 
-            <div class="w1024" style="clear:both; position:relative; margin-top:30px;">
-                <div class="navbackwide border-right"><!-- --></div>
-                <div id="shownav" title="Show Navigation" tabindex="0"><span class="fa fa-list"></span></div>
-                <div id="sidebar"><!-- -->
-                    <div class="left-nav-tut"><!-- -->
-                        <div id="hidenavw" title="Hide Navigation" tabindex="0"><span class="fa fa-close"></span></div>
-                        <div  id="navbar" class="left-nav-w"><!-- -->
-                            <div id="toc" class="tocify"><!-- --></div>
-                        </div>
-                    </div>
-                </div>
-                <div id="bookContainer">
-                    <article>
+            <div class="w1024" style="clear:both; position:relative; margin-top:30px; margin-left:200px;">
+					           
+<!-- ########## BACKGROUND ########## -->                        
                         <section>
-                            <h2>Before You Begin</h2>                           
-                            <ul>	                            
-                            	<li>Enter your user number:&nbsp;<input data-bind="value: user_number" type="text"/>&nbsp;<button>OK</button></br>
-                            		We'll use this user number to customize the integration names in this tutorial. If you leave this blank, these names will contain a placeholder that you can replace with your user number.
-                            	</li>
-                            	<li>Some steps in this tutorial have a <img src="img/copy-to-clipboard.png" alt="Copy to Cliboard" height="19px" width="19px"> icon next to them. Click this icon to copy the snippet to your clipboard and then paste it in Oracle Integration.														
-                        </section>
-                        <section>
-	                        <h2>Background</h2>
-	                        <p>In this hands-on lab, you'll create an integration to update an invoice in Oracle Engagement Cloud.</p>
-                            <p>We'll base this lab on the subscription billing demo discussed during other  Oracle OpenWorld sessions.</p>
-                            <p>The objective is to automate the update process to bill subscriptions for use of assets. The integration you'll create will update the number of subscriptions for a particular product.</p>
-                            <p>Then, in a following lab, we'll use this integration to create an automated business process.</p>	                      
+	                        <h2 id="section_2" style="text-align: left; margin-left:-4px;">Background</h2>
+	                        <p>In these hands-on labs, you'll create an integration to update an invoice in Oracle Engagement Cloud, and then create an automated business process.</p>
                         </section>
 
                         <!-- ========================================================================================================================= -->
                         <section>
                             <hr>
-                            <!-- ########## CREATE INTEGRATION ########## -->
-                            <h2 id="section_1" role="button" style="text-align: left;">Sign In</h2>
+<!-- ########## LABS ########## -->
+                            <h2 id="section_3" style="text-align: left; margin-left:-4px;">Labs</h2>
                             <p> Access to Oracle Integration is secured through Oracle Identity Cloud Service.  Users may be granted access to all the Oracle Integration environments in a cloud tenancy, or they may be restricted to specific environments. They may be assigned different roles in each environment.</p>
                             <ol>
-								<li>Click the <strong>Oracle Integration</strong> bookmark on your browser to open the Oracle Integration instance.</li>
-                                <li><p>Enter your user name and password.</p>  
-                                <ul>
-                                	<li>Your user name is <code class="allow-copy"><span>OICTraining1ic<em data-bind="text:user_number"></em></span></code><br/>
-                                	This is the prefix OICTraining1ic followed by the user number you were assigned.</li>                            
-	                                <li>Your password is listed in the document on your desktop.</li>
-	                                <li>Oracle Integration will log all your design activities with this user name.
-	                            </ul>
-	                            <p>The <strong>Welcome</strong> page appears. Check out the tour, videos, and links to learn more. Keep scrolling to find more useful links.</p>
-                                </li>
-                                <li><p>Click <strong>Open Home</strong>.</p>
-                                	<p>The <strong>Home</strong> page displays an overview with the current state of your instance. You can drill down to get information about available components, tasks, and instances.</p>
-                                	<img src="img/screenshots/home-page.png" width="600px"/>
-                                </li>                                                             
-                        </section>
-                        <hr>
-                        <section> <!-- ########## CREATE INTEGRATION ########## -->	
-                            <h2 id="section_2" role="button" style="text-align: left;">Create an Integration</h2>
-                            <p>We'll create an integration to connect to Oracle Engagement cloud and update the subscriptions for a specific product. For this lab, we'll create the integration from scratch but you can also create new versions of existing integrations.</p>
-                            <ol>
-                                <li><p>In the <strong>Navigation</strong> menu, click <strong>Integrations</strong>, and then click <strong>Integrations</strong>.</p>
-                                	<p>Note that the <strong>Navigation</strong> menu shows other features such as process automation and a visual development environment. We will explore some of them later.</p>
-                                	<p>For the purpose of this lab, we've already set up the connections to remote systems.</p>
-                                	<p>The <strong>Integration</strong> page lists all the available integrations in your environment. These integrations can be in different stages of the development cycle. You can look at the status column to find out if an integration is running (<span style="color:#86BD66;">&#x25CF;</span> Active)  or under construction (<span style="color:#F6BC4F;">&#x25CF;</span> Configured).</p>
-                                	<img src="img/screenshots/integration-page.png" width="600px"/>  
-                                </li>
-                                <li>Click <strong>Create</strong>.</li>
-								<li><p>Select <strong>App Driven Orchestration</strong>.</p>
-									<p>This style lets  you run integrations on demand as opposed to scheduled orchestrations that are batch driven and run at specific times of the day.
-We also support other patterns such as publish and subscribe that let you distribute events to multiple integrations.</p>
-								</li>
-								<li>Click <strong>Select</strong>.</li>
-								<li>Name your integration:
-								<code class="allow-copy"><span><em data-bind="text:user_number"></em> Update Subscription Product Bill Lines.</span></code>
-								</li>
-								<li>(Optional) Enter a package number. For example: com.oow.UXX.1.1</li>
-								<li><p>Click <strong>Create</strong>.</p>
-									<p>The <strong>Integration</strong> canvas appears.</p> 
-									<img src="img/screenshots/integration-canvas.png" width="600px"/> 
-								</li>
-                            </ol>
-                        </section>
-                        <hr>
-                        <section> <!-- ########## CREATE TRIGGER ########## -->
-                            <h2 id="section_3" role="button" style="text-align: left;">Create a Trigger</h2>
-                            <ol>
-                                <li>Hover over <strong>START</strong> and click the <strong>plus sign (+)</strong>.</li>
-                                <li>Click <strong>Create</strong>.</li>
-                                <li>Type REST in the <strong>Search</strong> field to find your rest connection.</li>
-								<li><p>Select the <strong>Rest Interface</strong> connection.</p>
-								<p>The <strong>Configure REST Endpoint</strong> dialog appears.</p></li>
-								<li>Name your connection <code class="allow-copy"><span>UpdateSubscription</span></code>.</li>
-								<li>Click <strong>Next</strong>.</li>
-								<li>On the <strong>Resource Configuration</strong> page configure the following values:
-									<ol type="a">
-										<li>In the <strong>operation name</strong> field, enter <code>AddLine</code>.</li>
-										<li>In the <strong>endpoint relative resource URI</strong> field, enter <code class="allow-copy"><span>/subscriptions/{SubscriptionPUID}/child/products/</span></code></li>
-										<li>From the <strong>action to perform</strong> list, select <strong>PATCH</strong>.</li>
-										<li>Select <strong>Configure a request payload for this endpoint.</strong></li>
-										<li>Select <strong>Configure the endpoint to receive a response.</strong></li>
-									</ol>
-								</li>
-								<li>Click <strong>Next</strong>.</li>
-								<li><p>In the <strong>Request Parameters</strong> page, leave the default values, and click <strong>Next</strong>.</p>
-								<p>The resource URI and template parameters are automatically added, and appear as the default values.</p></li>
-								<li>On the <strong>Request</strong> page, configure the following values:
-									<ol type="a">
-										<li>From the <strong>request payload format</strong> list, select <strong>JSON Sample</strong>.</li>
-										<li>Select <strong>JSON Sample</strong> for the <strong>request payload format</strong>.</li>
-										<li>Click the <strong>&lt;&lt;&lt;inline&gt;&gt;&gt;</strong> link.</li>
-										<li>Enter the following JSON sample:
-										<pre class="allow-copy"><code><span>
-{
-	"BillLine" : [
-		{
-			"BillLinePUID" : "string",
-			"UsageQuantity" : "0"
-		}
-	]
-}
-										</span></code></pre>
-										</li>
-										<li>Click <strong>OK</strong>.</li>
-										<li>Click <strong>Next</strong>.</li>
-									</ol>
-								</li>
-								<li>On the <strong>Response</strong> page, configure the following values:
-									<ol type "a">
-										<li>Select <strong>JSON Sample</strong> for the <strong>response payload format</strong>.</li>
-										<li>Click the <strong>&lt;&lt;&lt;inline&gt;&gt;&gt;</strong> link.</li>
-										<li>Enter the following JSON sample:
-										<pre class="allow-copy"><code><span>
-{
-	"BillLine" : [
-		{
-			"BillLinePUID" : "string",
-			"UsageQuantity" : "0"
-		}
-	]
-}
-										</span></code></pre>
-										</li>																				
-										<li>Click <strong>OK</strong>.</li>
-										<li>Click <strong>Next</strong>.</li>																				
-									</ol>
-								</li>
-								<li><p>In the <strong>Summary</strong> page, click <strong>Done</strong>.</p>
-								<p>The canvas with the new trigger appears.</p>									
-								</li>
-								<li>Click <strong>Save</strong>.</li>
-                            </ol>
-                            <p><img src="img/screenshots/canvas-trigger.png" width="600px"/></p> 
-                        </section>
-                        <hr>
-                        <section> <!-- ########## ITERATE OVER BILLING LINES ########## -->
-                            <h2 id="section_4" role="button" style="text-align: left;">Iterate Over Billing Lines</h2>
-                            <p>We might need to update multiple billing lines in the request. The API we'll use to connect to Oracle Engagement Cloud can update only one billing line at a time. So we'll loop over the billing lines to update a single billing line at a time.</p>
-                            <ol>
-                                <li>On the canvas, hover over the line that connects the first two activities, and click the <strong>plus sign (+)</strong>.</li>
-                                <li><p>In the <strong>Search</strong> field, enter <code>For</code>.</p>
-                                	<p>The search results includes connections to other system (<strong>Invokes</strong>), and activities (<strong>Actions</strong>).</p>
-                                </li>
-                                <li><p>From the <strong>Actions</strong> section, select <strong>For Each</strong>.</p>
-                                	<p>The <strong>Create Action</strong> dialog appears.</p>
-                                </li>
-                                <li>In the <strong>Name</strong> field, enter <code class="allow-copy"><span>LoopBillLines</span></code>.</li>
-                                <li>Drag the <strong>BillLine</strong> element from the <strong>Source</strong> tree, and drop it on the <strong>Repeating Element</strong> field.</li>
-                                <li>In the <strong>Current Element Name</strong> field, enter <code class="allow-copy"><span>CurrentBillLine</span></code>.</li>
-                                <li><p>Click <strong>Create</strong>.</p>
-                                <p>The canvas now displays a loop.</p>
-                                <p>For a better view of the loop, select <strong>Horizontal</strong> from the <strong>Layout</strong> list.</p>
-                                </li>                               
-                                <li>Click <strong>Save</strong>.</li>
-                            </ol>
-							<p><img src="img/screenshots/canvas-loop.png" width="600px"/></p> 
-                        </section>
-                        <hr>
-                        <section> <!-- ########## UPDATE THE BILLING QUANTITY ########## -->
-                            <h2 id="section_5" role="button" style="text-align: left;">Update the Billing Quantity</h2>
-                            <p>The loop we just created will update the billing lines for the request in Oracle Engagement Cloud. To do this, we'll connect to Oracle Engagement Cloud.</p>
-                            <ol>
-                                <li>Hover over the outgoing arrow for the <strong>LoopBillLines</strong> action.</li>
-                                <li>In the <strong>Search</strong> field, enter <code>Oracle</code>.</li>
-                                <li><p>From the <strong>Invokes</strong> section, select <strong>Oracle CRM</strong>.</p>
-                                	<p>The <strong>Configure REST Endpoint</strong> dialog appears.</p>
-                                </li>
-                                <li>Name the endpoint <code class="allow-copy"><span>UpdateBilling</span></code>.</li>
-                                <li>Click <strong>Next</strong>.</li>
-                                </li>
-                                <li><p>On the <strong>Configure the Required Operation</strong> page, leave the default values and click <strong>Next</strong>.</p>
-                                	<p>The resource and verb are selected by default.</p>
-                                	<p>To simplify this workshop, we've only provided a single operation. Typically, you would have to choose from multiple resources and operations.</p>
-                                </li>
-                                <li>On the <strong>Configure the Request Query Parameters</strong>, click <strong>Next</strong>.</li>
-                                <li><p>On the <strong>Summary</strong> page, click <strong>Done</strong>.</p>
-                                	<p>The <strong>Integration</strong> canvas appears.</p>
-                                </li>
-                                <li>Click <strong>Save</strong>.</li> 
-                            </ol>
-                            <p><img src="img/screenshots/canvas-billing-quantity.png" width="600px"/></p>
-                        </section>
-                        <hr>
-                        <section> <!-- ########## ADD REQUEST MAPPING ########## -->
-                            <h2 id="section_6" role="button" style="text-align: left;">Add Request Mapping</h2>
-                            <!--p>The data format between applications usually do not match and that is the case here.  We can use the map that was put on the canvas to transform the data from the source format to the target Engagement Cloud, format.  We need to map each individual field.
-</p-->
-                            <ol>
-                                <li><p>Click <strong>Map to UpdateBilling</strong>, and then click <img src="img/edit.png" alt="Edit icon" style="height: 18px; width: 18px;"/>.</p>
-                                	<p>The <strong>Map to UpdateBilling</strong> page appears. Note a tooltip indicates available recommendations for this data mapping.</p>
-                                </li>
-                                <li><p>Click <img src="img/recommendations.png" alt="Edit icon" style="height: 15px; width: 15px;"/>&nbsp;<strong>Recommendations</strong>.</p>
-                                	<p>The following recommended mappings appear:</p>
-                                	<ul class="display-item">
-	                                	<li class="display-item">SubscriptionPUID &#x27F6; SubscriptionPUID</li>
-	                                	<li class="display-item">SubscriptionProductPUID &#x27F6; SubscriptionProductPUID</li>
-	                                	<li class="display-item">BillLinePUID &#x27F6; BillLinePUID</li>
-	                                	<li class="display-item">UsageQuantity &#x27F6; UsageQuantity</li>
-                                	</ul>
-                                	<p><img src="img/screenshots/map-dialog.png" width="600px"/></p>
-                                </li>
-                                <li><p>Click <strong>&check; Apply Recommendations</strong>.</p>
-                                	<p>A <strong>Confirmation</strong> message appears informing you that the recommended mappings were applied.</p>
-                                	<p>The view changes back to <img src="img/design.png" alt="Design view icon" style="height: 15px; width: 15px;"/>&nbsp;<strong>Designer</strong>.</p>
-                                </li>
-                                <li><p>Click <strong>Validate</strong> and then click <strong>Close</strong>.</p>
-                                	<p>The <strong>Integration</strong> canvas appears.</p>
-                                </li>
-                                <li>Click <strong>Save</strong>.</li>
-                            </ol>
-                        </section>
-                        <hr>
-                        <section> <!-- ########## ADD RESPONSE MAPPING ########## -->
-                            <h2 id="section_7" role="button" style="text-align: left;">Add Response Mapping</h2>
-                                                        <ol>
-                                <li><p>Click <strong>Map to UpdateSubscription</strong>, and then click <img src="img/edit.png" alt="Edit icon" style="height: 18px; width: 18px;"/>.</p>
-                                	<p>The <strong>Map to UpdateSubscription</strong> page appears. Note that there is a tooltip that indicates that there are available recommendations for this data mapping.</p>
-                                </li>
-                                <li><p>Click <img src="img/recommendations.png" alt="Recommendations icon" style="height: 15px; width: 15px;"/>&nbsp;<strong>Recommendations</strong>.</p>
-                                	<p>The following recommended mappings appear:</p>
-                                	<ul class="display-item">
-	                                	<li class="display-item">BillLine &#x27F6; BillLine&nbsp;(Note that this mapping automatically generates a loop to to map the repeating elements.)
-	                                	</li>
-	                                	<li class="display-item">BillLinePUID &#x27F6; BillLinePUID</li>
-	                                	<li class="display-item">UsageQuantity &#x27F6; UsageQuantity</li>
-                                	</ul>	                                
-                                </li>
-                                <li><p>Click <strong>&check; Apply Recommendations</strong>.</p>
-                                	<p>A <strong>Confirmation</strong> message appears informing you that the recommended mappings were applied.</p>
-                                	<p>The view changes back to <img src="img/design.png" alt="Design view icon" style="height: 15px; width: 15px;"/>&nbsp;<strong>Designer</strong>.</p>
-                                </li>
-                                <li><p>Click <strong>Validate</strong> and then click <strong>Close</strong>.</p>
-                                	<p>The <strong>Integration</strong> canvas appears.</p>
-                                </li>
-                                <li>Click <strong>Save</strong>.</li>
-                            </ol>
-                        </section>
-                        <hr>
-                        <section> <!-- ########## ADD TRACKING FIELDS ########## -->
-                            <h2 id="section_8" role="button" style="text-align: left;">Add Tracking Fields</h2>
-                            <p>Tracking fields let you identify specific integration instances. A tracking field associates an integration instance with a business identifier. You must define at least one tracking field per integration. You can use tracking fields to track and locate instances. </p>
-                            <p>For example, for an integration that handles orders, you can track the order number. If for some reason the order is missing or delayed, you can search by the order number to locate the order and find out what caused the issue. </p>
-                            <ol>
-                                <li><p>In the <strong>Integration</strong> canvas, click the error icon <img src="img/error.png" alt="Error icon" style="height: 15px; width: 15px;"/>&nbsp; next to the <strong>Last Saved</strong> field.</p>
-                                	<p>The icon shows the number of errors you need to fix in your integration.</p></li>
-                                <li>Click <img src="img/menu.png" alt="Menu icon" style="height: 15px; width: 15px;"/> next to the <strong>Last Saved</strong> field.</li>
-                                <li>Select <strong>Tracking</strong>.</li>
-                                <li>In the <strong>Source</strong> tree, expand the <strong>execute</strong>, and then expand the <strong>TemplateParameters</strong> node.</li>
-                                <li>Drag the <strong>SubscriptionPUID</strong> to the first row of the <strong>Tracking Fields</strong> table.</li>
-								<li><p>Drag the <strong>SubscriptionProductPUID</strong> to the second row of the <strong>Tracking Fields</strong> table.</p>
-								    <p><img src="img/screenshots/tracking-dialog.png" width="600px"/></p>
-								</li>
-								<li><p>Click <strong>Save</strong>.</p>
-								<p>The <strong>Integration</strong> canvas appears. Note that there are no errors.</p>
-								</li>
-								<li>Click <strong>Close</strong>.</li>
-                            </ol>
-                        </section>
-                        <hr>
-                        <section>
-                        <section> <!-- ########## ACTIVATE INTEGRATION ########## -->
-                            <h2 id="section_9" role="button" style="text-align: left;">Activate Integration</h2>
-                            <!--p>Although we have finished building our integration, we have not yet made it available to be called.  Before it can be used, we need to activate the integration which will make it available for use.</p-->
-                            <ol>
-                                <li>On the <strong>Integrations</strong> page, hover over <em data-bind="text:user_number"></em> Update Subscription Product Bill Lines. 
-                                <li><p>Click <img src="img/activate.png" alt="Activate icon" style="height: 17px; width: 17px;"/>.</p>
-                                	<p><img src="img/screenshots/activate-power.png" width="600px"/></p>
-                                </li>
-                                <li>In the <strong>Activate Integration</strong> dialog select <strong>Enable Tracing</strong>, and then select <strong>Include Payload</strong>.</li>
-                                <li><p>Click <strong>Activate</strong>.</p>
-                                	<p>A confirmation message informing you that the activation is in progress briefly appears. Then your integration status will change to <strong>Action in progress</strong>.</p></li>
-                                <li><p>Click <img src="img/refresh.png" alt="Refresh icon" style="height: 17px; width: 17px;"/> to refresh the status.</p>
-                                	<p>When the status changes to <span style="color:#86BD66;">&#x25CF;</span> <strong>Active</strong>, the integration is ready to run.</p>
-								    <p><img src="img/screenshots/active-integration.png" width="600px"/></p>                                	
-                                </li>                                
-                            </ol>
-                        </section>
-                        <hr>
-                        <section>
-                        <section> <!-- ########## TEST INTEGRATION ########## -->
-                            <h2 id="section_10" role="button" style="text-align: left;">Test Integration</h2>
-                            <ol>
-                                <li>On the <strong>Integrations</strong> page, hover over <em data-bind="text:user_number"></em> Update Subscription Product Bill Lines. 
-                                <li>Click <img src="img/menu.png" alt="Menu icon" style="height: 15px; width: 15px;"/> and select <strong>Test</strong>.</li>
-                                <li>On the <strong>Test</strong> page, configure the following URI parameters:
-                                	<ul>
-	                                	<li><strong>SubscriptionProductPUID</strong>: <code class="allow-copy"><span>26009-PRDT-35001</span></code></li>
-	                                	<li><strong>SubscriptionPUID</strong>: <code class="allow-copy"><span>26009</span></code></li>	                                	
-                                	</ul>
-                                </li>
-                                <li>Click the <strong>Body</strong> tab.</li>
-                                <li>Enter the following JSON:
-                                	<pre class="allow-copy"><code><span>
-{
-  "BillLine" : [
-    {
-      "BillLinePUID" : "26009-PRDT-35001-BILL-80616",
-      "UsageQuantity" : "5"
-    }
-  ]
-}
-                                	</span></code></pre></li>
-                                <li><p>Click <strong>Test</strong>.</p>
-                                		<p>A confirmation message informing you that the request was submitted appears.</p>
-                                </li>
-								<li>Expand the <strong>Response</strong> section to verify that you got a successful response.</li>                               		                                								<li><p>Click the <strong>Instance Id</strong> link.</p>
-										<p>The <strong>Tracking</strong> page appears. This page shows an outline of the integration you just tested with the runtime details.</p>
-										<p><img src="img/screenshots/tracking-details.png" width="600px"/></p>										
-								</li>                         
-                            </ol>
-                        </section>
-                        <hr>
-                        <section> <!-- ########## VIEW TRACKING INFORMATION ########## -->
-                            <h2 id="section_11" role="button" style="text-align: left;">View Tracking Information</h2>
-                            <ol>
-	                            <li><p>Click <img src="img/menu.png" alt="Menu icon" style="height: 15px; width: 15px;"/>.</p>
-	                            	<p>The <strong>Activity Stream</strong> panel displays the list of activities.</p>
-	                            	<p><img src="img/screenshots/activity-stream.png" width="400px"/></p>
-	                            </li>
-	                            <li>Click <strong>Message</strong> or <strong>Payload</strong> to view the payload data for a specific activity.
-	                            </li>
-	                            <li><p>Click <img src="img/maximize.png" alt="Maximize icon" style="height: 15px; width: 15px;"/> to maximize the payload view.</p>
-	                            	<p>You can now see a maximized view of the request payload. The request payload includes the body you entered, and the template or path parameters. </p>
-	                            </li>
-                            </ol>
-                        </section>
-                        <section> <!-- ########## SAFE HARBOR ########## -->
-                            <h2 id="section_12" role="button" style="text-align: left;">Safe Harbor</h2>
+								<li><a class="standalone-link" href="integration.html" target="_blank">Integration Lab</a></li>
+                                <li><a class="standalone-link" href="process.html" target="_blank">Process Lab</a></li>
+                            </ol>                                                           
+                        </section> 
+<!-- ########## SAFE HARBOR ########## -->
+                        <section> 
+                            <h2 id="section_1" style="text-align: left; margin-left:-4px;">Safe Harbor</h2>
                             <p>The following is intended to outline our general product direction. It is intended for information purposes only, and may not be incorporated into any contract. It is not a commitment to deliver any material, code, or functionality, and should not be relied upon in making purchasing decisions. The development, release, timing, and pricing of any features or functionality described for Oracle’s products may change and remains at the sole discretion of Oracle Corporation.</p>
-                            <p>Statements in this presentation relating to Oracle’s future plans, expectations, beliefs, intentions and prospects are “forward-looking statements” and are subject to material risks and uncertainties. A detailed discussion of these factors and other risks that affect our business is contained in Oracle’s Securities and Exchange Commission (SEC) filings, including our most recent reports on Form 10-K and Form 10-Q under the heading “Risk Factors.” These filings are available on the SEC’s website or on Oracle’s website at <a>http://www.oracle.com/investor</a>. All information in this presentation is current as of September 2019 and Oracle undertakes no duty to update any statement in light of new information or future events.</p>
-                    </article>
-                </div>
+                            <p>Statements in this presentation relating to Oracle’s future plans, expectations, beliefs, intentions and prospects are “forward-looking statements” and are subject to material risks and uncertainties. A detailed discussion of these factors and other risks that affect our business is contained in Oracle’s Securities and Exchange Commission (SEC) filings, including our most recent reports on Form 10-K and Form 10-Q under the heading “Risk Factors.” These filings are available on the SEC’s website or on Oracle’s website at <a class="standalone-link">http://www.oracle.com/investor</a>. All information in this presentation is current as of September 2019 and Oracle undertakes no duty to update any statement in light of new information or future events.</p>
+                        </section>
+           
                 <br class="clearfloat">
             </div>
         </div>
