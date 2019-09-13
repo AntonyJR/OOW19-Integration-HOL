@@ -67,7 +67,7 @@
                         <!-- ========================================================================================================================= -->
                         <section>
                             <hr>
-                            <!-- ########## SIGN IN ########## -->
+<!-- ########## SIGN IN ########## -->
                             <h2 id="section_1" role="button" style="text-align: left;">Sign In</h2>
                             <p> Access to Oracle Integration is secured through Oracle Identity Cloud Service.  Users may be granted access to all the Oracle Integration environments in a cloud tenancy, or they may be restricted to specific environments. They may be assigned different roles in each environment.</p>
                             <ol>
@@ -93,7 +93,7 @@
                             <h2 id="section_2" role="button" style="text-align: left;">Create an Integration</h2>
                             <p>We'll create an integration to connect to Oracle Engagement cloud and update the subscriptions for a specific product. For this lab, we'll create the integration from scratch but you can also create new versions of existing integrations.</p>
                             <ol>
-                                <li><p>In the <strong>Navigation</strong> menu, click <strong>Integrations</strong>, and then click <strong>Integrations</strong>.</p>
+                                <li><p>From the <strong>Navigation</strong> menu, click <strong>Integrations</strong>, and then click <strong>Integrations</strong>.</p>
                                 	<p>Note that the <strong>Navigation</strong> menu shows other features such as process automation and a visual development environment. We will explore some of them later.</p>
                                 	<p>For the purpose of this lab, we've already set up the connections to remote systems.</p>
                                 	<p>The <strong>Integration</strong> page lists all the available integrations in your environment. These integrations can be in different stages of the development cycle. You can look at the status column to find out if an integration is running (<span style="color:#86BD66;">&#x25CF;</span> Active)  or under construction (<span style="color:#F6BC4F;">&#x25CF;</span> Configured).</p>
@@ -105,8 +105,8 @@
 We also support other patterns such as publish and subscribe that let you distribute events to multiple integrations.</p>
 								</li>
 								<li>Click <strong>Select</strong>.</li>
-								<li>Name your integration:
-								<code class="allow-copy">User <span><em data-bind="text:user_number"></em> Update Subscription Product Bill Lines</span></code>.
+								<li>Name your integration:&nbsp;
+								<code class="allow-copy"><span>User <em data-bind="text:user_number"></em> Update Subscription Product Bill Lines</span></code>.
 								</li>
 								<li>(Optional) Enter a package number. For example: com.oow.UXX.1.1</li>
 								<li><p>Click <strong>Create</strong>.</p>
@@ -116,7 +116,8 @@ We also support other patterns such as publish and subscribe that let you distri
                             </ol>
                         </section>
                         <hr>
-                        <section> <!-- ########## CREATE TRIGGER ########## -->
+<!-- ########## CREATE TRIGGER ########## -->                        
+                        <section> 
                             <h2 id="section_3" role="button" style="text-align: left;">Create a Trigger</h2>
                             <ol>
                                 <li>Hover over <strong>START</strong> and click the <strong>plus sign (+)</strong>.</li>
@@ -129,7 +130,7 @@ We also support other patterns such as publish and subscribe that let you distri
 								<li>On the <strong>Resource Configuration</strong> page configure the following values:
 									<ol type="a">
 										<li>In the <strong>operation name</strong> field, enter <code>AddLine</code>.</li>
-										<li>In the <strong>endpoint relative resource URI</strong> field, enter <code class="allow-copy"><span>/subscriptions/{SubscriptionPUID}/child/products/</span></code></li>
+										<li>In the <strong>endpoint relative resource URI</strong> field, enter <code class="allow-copy"><span>/subscriptions/{SubscriptionPUID}/child/products/{SubscriptionProductPUID}/child/billLines</span></code></li>
 										<li>From the <strong>action to perform</strong> list, select <strong>PATCH</strong>.</li>
 										<li>Select <strong>Configure a request payload for this endpoint.</strong></li>
 										<li>Select <strong>Configure the endpoint to receive a response.</strong></li>
@@ -187,11 +188,14 @@ We also support other patterns such as publish and subscribe that let you distri
                             <p><img src="img/screenshots/integration/canvas-trigger.png" width="600px"/></p> 
                         </section>
                         <hr>
-                        <section> <!-- ########## ITERATE OVER BILLING LINES ########## -->
+<!-- ########## ITERATE OVER BILLING LINES ########## -->                        
+                        <section> 
                             <h2 id="section_4" role="button" style="text-align: left;">Iterate Over Billing Lines</h2>
                             <p>We might need to update multiple billing lines in the request. The API we'll use to connect to Oracle Engagement Cloud can update only one billing line at a time. So we'll loop over the billing lines to update a single billing line at a time.</p>
                             <ol>
-                                <li>On the canvas, hover over the line that connects the first two activities, and click the <strong>plus sign (+)</strong>.</li>
+                                <li><p>On the canvas, hover over the line that connects the first two activities, and click the <strong>plus sign (+)</strong>.</p>
+                                	<p><img src="img/screenshots/integration/iterate-plus.png" width="400px"/></p>
+                                </li>
                                 <li><p>In the <strong>Search</strong> field, enter <code>For</code>.</p>
                                 	<p>The search results includes connections to other system (<strong>Invokes</strong>), and activities (<strong>Actions</strong>).</p>
                                 </li>
@@ -235,7 +239,8 @@ We also support other patterns such as publish and subscribe that let you distri
                             <p><img src="img/screenshots/integration/canvas-billing-quantity.png" width="600px"/></p>
                         </section>
                         <hr>
-                        <section> <!-- ########## ADD REQUEST MAPPING ########## -->
+<!-- ########## ADD REQUEST MAPPING ########## -->                        
+                        <section>
                             <h2 id="section_6" role="button" style="text-align: left;">Add Request Mapping</h2>
                             <!--p>The data format between applications usually do not match and that is the case here.  We can use the map that was put on the canvas to transform the data from the source format to the target Engagement Cloud, format.  We need to map each individual field.
 </p-->
@@ -264,7 +269,8 @@ We also support other patterns such as publish and subscribe that let you distri
                             </ol>
                         </section>
                         <hr>
-                        <section> <!-- ########## ADD RESPONSE MAPPING ########## -->
+<!-- ########## ADD RESPONSE MAPPING ########## -->                        
+                        <section> 
                             <h2 id="section_7" role="button" style="text-align: left;">Add Response Mapping</h2>
                                                         <ol>
                                 <li><p>Click <strong>Map to UpdateSubscription</strong>, and then click <img src="img/edit.png" alt="Edit icon" style="height: 18px; width: 18px;"/>.</p>
@@ -273,12 +279,13 @@ We also support other patterns such as publish and subscribe that let you distri
                                 <li><p>Click <img src="img/recommendations.png" alt="Recommendations icon" style="height: 15px; width: 15px;"/>&nbsp;<strong>Recommendations</strong>.</p>
                                 	<p>The following recommended mappings appear:</p>
                                 	<ul class="display-item">
-	                                	<li class="display-item">BillLine &#x27F6; BillLine&nbsp;(Note that this mapping automatically generates a loop to to map the repeating elements.)
+	                                	<li class="display-item">BillLine &#x27F6; BillLine&nbsp;(Note that this mapping automatically generates a for each loop to to map the repeating elements.)
 	                                	</li>
 	                                	<li class="display-item">BillLinePUID &#x27F6; BillLinePUID</li>
 	                                	<li class="display-item">UsageQuantity &#x27F6; UsageQuantity</li>
                                 	</ul>	                                
                                 </li>
+                                <li>(Optional) Click <img src="img/advanced.png" alt="Advanced view icon" style="height: 15px; width: 15px;"/> <strong>Advanced</strong> to view the <strong>for each</strong> loop that was automatically added when you mapped the<strong>BillLine</strong> element.</li>
                                 <li><p>Click <strong>&check; Apply Recommendations</strong>.</p>
                                 	<p>A <strong>Confirmation</strong> message appears informing you that the recommended mappings were applied.</p>
                                 	<p>The view changes back to <img src="img/design.png" alt="Design view icon" style="height: 15px; width: 15px;"/>&nbsp;<strong>Designer</strong>.</p>
@@ -290,7 +297,8 @@ We also support other patterns such as publish and subscribe that let you distri
                             </ol>
                         </section>
                         <hr>
-                        <section> <!-- ########## ADD TRACKING FIELDS ########## -->
+<!-- ########## ADD TRACKING FIELDS ########## -->                        
+                        <section>
                             <h2 id="section_8" role="button" style="text-align: left;">Add Tracking Fields</h2>
                             <p>Tracking fields let you identify specific integration instances. A tracking field associates an integration instance with a business identifier. You must define at least one tracking field per integration. You can use tracking fields to track and locate instances. </p>
                             <p>For example, for an integration that handles orders, you can track the order number. If for some reason the order is missing or delayed, you can search by the order number to locate the order and find out what caused the issue. </p>
@@ -312,7 +320,8 @@ We also support other patterns such as publish and subscribe that let you distri
                         </section>
                         <hr>
                         <section>
-                        <section> <!-- ########## ACTIVATE INTEGRATION ########## -->
+<!-- ########## ACTIVATE INTEGRATION ########## -->	                        
+                        <section> 
                             <h2 id="section_9" role="button" style="text-align: left;">Activate the Integration</h2>
                             <!--p>Although we have finished building our integration, we have not yet made it available to be called.  Before it can be used, we need to activate the integration which will make it available for use.</p-->
                             <ol>
