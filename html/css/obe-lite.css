@@ -11,11 +11,11 @@
 html, body, input {
 	margin: 0;
 	padding: 0;
-	font-family: oraclesans;
+	font-family: oraclesans;	
 }
 
 body, input {
-    color: #4f4f4f;
+    color: #4d3628;
 	-ms-overflow-style: scrollbar;
 	background-color: #feffff;
 }
@@ -242,7 +242,7 @@ header a:visited {
 	float:left;
 	left: 0;
 	margin: 0 auto;
-	/*background: #eaeaea; /* Old browsers */
+	background: #3f3c37; /* Old browsers */
 	/*background: -moz-linear-gradient(top, #eaeaea 0%, #ffffff 100%); /* FF3.6+ */
 	/*background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #eaeaea), color-stop(100%, #ffffff)); /* Chrome,Safari4+ */
 	/*background: -webkit-linear-gradient(top, #eaeaea 0%, #ffffff 100%); /* Chrome10+,Safari5.1+ */
@@ -250,28 +250,28 @@ header a:visited {
 	/*background: -ms-linear-gradient(top, #eaeaea 0%, #ffffff 100%); /* IE10+ */
 	/*background: linear-gradient(to bottom, #eaeaea 0%, #ffffff 100%); /* W3C */
 }
-.footer-list {
+.footer-list {	
 	float:left;
 	margin: 0;
-	padding: 0;
+	padding: 0;	
 }
 .footer-list ul {
 	padding: 0;
 	margin: 0;
-	margin-left: -7px;
+	margin-left: -7px;	
 }
 .footer-list li {
 	display: inline;
-	padding: 0 7px;
 	font-size: 11px;
 	/*border-right: 1px solid #cbcbcb;*/
 	list-style-type: none;
+	padding: 0 7px;
 }
 .footer-list li:last-child {
 	border-right: none;
 }
 .footer-list ul li a:link {
-	color: #4d3628;
+	color: #fefffe;
 }
 
 /* from leftnav.css */
@@ -490,7 +490,7 @@ display: block;
  *
  */
 body{
-    color: #4d3628;
+    color: #3f3c37;
 }
 
 tutorial{
