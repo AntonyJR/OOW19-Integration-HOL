@@ -20,6 +20,10 @@ body, input {
 	background-color: #feffff;
 }
 
+p.comment {
+	background-color: #fefb00;
+}
+
 a, a:link {
 	text-decoration: none;
 	/*color: #0572ce; DL*/	

@@ -105,12 +105,15 @@
 We also support other patterns such as publish and subscribe that let you distribute events to multiple integrations.</p>
 								</li>
 								<li>Click <strong>Select</strong>.</li>
-								<li>Name your integration:&nbsp;
-								<code class="allow-copy"><span>User <em data-bind="text:user_number"></em> Update Subscription Product Bill Lines</span></code>.
+								<li><p>Name your integration:&nbsp;
+								<code class="allow-copy"><span>User <em data-bind="text:user_number"></em> Update Subscription Product Bill Lines</span></code>.</p>
+								<p class="comment">The name uniquely identifies your integration. Oracle Integration has a sophisticated version handling feature to handle multiple versions of an integration.</p>
 								</li>
-								<li>(Optional) Enter a package number. For example: com.oow.UXX.1.1</li>
+								<li><p>(Optional) Enter a package number. For example: com.oow.UXX.1.1</p>
+									<p class="comment">A package lets you group related integrations into a single deployment unit.</p></li>
 								<li><p>Click <strong>Create</strong>.</p>
 									<p>The <strong>Integration</strong> canvas appears.</p> 
+									<p class="comment">The canvas shows you the flow of your integration, and it lets you add activities. You can resize and flip the canvas to your convenience.</p>									
 									<img src="img/screenshots/integration/integration-canvas.png" width="600px"/> 
 								</li>
                             </ol>
@@ -377,7 +380,7 @@ We also support other patterns such as publish and subscribe that let you distri
                             <h2 id="section_11" role="button" style="text-align: left;">View Tracking Information</h2>
                             <ol>
 	                            <li><p>Click <img src="img/menu.png" alt="Menu icon" style="height: 15px; width: 15px;"/>.</p>
-	                            	<p>The <strong>Activity Stream</strong> panel displays the list of activities.</p>
+	                            	<p>The <strong>Activity Stream</strong> pane displays the list of activities.</p>
 	                            	<p><img src="img/screenshots/integration/activity-stream.png" width="400px"/></p>
 	                            </li>
 	                            <li>Click <strong>Message</strong> or <strong>Payload</strong> to view the payload data for a specific activity.
