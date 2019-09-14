@@ -58,10 +58,33 @@
                         </section>
                         <section>
 	                        <h2>Background</h2>
-	                        <p style="color: #d1340f">Scenario set up needed. Is Sign-In info needed like the integrations tutorial?</p>                        	                      
+	                        <p>In this hands-on lab, you'll create process to automate the updating of an invoice in Oracle Engagement Cloud.</p>
+                            <p>We'll base this lab on the subscription billing demo discussed during other  Oracle OpenWorld sessions, and on the previous lab where you created an integration.</p>
+                            <p>The objective is to automate the update process to bill subscriptions for use of assets. The process you'll create will let you update the number of subscriptions for a particular product.</p>                     	                         	                      
                         </section>
 
                         <!-- ========================================================================================================================= -->
+<!-- ########## SIGN IN ########## -->
+                            <h2 id="section_1" role="button" style="text-align: left;">Sign In</h2>
+                            <p> Access to Oracle Integration is secured through Oracle Identity Cloud Service.  Users may be granted access to all the Oracle Integration environments in a cloud tenancy, or they may be restricted to specific environments. They may be assigned different roles in each environment.</p>
+                            <ol>
+								<li>Click the <strong>Oracle Integration</strong> bookmark on your browser to open the Oracle Integration instance.</li>
+                                <li><p>Enter your user name and password.</p>  
+                                <ul>
+                                	<li>Your user name is <code class="allow-copy"><span>OICTraining1ic<em data-bind="text:user_number"></em></span></code><br/>
+                                	This is the prefix OICTraining1ic followed by the user number you were assigned.</li>                            
+	                                <li>Your password is listed in the document on your desktop.</li>
+	                                <li>Oracle Integration will log all your design activities with this user name.
+	                            </ul>
+	                            <p>The <strong>Welcome</strong> page appears. Check out the tour, videos, and links to learn more. Keep scrolling to find more useful links.</p>
+                                </li>
+                                <li><p>Click <strong>Open Home</strong>.</p>
+                                	<p>The <strong>Home</strong> page displays an overview with the current state of your instance. You can drill down to get information about available components, tasks, and instances.</p>
+                                	<img src="img/screenshots/integration/home-page.png" width="600px"/>
+                                </li>  
+                            </ol>                                                           
+                        </section>
+                        <hr>                        
 <!-- ########## CREATE PROCESS ########## -->                        
                         <section> 
                             <hr>
@@ -74,6 +97,11 @@
 								<li><p>Locate the <strong>Subscription Management QuickStart</strong>, and click its <strong>Create</strong> button.</p>
 								<img src="img/screenshots/process/quickstart-gallery.png" width="600px"/>
 								</li>
+								<li>In the <strong>Create Application</strong> dialog, in the name field, enter <code class="allow-copy"><span>My Subscriptions</span></code>.</li>
+								<li>Click <strong>Create</strong>.</li>
+								<li><p>On the <strong>QuickStart App</strong> page, click the <strong>Switch to Application View</strong> link.</p>
+									<p><img src="img/screenshots/process/switch-app-view.png" width="600px"/></p>
+								</li>								
                             </ol>                                                             
                         </section>
                         <hr>
