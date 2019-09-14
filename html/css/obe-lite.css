@@ -236,24 +236,21 @@ header a:visited {
 
 /* from footer.css */
 .footer-container {
-    position: relative;
 	/*border-top: 1px solid #d9dfe3;*/
 	width:100%;
 	float:left;
 	left: 0;
 	margin: 0 auto;
-	background: #3f3c37; /* Old browsers */
-	/*background: -moz-linear-gradient(top, #eaeaea 0%, #ffffff 100%); /* FF3.6+ */
-	/*background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #eaeaea), color-stop(100%, #ffffff)); /* Chrome,Safari4+ */
-	/*background: -webkit-linear-gradient(top, #eaeaea 0%, #ffffff 100%); /* Chrome10+,Safari5.1+ */
-	/*background: -o-linear-gradient(top, #eaeaea 0%, #ffffff 100%); /* Opera 11.10+ */
-	/*background: -ms-linear-gradient(top, #eaeaea 0%, #ffffff 100%); /* IE10+ */
-	/*background: linear-gradient(to bottom, #eaeaea 0%, #ffffff 100%); /* W3C */
+	background: #3f3c37;
+	position: fixed;
+	bottom: 0;
 }
 .footer-list {	
 	float:left;
 	margin: 0;
 	padding: 0;	
+   	bottom:0;
+   	width:100%;
 }
 .footer-list ul {
 	padding: 0;
@@ -270,7 +267,7 @@ header a:visited {
 .footer-list li:last-child {
 	border-right: none;
 }
-.footer-list ul li a:link {
+.footer-list ul li a:link a:visited {
 	color: #fefffe;
 }
 
