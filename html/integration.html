@@ -350,8 +350,11 @@ We also support other patterns such as publish and subscribe that let you distri
                                 <li>Click <img src="img/menu.png" alt="Menu icon" style="height: 15px; width: 15px;"/> next to the <strong>Last Saved</strong> field.</li>
                                 <li>Select <strong>Tracking</strong>.</li>
                                 <li>In the <strong>Source</strong> tree, expand the <strong>execute</strong>, and then expand the <strong>TemplateParameters</strong> node.</li>
-                                <li>Drag the <strong>SubscriptionPUID</strong> to the first row of the <strong>Tracking Fields</strong> table.</li>
+                                <li><p>Drag the <strong>SubscriptionPUID</strong> to the first row of the <strong>Tracking Fields</strong> table.</p>
+                                	<p class="comment">The first field in the list is the primary tracking field. It's used as the primary index to find an integration instance.</p>
+                                </li>
 								<li><p>Drag the <strong>SubscriptionProductPUID</strong> to the second row of the <strong>Tracking Fields</strong> table.</p>
+									<p class="comment">The fields after the first field in the list are the secondary tracking fields. They act as as secondary indexes.</p>
 								    <p><img src="img/screenshots/integration/tracking-dialog.png" width="600px"/></p>
 								</li>
 								<li><p>Click <strong>Save</strong>.</p>
