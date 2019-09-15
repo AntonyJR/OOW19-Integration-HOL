@@ -219,10 +219,12 @@ We also support other patterns such as publish and subscribe that let you distri
 <!-- ########## ITERATE OVER BILLING LINES ########## -->                        
                         <section> 
                             <h2 id="section_4" role="button" style="text-align: left;">Iterate Over Billing Lines</h2>
-                            <p>We might need to update multiple billing lines in the request. The API we'll use to connect to Oracle Engagement Cloud can update only one billing line at a time. So we'll loop over the billing lines to update a single billing line at a time.</p>
+                            <p>We may need to update multiple billing lines in the request. The API we'll use to connect to Oracle Engagement Cloud can update only one billing line at a time. So we'll loop over the billing lines to update a single billing line at a time.</p>
+                            <p class="comment">We'll iterate the billing lines one by one. We will define which element to loop over, and then assign a name to that element.  At runtime the loop will set the current element to each individual billing each time it runs.</p>
                             <ol>
-                                <li><p>On the canvas, hover over the line that connects the first two activities, and click the <strong>plus sign (+)</strong>.</p>
+                                <li><p>On the canvas, hover over the line that connects the first two actions, and click <img src="img/add.png" alt="Add icon" style="height: 15px; width: 15px;"/>.</p>
                                 	<p><img src="img/screenshots/integration/iterate-plus.png" width="400px"/></p>
+                                	<p class="comment">Notice there are a lot of different activities to add. Click <img src="img/actions.png" alt="Actions icon" style="height: 15px; width: 15px;"/> to view all the available actions.</p>
                                 </li>
                                 <li><p>In the <strong>Search</strong> field, enter <code>For</code>.</p>
                                 	<p>The search results includes connections to other system (<strong>Invokes</strong>), and activities (<strong>Actions</strong>).</p>
@@ -230,7 +232,8 @@ We also support other patterns such as publish and subscribe that let you distri
                                 <li><p>From the <strong>Actions</strong> section, select <strong>For Each</strong>.</p>
                                 	<p>The <strong>Create Action</strong> dialog appears.</p>
                                 </li>
-                                <li>In the <strong>Name</strong> field, enter <code class="allow-copy"><span>LoopBillLines</span></code>.</li>
+                                <li>In the <strong>Name</strong> field, enter <code class="allow-copy"><span>LoopBillLines</span></code>.                                	
+                                </li>
                                 <li>Drag the <strong>BillLine</strong> element from the <strong>Source</strong> tree, and drop it on the <strong>Repeating Element</strong> field.</li>
                                 <li>In the <strong>Current Element Name</strong> field, enter <code class="allow-copy"><span>CurrentBillLine</span></code>.</li>
                                 <li><p>Click <strong>Create</strong>.</p>
@@ -421,11 +424,10 @@ We also support other patterns such as publish and subscribe that let you distri
             </div>
         </div>
         <!--close main--> 
-        <!--end content-->
-        	        	                
+        <!--end content-->        	        	                
         <div class="footer-container ">	        
-            <div> <!--background: #3f3c37"-->
-            	<img src="img/o.png" align="right" alt="Oracle">
+            <div> 
+            	<img src="img/o.png" align="right" style="padding:0 40px 0 0;" alt="Oracle">
                 <footer class="footer-list">
                     <ul>
                         <li> <a style="color: #fefffe;" href="https://www.oracle.com/corporate/index.html" target="_blank">About Oracle</a> </li>
