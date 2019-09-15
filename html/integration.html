@@ -368,16 +368,21 @@ We also support other patterns such as publish and subscribe that let you distri
 <!-- ########## ACTIVATE INTEGRATION ########## -->	                        
                         <section> 
                             <h2 id="section_9" role="button" style="text-align: left;">Activate the Integration</h2>
-                            <!--p>Although we have finished building our integration, we have not yet made it available to be called.  Before it can be used, we need to activate the integration which will make it available for use.</p-->
+                            <p class="comment">We finished building our integration, but before using it, we need to activate it.</p>
                             <ol>
                                 <li>On the <strong>Integrations</strong> page, hover over <em data-bind="text:user_number"></em> Update Subscription Product Bill Lines. 
                                 <li><p>Click <img src="img/activate.png" alt="Activate icon" style="height: 17px; width: 17px;"/>.</p>
                                 	<p><img src="img/screenshots/integration/activate-power.png" width="600px"/></p>
                                 </li>
-                                <li>In the <strong>Activate Integration</strong> dialog select <strong>Enable Tracing</strong>, and then select <strong>Include Payload</strong>.</li>
+                                <li><p>In the <strong>Activate Integration</strong> dialog select <strong>Enable Tracing</strong>, and then select <strong>Include Payload</strong>.</p>
+                                	<p class="comment">Select <strong>Enable Tracing</strong> to keep a record of all the steps the integration performed.</p>
+                                	<p class="comment">When you select the <strong>Include Payload</strong> option, the message payloads are also stored.</p>
+                                	<p class="comment">We strongly suggest that you don't enable this option in production environments. Enabling them will affect the performance of your system and may violate your company's data retention rules by storing sensitive information in the payload trace.</p>
+                                </li>
                                 <li><p>Click <strong>Activate</strong>.</p>
                                 	<p>A confirmation message informing you that the activation is in progress briefly appears. Then your integration status will change to <strong>Action in progress</strong>.</p></li>
                                 <li><p>Click <img src="img/refresh.png" alt="Refresh icon" style="height: 17px; width: 17px;"/> to refresh the status.</p>
+                                	<p class="comment">Activation is an asynchronous activity so we need to refresh the screen to see the latest status.</p>
                                 	<p>When the status changes to <span style="color:#86BD66;">&#x25CF;</span> <strong>Active</strong>, the integration is ready to run.</p>
 								    <p><img src="img/screenshots/integration/active-integration.png" width="600px"/></p>                                	
                                 </li>                                
