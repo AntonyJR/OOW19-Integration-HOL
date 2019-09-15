@@ -310,6 +310,8 @@ We also support other patterns such as publish and subscribe that let you distri
 <!-- ########## ADD RESPONSE MAPPING ########## -->                        
                         <section> 
                             <h2 id="section_7" role="button" style="text-align: left;">Add Response Mapping</h2>
+                            <p class="comment">After running the integration we want to send a response to the caller to confirmed the job was successful and provide any available feedback.</p>
+                            <p class="comment">We'll use the update subscription map to populate the response data.</p>
 	                        <ol>
                                 <li><p>Click <strong>Map to UpdateSubscription</strong>, and then click <img src="img/edit.png" alt="Edit icon" style="height: 18px; width: 18px;"/>.</p>
                                 	<p>The <strong>Map to UpdateSubscription</strong> page appears. Notice that there is a tooltip that indicates that there are available recommendations for this data mapping.</p>
@@ -323,7 +325,9 @@ We also support other patterns such as publish and subscribe that let you distri
 	                                	<li class="display-item">UsageQuantity &#x27F6; UsageQuantity</li>
                                 	</ul>	                                
                                 </li>
-                                <li>(Optional) Click <img src="img/advanced.png" alt="Advanced view icon" style="height: 15px; width: 15px;"/> <strong>Advanced</strong> to view the <strong>for each</strong> loop that was automatically added when you mapped the <strong>BillLine</strong> element.</li>
+                                <li><p>(Optional) Click <img src="img/advanced.png" alt="Advanced view icon" style="height: 15px; width: 15px;"/> <strong>Advanced</strong> to view the <strong>for each</strong> loop that was automatically added when you mapped the <strong>BillLine</strong> element.</p>
+                                	<p class="comment">Each of the bill lines in the source data is mapped in the successive iterations of the for each loop that populates the target data.</p>
+                                </li>
                                 <li><p>Click <strong>&check; Apply Recommendations</strong>.</p>
                                 	<p>A <strong>Confirmation</strong> message appears informing you that the recommended mappings were applied.</p>
                                 	<p>The view changes back to <img src="img/design.png" alt="Design view icon" style="height: 15px; width: 15px;"/>&nbsp;<strong>Designer</strong>.</p>
