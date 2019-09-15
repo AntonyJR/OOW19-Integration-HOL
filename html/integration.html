@@ -392,14 +392,16 @@ We also support other patterns such as publish and subscribe that let you distri
                         <section>
                         <section> <!-- ########## TEST INTEGRATION ########## -->
                             <h2 id="section_10" role="button" style="text-align: left;">Test the Integration</h2>
+                            <p class="comment">Now let's see if our integration works.  We'll use the test feature to call the integration from the development console.</p>
                             <ol>
                                 <li>On the <strong>Integrations</strong> page, hover over <em data-bind="text:user_number"></em> Update Subscription Product Bill Lines. 
                                 <li>Click <img src="img/menu.png" alt="Menu icon" style="height: 15px; width: 15px;"/> and select <strong>Test</strong>.</li>
-                                <li>On the <strong>Test</strong> page, configure the following URI parameters:
+                                <li><p>On the <strong>Test</strong> page, configure the following URI parameters:</p>
                                 	<ul>
 	                                	<li><strong>SubscriptionProductPUID</strong>: <code class="allow-copy"><span>26009-PRDT-35001</span></code></li>
 	                                	<li><strong>SubscriptionPUID</strong>: <code class="allow-copy"><span>26009</span></code></li>	                                	
                                 	</ul>
+                                	<p class="comment">These requested values are the template parameters that you specified in the endpoint URI that triggers the integration.</p>
                                 </li>
                                 <li>Click the <strong>Body</strong> tab.</li>
                                 <li>Enter the following JSON:
@@ -415,6 +417,7 @@ We also support other patterns such as publish and subscribe that let you distri
                                 	</span></code></pre></li>
                                 <li><p>Click <strong>Test</strong>.</p>
                                 		<p>A confirmation message informing you that the request was submitted appears.</p>
+                                		<p class="comment">You can click the ID link to view the tracking information for this instance.</p>
                                 </li>
 								<li>Expand the <strong>Response</strong> section to verify that you got a successful response.</li>                               		                                								<li><p>Click the <strong>Instance Id</strong> link.</p>
 										<p>The <strong>Tracking</strong> page appears. This page shows an outline of the integration you just tested with the runtime details.</p>
