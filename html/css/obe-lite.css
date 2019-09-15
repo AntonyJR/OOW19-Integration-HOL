@@ -241,7 +241,6 @@ header a:visited {
 	float:left;
 	left: 0;
 	margin: 0 auto;
-	background: #3f3c37;
 	position: fixed;
 	bottom: 0;
 }
@@ -251,11 +250,12 @@ header a:visited {
 	padding: 0;	
    	bottom:0;
    	width:100%;
+   	background: #3f3c37;
+   	padding:10px 0 0 17px;
 }
 .footer-list ul {
 	padding: 0;
-	margin: 0;
-	margin-left: -7px;	
+	margin: 0 0 10px -7px;	
 }
 .footer-list li {
 	display: inline;

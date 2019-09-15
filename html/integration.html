@@ -94,7 +94,7 @@
                             <p>We'll create an integration to connect to Oracle Engagement cloud and update the subscriptions for a specific product. For this lab, we'll create the integration from scratch but you can also create new versions of existing integrations.</p>
                             <ol>
                                 <li><p>From the <strong>Navigation</strong> menu, click <strong>Integrations</strong>, and then click <strong>Integrations</strong>.</p>
-                                	<p>Note that the <strong>Navigation</strong> menu shows other features such as process automation and a visual development environment. We will explore some of them later.</p>
+                                	<p>Notice that the <strong>Navigation</strong> menu shows other features such as process automation and a visual development environment. We will explore some of them later.</p>
                                 	<p>For the purpose of this lab, we've already set up the connections to remote systems.</p>
                                 	<p>The <strong>Integration</strong> page lists all the available integrations in your environment. These integrations can be in different stages of the development cycle. You can look at the status column to find out if an integration is running (<span style="color:#86BD66;">&#x25CF;</span> Active)  or under construction (<span style="color:#F6BC4F;">&#x25CF;</span> Configured).</p>
                                 	<img src="img/screenshots/integration/integration-page.png" width="600px"/>  
@@ -122,18 +122,25 @@ We also support other patterns such as publish and subscribe that let you distri
 <!-- ########## CREATE TRIGGER ########## -->                        
                         <section> 
                             <h2 id="section_3" role="button" style="text-align: left;">Create a Trigger</h2>
+                            <p class="comment">Triggers start the integration. After you activate the integration, it listens for a request to the trigger.</p>
+                            <p class="comment">Any connections identified as supporting triggers can trigger an integration.</p>
+							<p class="comment">When you activate an integration, if the application supports triggers, Oracle Integration will configure the endpoint to send messages .</p>
                             <ol>
-                                <li>Hover over <strong>START</strong> and click the <strong>plus sign (+)</strong>.</li>
-                                <li>Click <strong>Create</strong>.</li>
-                                <li>Type REST in the <strong>Search</strong> field to find your rest connection.</li>
+                                <li>Hover over <strong>START</strong> and click <img src="img/add.png" alt="Add icon" style="height: 15px; width: 15px;"/>.</li>
+                                <li>Type <code class="allow-copy"><span>REST I</span></code> in the <strong>Search</strong> field to find your rest connection.</li>
 								<li><p>Select the <strong>Rest Interface</strong> connection.</p>
-								<p>The <strong>Configure REST Endpoint</strong> dialog appears.</p></li>
+								<p>The <strong>Configure REST Endpoint</strong> wizard appears.</p>
+								<p class="comment">The wizard shows your progress in the endpoint configuration process.</p>
+								</li>
 								<li>Name your connection <code class="allow-copy"><span>UpdateSubscription</span></code>.</li>
 								<li>Click <strong>Next</strong>.</li>
 								<li>On the <strong>Resource Configuration</strong> page configure the following values:
 									<ol type="a">
 										<li>In the <strong>operation name</strong> field, enter <code>AddLine</code>.</li>
-										<li>In the <strong>endpoint relative resource URI</strong> field, enter <code class="allow-copy"><span>/subscriptions/{SubscriptionPUID}/child/products/{SubscriptionProductPUID}/child/billLines</span></code></li>
+										<li><p>In the <strong>endpoint relative resource URI</strong> field, enter <code class="allow-copy"><span>/subscriptions/{SubscriptionPUID}/child/products/{SubscriptionProductPUID}/child/billLines</span></code></p>
+											<p class="comment">The URI is the path that you want to monitor for requests to start the integration.</p>
+											<p class="comment">The path parameters (surrounded with curly braces) are place holders for the IDs in the request.  These values can be different for every request, and will identify the specific product and subscription to update.</p>
+										</li>
 										<li>From the <strong>action to perform</strong> list, select <strong>PATCH</strong>.</li>
 										<li>Select <strong>Configure a request payload for this endpoint.</strong></li>
 										<li>Select <strong>Configure the endpoint to receive a response.</strong></li>
@@ -141,10 +148,15 @@ We also support other patterns such as publish and subscribe that let you distri
 								</li>
 								<li>Click <strong>Next</strong>.</li>
 								<li><p>In the <strong>Request Parameters</strong> page, leave the default values, and click <strong>Next</strong>.</p>
-								<p>The resource URI and template parameters are automatically added, and appear as the default values.</p></li>
+								<p>The resource URI and template parameters are automatically added, and appear as the default values.</p>
+								<p class="comment">If you had to specify additional query parameters, you would do it in this page.</p> 
+								</li>
 								<li>On the <strong>Request</strong> page, configure the following values:
 									<ol type="a">
-										<li>From the <strong>request payload format</strong> list, select <strong>JSON Sample</strong>.</li>
+										<li><p>From the <strong>request payload format</strong> list, select <strong>JSON Sample</strong>.</p>
+											<p class="comment">We are passing a JSON document to the integration. We've just provided a sample to configure the shape of the JSON document.</p>
+											<p class="comment">Notice that you can use payload types, including XML.</p>
+										</li>
 										<li>Select <strong>JSON Sample</strong> for the <strong>request payload format</strong>.</li>
 										<li>Click the <strong>&lt;&lt;&lt;inline&gt;&gt;&gt;</strong> link.</li>
 										<li>Enter the following JSON sample:
@@ -158,15 +170,23 @@ We also support other patterns such as publish and subscribe that let you distri
 	]
 }
 										</span></code></pre>
+										<p class="comment">This simple document specifies the product billing line we want to update and the new quantity for the subscription.
+										<p class="comment">Oracle Integration will validate the JSON document.</p>										
 										</li>
 										<li>Click <strong>OK</strong>.</li>
 										<li>Click <strong>Next</strong>.</li>
 									</ol>
+									<p class="comment">Notice that the payload type was automatically updated to JSON.</p>
+									<p class="comment">If you need to be more specific, you can manually edit the media type to change the content-type header. By default the content-type header matches the payload type.</p>
 								</li>
 								<li>On the <strong>Response</strong> page, configure the following values:
 									<ol type "a">
-										<li>Select <strong>JSON Sample</strong> for the <strong>response payload format</strong>.</li>
-										<li>Click the <strong>&lt;&lt;&lt;inline&gt;&gt;&gt;</strong> link.</li>
+										<li>Select <strong>JSON Sample</strong> for the <strong>response payload format</strong>.											
+										</li>
+										<li><p>Click the <strong>&lt;&lt;&lt;inline&gt;&gt;&gt;</strong> link.</p>
+											<p class="comment">You will define the shape of the data that your integration will return.</p>
+											<p class="comment">The wizard gives you the option to define the response payload because you specified that the integration will return a payload on the <strong>Basic Info</strong> page.</p>
+										</li>
 										<li>Enter the following JSON sample:
 										<pre class="allow-copy"><code><span>
 {
@@ -179,13 +199,18 @@ We also support other patterns such as publish and subscribe that let you distri
 }
 										</span></code></pre>
 										</li>																				
-										<li>Click <strong>OK</strong>.</li>
+										<li><p>Click <strong>OK</strong>.</p>
+											<p class="comment">Notice that in addition to returning a response in the body, you can also attach items to the response.</p>
+										</li>
 										<li>Click <strong>Next</strong>.</li>																				
 									</ol>
 								</li>
-								<li><p>In the <strong>Summary</strong> page, click <strong>Done</strong>.</p>
-								<p>The canvas with the new trigger appears.</p>									
+								<li><p class="comment">(Optional)On the <strong>Summary</strong> page, expand the endpoint summary to view the trigger for your integration. Check that everything looks right.</p>
+								<li><p>click <strong>Done</strong>.</p>
+								<p>The canvas with the new trigger appears.</p>	
 								</li>
+								<li><p class="comment">(Optional) Click <img src="img/reposition.png" alt="Reposition icon" style="height: 15px; width: 15px;"/> <strong>Reposition</strong> to change the layout of the activities</p>
+									<p class="comment">This is useful for complex integrations where a particular layout helps you better understand the flow of the activities.</p>
 								<li>Click <strong>Save</strong>.</li>
                             </ol>
                             <p><img src="img/screenshots/integration/canvas-trigger.png" width="600px"/></p> 
@@ -249,7 +274,7 @@ We also support other patterns such as publish and subscribe that let you distri
 </p-->
                             <ol>
                                 <li><p>Click <strong>Map to UpdateBilling</strong>, and then click <img src="img/edit.png" alt="Edit icon" style="height: 18px; width: 18px;"/>.</p>
-                                	<p>The <strong>Map to UpdateBilling</strong> page appears. Note a tooltip indicates available recommendations for this data mapping.</p>
+                                	<p>The <strong>Map to UpdateBilling</strong> page appears. Notice a tooltip indicates available recommendations for this data mapping.</p>
                                 </li>
                                 <li><p>Click <img src="img/recommendations.png" alt="Edit icon" style="height: 15px; width: 15px;"/>&nbsp;<strong>Recommendations</strong>.</p>
                                 	<p>The following recommended mappings appear:</p>
@@ -277,12 +302,12 @@ We also support other patterns such as publish and subscribe that let you distri
                             <h2 id="section_7" role="button" style="text-align: left;">Add Response Mapping</h2>
                                                         <ol>
                                 <li><p>Click <strong>Map to UpdateSubscription</strong>, and then click <img src="img/edit.png" alt="Edit icon" style="height: 18px; width: 18px;"/>.</p>
-                                	<p>The <strong>Map to UpdateSubscription</strong> page appears. Note that there is a tooltip that indicates that there are available recommendations for this data mapping.</p>
+                                	<p>The <strong>Map to UpdateSubscription</strong> page appears. Notice that there is a tooltip that indicates that there are available recommendations for this data mapping.</p>
                                 </li>
                                 <li><p>Click <img src="img/recommendations.png" alt="Recommendations icon" style="height: 15px; width: 15px;"/>&nbsp;<strong>Recommendations</strong>.</p>
                                 	<p>The following recommended mappings appear:</p>
                                 	<ul class="display-item">
-	                                	<li class="display-item">BillLine &#x27F6; BillLine&nbsp;(Note that this mapping automatically generates a for each loop to to map the repeating elements.)
+	                                	<li class="display-item">BillLine &#x27F6; BillLine&nbsp;(Notice that this mapping automatically generates a for each loop to to map the repeating elements.)
 	                                	</li>
 	                                	<li class="display-item">BillLinePUID &#x27F6; BillLinePUID</li>
 	                                	<li class="display-item">UsageQuantity &#x27F6; UsageQuantity</li>
@@ -316,7 +341,7 @@ We also support other patterns such as publish and subscribe that let you distri
 								    <p><img src="img/screenshots/integration/tracking-dialog.png" width="600px"/></p>
 								</li>
 								<li><p>Click <strong>Save</strong>.</p>
-								<p>The <strong>Integration</strong> canvas appears. Note that there are no errors.</p>
+								<p>The <strong>Integration</strong> canvas appears. Notice that there are no errors.</p>
 								</li>
 								<li>Click <strong>Close</strong>.</li>
                             </ol>
@@ -397,11 +422,13 @@ We also support other patterns such as publish and subscribe that let you distri
         </div>
         <!--close main--> 
         <!--end content-->
-        <div class="footer-container ">
-            <div style="max-width: 994px; padding:10px 0 0 17px; background: #3f3c37">
+        	        	                
+        <div class="footer-container ">	        
+            <div> <!--background: #3f3c37"-->
+            	<img src="img/o.png" align="right" alt="Oracle">
                 <footer class="footer-list">
                     <ul>
-                        <li> <a style="color: #fefffe; padding:0px 0 0 17px;" href="https://www.oracle.com/corporate/index.html" target="_blank">About Oracle</a> </li>
+                        <li> <a style="color: #fefffe;" href="https://www.oracle.com/corporate/index.html" target="_blank">About Oracle</a> </li>
                         <li> <a style="color: #fefffe;" href="https://www.oracle.com/us/corporate/contact/index.html" target="_blank">Contact Us</a> </li>
                         <li> <a style="color: #fefffe;" href="https://www.oracle.com/us/legal/index.html" target="_blank">Legal Notices</a> </li>
                         <li> <a style="color: #fefffe;" href="https://www.oracle.com/us/legal/terms/index.html" target="_blank">Terms of Use</a> </li>
