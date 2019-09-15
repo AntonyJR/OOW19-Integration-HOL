@@ -51,7 +51,7 @@
                         <section>
                             <h2>Before You Begin</h2>                           
                             <ul>	                            
-                            	<li>Enter your user number:&nbsp;<input data-bind="value: user_number" type="text"/>&nbsp;<button>OK</button></br>
+                            	<li>Enter your user number:&nbsp;<input data-bind="value: user_number" type="text"/>&nbsp;<button>OK</button><br>
                             		We'll use this user number to customize the integration names in this tutorial. If you leave this blank, these names will contain a placeholder that you can replace with your user number.
                             	</li>
                             	<li>Some steps in this tutorial have a <img src="img/copy-to-clipboard.png" alt="Copy to Cliboard" height="19px" width="19px"> icon next to them. Click this icon to copy the name of snippet to your clipboard and then paste it in Oracle Integration.</li>														
@@ -93,7 +93,7 @@
                             <ol>
 	                            <li>From the <strong>Home</strong> page’s <strong>Navigation menu</strong>, select <strong>Processes</strong>, and then select <strong>Process Applications</strong>.</li>
 	                            <li>Click <strong>Create</strong>.</li>
-								<li>In the Start with a QuickStart box, click <strong>Browse</strong>.</li>
+								<li>Hover over the <strong>Start with a QuickStart</strong> box, and then click <strong>Browse</strong>.</li>
 								<li><p>Locate the <strong>Subscription Management QuickStart</strong>, and click its <strong>Create</strong> button.</p>
 								<img src="img/screenshots/process/quickstart-gallery.png" width="600px"/>
 								</li>
@@ -110,25 +110,32 @@
                             <h2 id="section_3" role="button" style="text-align: left;">Edit the Form</h2>
                             <p>You’ll add two controls to the form that each call the source system and return values for customers to choose from.</p>
                             <ol>
-								<li><p>On the <strong>Processes</strong> page, click the process to open it in the structured process editor.</p>
+								<li>On the <strong>Processes</strong> page, click the process to open it in the structured process editor.</li>
+								<li>Click the purple Start activity titled <strong>Submit Subscription Update</strong>.</li>
+								<li><p>Click <img src="img/menu.png" alt="Menu icon" style="height: 15px; width: 15px;"/> and select <strong>Open Properties</strong>.</p>
 									<img src="img/screenshots/process/process-canvas.png" width="600px"/>
 								</li>
-								<li>Click the purple Start activity titled <strong>Submit Subscription Update</strong>.</li>
-								<li>Click <img src="img/menu.png" alt="Menu icon" style="height: 15px; width: 15px;"/> and select <strong>Open Properties</strong>.</li>
-								<li><p>In the <strong>How to identify the task?</strong> section, in the <strong>Title</strong> field, enter <code class="allow-copy"><span>User <em data-bind="text:user_number"></em> Submit Subscription Update</span></code>.</p>
+								<li><p>In the <strong>How will the end user identify the process?</strong> section, in the <strong>Title</strong> field, enter <code class="allow-copy"><span>User <em data-bind="text:user_number"></em> Submit Subscription Update</span></code>.</p>
 									<p>Remember this name for later, when you run the process application.</p>
 								</li>
-								<li>Close the <strong>Properties</strong> pane and select the same activity again.</li>
+								<li><p>Close the <strong>Properties</strong> pane and select the same activity again.</p>
+									<img src="img/screenshots/process/close-properties.png" width="600px"/>
+								</li>
 								<li><p>Click <img src="img/menu.png" alt="Menu icon" style="height: 15px; width: 15px;"/> and select <strong>Open Form</strong>.</p>
-									<img src="img/screenshots/process/form-canvas.png" width="600px"/>
+									<p>The form editor appears. It contains a central canvas, a side pane for setting properties for selected controls, and a side palette pane with basic and advanced controls you can add to the form.</p>
 								</li>
 								<li><p>Add a <strong>Select</strong> control to select the subscription:</p>
 									<ol type="a">
-										<li>In the form editor, drag and drop a <strong>Select</strong> control from the <strong>Basic Palette</strong> to the top of the form.</li>
-										<li>Select the control you just added.</li>
-										<li>In the <strong>Properties</strong> pane, locate the <strong>General</strong> tab.<span style="color:#ff0078"> [Carol: I know this is forced, but it was this or In the Properties pane, in the General tab, in the Name field, enter... and that seemed too long...]</span></li>
-										<li>in the <strong>Name</strong> field, enter <code class="allow-copy"><span>SubscriptionPUID</span></code>.</li>										
+										<li><p>Drag and drop a <strong>Select</strong> control from the <strong>Basic Palette</strong> to the top of the form.</p></li>
+										<img src="img/screenshots/process/form-canvas-select-control.png" width="600px"/>										
+										<li><p>Select the control you just added.</p>
+											<p>Notice how the Properties pane changes: when you select a control, the properties panel displays its properties. When you click outside of a control, the properties panel displays the entire form’s properties.
+										</li>
+										<li>In the <strong>Properties</strong> pane, locate the <strong>General</strong> tab.</li>
+										<li>In the <strong>Name</strong> field, enter <code class="allow-copy"><span>SubscriptionPUID</span></code>.</li>										
 										<li>In the <strong>Label</strong> field, enter <code class="allow-copy"><span>Subscription</span></code>.</li>
+										<li><p>Click outside the new control.</p>
+											<p>Notice how the label is now Subscription and the select control is a dropdown field.</p>
 									</ol>
 								</li>
 								<li><p>Add a <strong>Select</strong> control to select the product:</p>
@@ -137,10 +144,13 @@
 										<li>Select the control you just added.</li>
 										<li>In the <strong>Properties</strong> pane, locate the <strong>General</strong> tab.</li>
 										<li>in the <strong>Name</strong> field, enter <code class="allow-copy"><span>ProductPUID</span></code>.</li>										
-										<li>In the <strong>Label</strong> field, enter <code class="allow-copy"><span>Product</span></code>.</li>
+										<li><p>In the <strong>Label</strong> field, enter <code class="allow-copy"><span>Product</span></code>.</p>
+										<img src="img/screenshots/process/form-canvas.png" width="600px"/>											
+										</li>
 									</ol>
+
 								</li>
-								<li>Click the <img src="img/menu.png" alt="Preview icon" style="height: 15px; width: 15px;"/> <strong>Preview</strong> button to see the new fields in your form.</li>
+								<li>Click the <img src="img/preview.png" alt="Preview icon" style="height: 15px; width: 15px;"/> <strong>Preview</strong> button to see the new fields in your form.</li>
 								<li>Click <img src="img/close.png" alt="Close icon" style="height: 12px; width: 12px;"/> to close the preview.</li>
                             </ol>                         
                         </section>
@@ -178,7 +188,7 @@
 								<li><p>In the <strong>Value Binding</strong> field, enter <code>subscription</code> and then select <strong>subscriptionNumber</strong>.</p>
 									<img src="img/screenshots/process/label-binding.png" width="250px"/>
 								</li>
-								<li>Click <img src="img/menu.png" alt="Preview icon" style="height: 15px; width: 15px;"/> Preview.</li>
+								<li>Click <img src="img/preview.png" alt="Preview icon" style="height: 15px; width: 15px;"/> Preview.</li>
 								<li>Click the <strong>Subscription</strong> list, and notice subscription options returned from the integration appear.</li>
 								<li>Click <img src="img/close.png" alt="Close icon" style="height: 12px; width: 12px;"/> to close the preview.</li>
 	
@@ -191,7 +201,7 @@
 								<li>From the <strong>Resource</strong> list, select <strong>resources</strong>.</li>
 								<li>From the <strong>Operation</strong> list, select <strong>getResource</strong>.</li>
 								<li>In the <strong>Template Parameters</strong> section, from the <strong>SubscriptionPUID</strong> field, select <strong>Control value</strong>.</li>
-								<li>From the field next to <strong>SubscriptionPUID</strong>, select <strong>SubscriptionPUID</strong>.</br><span style="color:#ff0078">[Carol: Nathan, I replaced Subscription by SubscriptionPUID as you requested, however I don't see this in the click-through. Please confirm this is right.]</span></li>
+								<li>From the field next to <strong>SubscriptionPUID</strong>, select <strong>SubscriptionPUID</strong>.</li>
 								<li>In the <strong>Response</strong> section, in the <strong>Options List</strong> field, enter <code class="allow-copy"><span>response.items</span></code>.</li>
 								<li>In the <strong>Label Binding</strong> field, enter <code>product</code> and then select <strong>productName</strong>.</li>	
 								<li>In the <strong>Value Binding</strong> field, enter <code>subscription</code> and then select <strong>subscriptionProductPuid</strong>.</li>
@@ -202,37 +212,37 @@
 								<li>Click <img src="img/close.png" alt="Close icon" style="height: 12px; width: 12px;"/> to close the preview.</li>
 								<li>On the form canvas, select the <strong>Product</strong> control.</li> 
 								<li>In the <strong>Properties</strong> pane, in the <strong>Default Value</strong> section, select <strong>Skip Upon Load</strong>.</li>
-								<li>Scroll up until you find the section before the <strong>Options Source</strong> section, and then select the <strong>Hide</strong>.</li>
-								<li>On the <strong>Form</strong> canvas, select the <strong>Product</strong> control.</li>
-								<li>In the Properties pane, scroll down until you find the <strong>Events</strong> section.</li>
-								<li>Click <img src="img/menu.png" alt="Add icon" style="height: 12px; width: 12px;"/></li>
+								<li>Scroll up until you find the section before the <strong>Options Source</strong> section, and then select <strong>Hide</strong>.</p>
+									<p>Notice that the <strong>Product</strong> control is disabled to show it's hidden.</p>
+								</li>		
+								<li>On the <strong>Form</strong> canvas, select the <strong>Subscription</strong> control.</li>						
+								<li><p>In the Properties pane, scroll down until you find the <strong>Events</strong> section.</li>
+								<li><p>Click <img src="img/add.png" alt="Add icon" style="height: 12px; width: 12px;"/>.</p>
+									<p>The <strong>On Change</strong> dialog appears.</p>
+									<img src="img/screenshots/process/action-editor.png" width="650px"/>
+								</li>
 								<li><p>From the list next to the <strong>Event Name</strong> field, select <strong>On Change</strong>.</p>
 									<img src="img/screenshots/process/on-change.png" width="250px"/>
 								</li>
 								<li>Click <img src="img/edit.png" alt="Edit icon" style="height: 15px; width: 15px;"/> to display the <strong>Expression Editor</strong> dialog.</li>
-								<li><p>Add an action to load the <strong>Product</strong> list values when the user selects a subscription:</p>
-									<p><span style="color:#ff0078">[Carol: Sarah, I changed this because the name that you see in the first field is automatically created based on what you select from the Control Name and Action lists. If you try to click the first field to enter the name, the complete section collapses which can be extremely confusing (I know this fist hand haha). Let me know if you want me to show you this.]</span></p>
+								<li><p>Add an action to load the <strong>Product</strong> list values when the user selects a subscription:</p>									
 									<ol type="a">
 										<li>Click <strong>+ Action</strong>.</li>
-										<li><p>From the <strong>Control Name</strong> list, select <strong>ProductPUID</strong>.</p>
-											<p><span style="color:#ff0078">[Carol: Nathan, I replaced Product by ProductPUID as you requested, however I don't see this in the click-through. Please confirm this is right.]</span></p>
-										</li>										
+										<li>From the <strong>Control Name</strong> list, select <strong>ProductPUID</strong>.</li>										
 										<li>From the <strong>Action</strong> list, select <strong>Refresh Connector</strong>.</li>																				
 									</ol>
 								</li>
 								<li><p>Add an action to show the values for the <strong>Product</strong> list values when the user selects a subscription:</p>
 								<ol type="a">
 										<li>Click <strong>+ Action</strong>.</li>
-										<li><p>From the <strong>Control Name</strong> list, select <strong>ProductPUID</strong>.</p>
-										<p><span style="color:#ff0078">[Carol: Nathan, I replaced Product by ProductPUID as you requested, however I don't see this in the click-through. Please confirm this is right.]</span></p>
-										</li>										
+										<li>From the <strong>Control Name</strong> list, select <strong>ProductPUID</strong>.</li>										
 										<li>From the <strong>Action</strong> list, select <strong>Show</strong>.</li>																				
 									</ol>
 								</li>
-								<li>Click <strong>OK</strong></li>
+								<li>Click <strong>OK</strong>.</li>
 								<li><p>Let's preview the behavior you just added to the form controls:</p>
-								<ol>
-									<li>On the <strong>Form</strong> canvas, click <img src="img/menu.png" alt="Preview icon" style="height: 15px; width: 15px;"/> Preview.</li>
+								<ol type="a">
+									<li>On the <strong>Form</strong> canvas, click <img src="img/preview.png" alt="Preview icon" style="height: 15px; width: 15px;"/> Preview.</li>
 									<li><p>On the <strong>Preview</strong> page, from the <strong>Subscription</strong> list, select <strong>Computer Service and Rentals -26009</strong>.</p> 
 										<p>Notice how the <stong>Product</stong> list displays its recently loaded values after the Subscription field changes.</p></li>
 									<li>From the <strong>Product</strong> list, select <strong>GE Top Control Dishwasher</strong>.</li>
@@ -253,17 +263,14 @@
 									<!--li>In the <strong>Properties</strong> pane, scroll down and select the <strong>Hide Labels</strong> and <strong>Hide Row Checkbox</strong> options.</li-->
 									<li><p>Configure the connector:</p>
 										<ol type="a">
-											<li>Select <strong>Use Data from Connector</strong>.</li>
+											<li>In the <strong>Properties</strong> pane, select <strong>Use Data from Connector</strong>.</li>
 											<li>From the <strong>Connector</strong> list, select <strong>GetSubscriptionProductBillLinesByProduct</strong>.</li>
 											<li>From the <strong>Resource</strong>, select <strong>resources</strong>.</li>
 											<li>From the <strong>Operation</strong> list, select <strong>getResource</strong>.</li>
 											<li>In the <strong>Template Parameters</strong> section, from the <strong>SubscriptionPUID</strong> field, select <strong>Control value</strong>.</li>
-											<li>From the field next to <strong>SubscriptionPUID</strong>, select <strong>ProductPUID</strong>.
-											</br><span style="color:#ff0078">[Carol: Nathan, I replaced Subscription by ProductPUID as you requested, however I don't see this in the click-through. Please confirm this is right.]</span></li>
-											
+											<li>From the field next to <strong>SubscriptionPUID</strong>, select <strong>ProductPUID</strong>.</li>											
 											<li>From the <strong>SubscriptionPUID</strong> field, select <strong>Control value</strong>.</li>
-											<li>From the field next to <strong>SubscriptionPUID</strong>, select <strong>SubscriptionPUID</strong>.
-											</br><span style="color:#ff0078">[Carol: Nathan, I replaced Subscription by SubscriptionPUID as you requested, however I don't see this in the click-through. Please confirm this is right.]</span></li>
+											<li>From the field next to <strong>SubscriptionPUID</strong>, select <strong>SubscriptionPUID</strong>.</li>
 											<li>In the <strong>Response</strong> section, in the <strong>Options List</strong> field, enter <code class="allow-copy"><span>response.items</span></code>.</li>
 											<li>Click the <strong>BillLinePuid</strong> field, and select <strong>billLinePuid</strong>.</li>
 											<li>In the <strong>InvoiceText</strong> field, enter <code>invoice</code> and then select <strong>invoiceText</strong>.</li>
@@ -276,28 +283,26 @@
 																											
 									<li>On the <strong>Form</strong> canvas, select the <strong>Product</strong> control.</li>
 									<li>In the Properties pane, scroll down until you find the <strong>Events</strong> section.</li>
-									<li>Click <img src="img/menu.png" alt="Add icon" style="height: 12px; width: 12px;"/></li>
+									<li>Click <img src="img/add.png" alt="Add icon" style="height: 12px; width: 12px;"/>.</li>
 									<li>From the list next to the <strong>Event Name</strong> field, select <strong>On Change</strong></li>
-									<li><p>Click <img src="img/edit.png" alt="Edit icon" style="height: 15px; width: 15px;"/> to display the <strong>Expression Editor</strong> dialog.</p>
-										<img src="img/screenshots/process/action-editor.png" width="650px"/>
-									</li>										
+									<li>Click <img src="img/edit.png" alt="Edit icon" style="height: 15px; width: 15px;"/> to display the <strong>Expression Editor</strong> dialog.</li>										
 									<li><p>Add an action that refreshes the table when the selected subscription and product value change:</p>
-										<p><span style="color:#ff0078">[Carol: Sarah, I changed this because the name that you see in the first field is automatically created based on what you select from the Control Name and Action lists. If you try to click the first field to enter the name, the complete section collapses which can be extremely confusing (I know this fist hand haha). Let me know if you want me to show you this.]</span></p>
 										<ol type="a">
 											<li>Click <strong>+ Action</strong>.</li>
 											<li>From the <strong>Control Name</strong> list, select <strong>BillLines</strong>.</li>
-											<li>From the <strong>Which?</strong> list, select <strong>Self</strong>.</li>														
+											<li>Leave the default selection (<strong>Self</strong>) for the <strong>Which?</strong> field as is.</li>														
 											<li>From the <strong>Action</strong> list, select <strong>Refresh Connector</strong>.</li>																				
 										</ol>
 									</li>
 									<li><p>Add an action that shows the table when the selected subscription and product value change:</p>
 										<ol type="a">
 											<li>Click <strong>+ Action</strong>.</li>
-											<li>From the <strong>Control Name</strong> list, select <strong>BillLines</strong>.</li>										
+											<li>From the <strong>Control Name</strong> list, select <strong>BillLines</strong>.</li>
+											<li>Leave the default selection (<strong>Self</strong>) for the <strong>Which?</strong> field as is.</li>											
 											<li>From the <strong>Action</strong> list, select <strong>Show</strong>.</li>																				
 										</ol>
 									</li>
-									<li>Click <strong>OK</strong></li>
+									<li>Click <strong>OK</strong>.</li>
 									<li><p>Let's preview the behavior you just added to the table control:</p>
 										<ol>
 											<li>On the <strong>Form</strong> canvas, click <img src="img/menu.png" alt="Preview icon" style="height: 15px; width: 15px;"/> Preview.</li>
