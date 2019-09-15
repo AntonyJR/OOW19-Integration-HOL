@@ -248,6 +248,7 @@ We also support other patterns such as publish and subscribe that let you distri
                         <section> <!-- ########## UPDATE THE BILLING QUANTITY ########## -->
                             <h2 id="section_5" role="button" style="text-align: left;">Update the Billing Quantity</h2>
                             <p>The loop we just created will update the billing lines for the request in Oracle Engagement Cloud. To do this, we'll connect to Oracle Engagement Cloud.</p>
+                            <p class="comment">Oracle Engagement Cloud is part of Oracle Customer Experience Suite which is a suite of CRM products.</p>
                             <ol>
                                 <li>Hover over the outgoing arrow for the <strong>LoopBillLines</strong> action.</li>
                                 <li>In the <strong>Search</strong> field, enter <code>Oracle</code>.</li>
@@ -264,6 +265,7 @@ We also support other patterns such as publish and subscribe that let you distri
                                 <li>On the <strong>Configure the Request Query Parameters</strong>, click <strong>Next</strong>.</li>
                                 <li><p>On the <strong>Summary</strong> page, click <strong>Done</strong>.</p>
                                 	<p>The <strong>Integration</strong> canvas appears.</p>
+                                	<p class="comment">Notice that a new map was added to the flow.  We'll use this map in the following procedure.</p>
                                 </li>
                                 <li>Click <strong>Save</strong>.</li> 
                             </ol>
@@ -273,13 +275,15 @@ We also support other patterns such as publish and subscribe that let you distri
 <!-- ########## ADD REQUEST MAPPING ########## -->                        
                         <section>
                             <h2 id="section_6" role="button" style="text-align: left;">Add Request Mapping</h2>
-                            <!--p>The data format between applications usually do not match and that is the case here.  We can use the map that was put on the canvas to transform the data from the source format to the target Engagement Cloud, format.  We need to map each individual field.
-</p-->
+                            <p class="comment">The data format often varies between applications, so we need to map the format from the source data, to the format required by the target application.</p>
+                            <p class="comment">In this case, we'll use the map from the previous procedure to transform the data from the source format, to the format Oracle Engagement Cloud requires. We'll map each individual field using the recommendations suggested by Oracle Integration.</p>
+                            <p class="comment">You can edit maps at any point in your development process.</p>
                             <ol>
                                 <li><p>Click <strong>Map to UpdateBilling</strong>, and then click <img src="img/edit.png" alt="Edit icon" style="height: 18px; width: 18px;"/>.</p>
                                 	<p>The <strong>Map to UpdateBilling</strong> page appears. Notice a tooltip indicates available recommendations for this data mapping.</p>
                                 </li>
                                 <li><p>Click <img src="img/recommendations.png" alt="Edit icon" style="height: 15px; width: 15px;"/>&nbsp;<strong>Recommendations</strong>.</p>
+                                	<p class="comment">You can also map your recommendations manually by dragging the data from the <strong>Source</strong> tree, and dropping it on the <strong>Target</strong> tree. For this lab, we'll use the recommended mappings so that you see how easy it is.</p>
                                 	<p>The following recommended mappings appear:</p>
                                 	<ul class="display-item">
 	                                	<li class="display-item">SubscriptionPUID &#x27F6; SubscriptionPUID</li>
@@ -288,6 +292,7 @@ We also support other patterns such as publish and subscribe that let you distri
 	                                	<li class="display-item">UsageQuantity &#x27F6; UsageQuantity</li>
                                 	</ul>
                                 	<p><img src="img/screenshots/integration/map-dialog.png" width="600px"/></p>
+                                	<p class="comment">When you map data fields, you set the values for target data based on the source data.  Notice that the <strong>CurrentBillLine</strong> variable in the for each loop is treated in the same way as the incoming request variable.</p>
                                 </li>
                                 <li><p>Click <strong>&check; Apply Recommendations</strong>.</p>
                                 	<p>A <strong>Confirmation</strong> message appears informing you that the recommended mappings were applied.</p>
@@ -296,14 +301,16 @@ We also support other patterns such as publish and subscribe that let you distri
                                 <li><p>Click <strong>Validate</strong> and then click <strong>Close</strong>.</p>
                                 	<p>The <strong>Integration</strong> canvas appears.</p>
                                 </li>
-                                <li>Click <strong>Save</strong>.</li>
+                                <li><p>Click <strong>Save</strong>.</p>
+                                	<p class="comment">Notice how visually different the current map is from the map we started with.</p>
+                                </li>
                             </ol>
                         </section>
                         <hr>
 <!-- ########## ADD RESPONSE MAPPING ########## -->                        
                         <section> 
                             <h2 id="section_7" role="button" style="text-align: left;">Add Response Mapping</h2>
-                                                        <ol>
+	                        <ol>
                                 <li><p>Click <strong>Map to UpdateSubscription</strong>, and then click <img src="img/edit.png" alt="Edit icon" style="height: 18px; width: 18px;"/>.</p>
                                 	<p>The <strong>Map to UpdateSubscription</strong> page appears. Notice that there is a tooltip that indicates that there are available recommendations for this data mapping.</p>
                                 </li>
@@ -421,6 +428,7 @@ We also support other patterns such as publish and subscribe that let you distri
                     </article>
                 </div>
                 <br class="clearfloat">
+				<br class="clearfloat">
             </div>
         </div>
         <!--close main--> 
