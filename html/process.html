@@ -98,10 +98,10 @@
 								<img src="img/screenshots/process/quickstart-gallery.png" width="600px"/>
 								</li>
 								<li>In the <strong>Create Application</strong> dialog, in the name field, enter <code class="allow-copy"><span>My Subscriptions</span></code>.</li>
-								<li>Click <strong>Create</strong>.</li>
-								<li><p>On the <strong>QuickStart App</strong> page, click the <strong>Switch to Application View</strong> link.</p>
-									<p><img src="img/screenshots/process/switch-app-view.png" width="600px"/></p>
-								</li>								
+								<li><p>Click <strong>Create</strong>.</p>
+									<p>The quickstart application appears.</p>
+									<img src="img/screenshots/process/quickstart.png" width="600px"/>
+								</li>																
                             </ol>                                                             
                         </section>
                         <hr>
@@ -110,6 +110,9 @@
                             <h2 id="section_3" role="button" style="text-align: left;">Edit the Form</h2>
                             <p>You’ll add two controls to the form that each call the source system and return values for customers to choose from.</p>
                             <ol>
+	                            <li><p>On the <strong>QuickStart App</strong> page, click the <strong>Switch to Application View</strong> link.</p>
+									<p><img src="img/screenshots/process/switch-app-view.png" width="600px"/></p>
+								</li>
 								<li>On the <strong>Processes</strong> page, click the process to open it in the structured process editor.</li>
 								<li>Click the purple Start activity titled <strong>Submit Subscription Update</strong>.</li>
 								<li><p>Click <img src="img/menu.png" alt="Menu icon" style="height: 15px; width: 15px;"/> and select <strong>Open Properties</strong>.</p>
@@ -342,6 +345,8 @@
 	                            <li>Click <img src="img/menu.png" alt="Menu icon" style="height: 15px; width: 15px;"/>.</li>
 	                            <li><p>Select <strong>Open Data Association</strong>.</p>
 	                            	<img src="img/screenshots/process/select-data-association.png" width="650px"/>
+	                            	<p>The <strong>Data Association</strong> page appears.</p>
+	                            	<img src="img/screenshots/process/data-association.png" width="650px"/>
 	                            </li>
 	                            <li><p>Click <img src="img/auto-map.png" alt="Auto Mapping icon" style="height: 17px; width: 17px;"/>.</p>
 	                            	<img src="img/screenshots/process/auto-mapping.png" width="600px"/>
@@ -363,26 +368,26 @@
 										<p>The data association icon turns red and an error is displayed indicating that the arrays cannot be mapped as is.</p>
 										<img src="img/screenshots/process/data-mapping-error.png" width="600px"/>
 										</li>
-										<li><p>Create a transformation to map bill lines values:</p>
-											<ol type="a">
-												<li>Click <img src="img/screenshots/process/data-mapping-error-icon.png" alt="Data association error icon" style="width: 35px;"/>.</li>
-												<li><p>Select <strong>Transform</strong>.</p>
-													<p>The <strong>Transformation</strong> dialog appears.</p>					
-												</li>
-												<li>In the <strong>Transformation</strong> dialog, enter <code class="allow-copy"><span>Bill Line</span></code>												
-												<li><p>Click <strong>Create</strong>.</p>
-													<p>The <strong>Data Association</strong> page changes to the <strong>Transform</strong> page.</p>
-												</li>
-												<li>Drag and drop to associate <strong>billLinePuid</strong> and <strong>billLinePUID</strong>.</li>			
-												<li><p>Drag and drop to associate <strong>string(usageQuantity</strong> and <strong>usageQuantity</strong>.</p>
-												<img src="img/screenshots/process/transformation.png" width="600px"/>
-												</li>
-												<li>Click <strong>Save</strong>.
-												<p>You exit the <strong>Transform</strong> page and return to the <strong>Data Association</strong> page.</p>
-													</li> 																				
-											</ol>
-										</li>
 	                            	</ol>
+									<li><p>Create a transformation to map bill lines values:</p>
+										<ol type="a">
+											<li>Click <img src="img/screenshots/process/data-mapping-error-icon.png" alt="Data association error icon" style="width: 35px;"/>.</li>
+											<li><p>Select <strong>Transform</strong>.</p>
+												<p>The <strong>Transformation</strong> dialog appears.</p>					
+											</li>
+											<li>In the <strong>Transformation</strong> dialog, enter <code class="allow-copy"><span>Bill Line</span></code>												
+											<li><p>Click <strong>Create</strong>.</p>
+												<p>The <strong>Data Association</strong> page changes to the <strong>Transform</strong> page.</p>
+											</li>
+											<li>Drag and drop to associate <strong>billLinePuid</strong> and <strong>billLinePUID</strong>.</li>			
+											<li><p>Drag and drop to associate <strong>string(usageQuantity</strong> and <strong>usageQuantity</strong>.</p>
+											<img src="img/screenshots/process/transformation.png" width="600px"/>
+											</li>
+											<li>Click <strong>Save</strong>.
+											<p>You exit the <strong>Transform</strong> page and return to the <strong>Data Association</strong> page.</p>
+												</li> 																				
+										</ol>
+									</li>	                            	
 	                            </li>
                             </ol>
                             <h3>Configure the Integration’s Output</h3>
