@@ -319,10 +319,97 @@
 <!-- ########## AUTOMATE THE UPDATE TASK ########## -->                                                
                         <section>
                             <h2 id="section_6" role="button" style="text-align: left;">Automate the Update Task</h2>
-                            <p> </p>
+                            <p>Your last task is to configure an integration that updates the source system, Oracle Engagement Cloud, with all entries users make in the form.</p>
+                            <h3>Link an Integration</h3>
                             <ol>
-								<li></li>
+								<li>From the <strong>Navigation</strong> menu, select <strong>Integrations</strong>.</li>
+								<li>On the <strong>Application Home</strong> tab, click <strong>Create</strong>.</li>
+								<li>Select <strong>Use an Integration</strong>.</li>
+								<li>In the Use an Integration dialog, in the <strong>Search</strong> field, enter update, and then select <strong>Update Subscription Product Bill Lines</strong>. </li>
+								<li>Click <strong>Create</strong>.</li>
+								<li>Select the <strong>Process</strong> tab to display the process editor.</li>
+								<li>Select the <strong>Update Subscription</strong> human task from the flow.</li>
+								<li>Click <img src="img/delete.png" alt="Delete icon" style="height: 15px; width: 15px;"/>.</li>
+								<li>Insert the integration you previously linked onto the flow line.</li>
+								<ol type="a">
+									<li>Expand the <strong>Integrations</strong> category in the <strong>BPMN</strong> palette.</li>
+									<li>Drag and drop the <strong>UpdateSubscriptionProductBillLines</strong> integration to the same position on the flow as the deleted human task.</li>
+								</ol>
                             </ol> 
+                            <h3>Configure the Integration’s Input</h3>
+                            <ol>
+	                            <li>Select the integration.</li>
+	                            <li>Click <img src="img/menu.png" alt="Menu icon" style="height: 15px; width: 15px;"/>.</li>
+	                            <li><p>Select <strong>Open Data Association</strong>.</p>
+	                            	<img src="img/screenshots/process/select-data-association.png" width="650px"/>
+	                            </li>
+	                            <li><p>Click <img src="img/auto-map.png" alt="Auto Mapping icon" style="height: 17px; width: 17px;"/>.</p>
+	                            	<img src="img/screenshots/process/auto-mapping.png" width="600px"/>
+	                            	<p>This action automatically maps the subscription and product values users select in the form to the corresponding source fields in Oracle Engagement Cloud:</p>
+	                            	<ul>
+		                            	<li>Process.Data Object.webFormDataObject.subscription &#x27F6; subscriptionPUID</li>
+		                            	<li>Process.Data Object.webFormDataObject.product &#x27F6; subscriptionProductPUID</li>
+	                            	</ul>
+	                            </li>
+	                            <li>Add a third data association for the bill lines table:
+	                            	<ol type="a">
+		                            	<li>In the <strong>Data Objects</strong> tree, expand <strong>Process</strong>.</li>
+										<li>Expand <strong>Data Object</strong>.</li>
+										<li>Expand <strong>webFormDataObject</strong>.</li>
+										<li>Drag and drop <strong>billLines</strong> to the <strong>Process</strong> section.</li>
+										<li>Under Update subscription product bill lines, open body.</li>
+										<li>In the <strong>Update subscription product bill lines</strong> tree, expand <strong>body</strong>.</li>
+										<li><p>Drag and drop <strong>billLine</strong> from the <strong>Update subscription product bill lines</strong> tree to the blank field that maps the value for <strong>webFormDataObject.billLines</strong>.</p>
+										<p>The data association icon turns red and an error is displayed indicating that the arrays cannot be mapped as is.</p>
+										<img src="img/screenshots/process/data-mapping-error.png" width="600px"/>
+										</li>
+										<li><p>Create a transformation to map bill lines values:</p>
+											<ol type="a">
+												<li>Click <img src="img/screenshots/process/data-mapping-error-icon.png" alt="Data association error icon" style="width: 35px;"/>.</li>
+												<li><p>Select <strong>Transform</strong>.</p>
+													<p>The <strong>Transformation</strong> dialog appears.</p>					
+												</li>
+												<li>In the <strong>Transformation</strong> dialog, enter <code class="allow-copy"><span>Bill Line</span></code>												
+												<li><p>Click <strong>Create</strong>.</p>
+													<p>The <strong>Data Association</strong> page changes to the <strong>Transform</strong> page.</p>
+												</li>
+												<li>Drag and drop to associate <strong>billLinePuid</strong> and <strong>billLinePUID</strong>.</li>			
+												<li><p>Drag and drop to associate <strong>string(usageQuantity</strong> and <strong>usageQuantity</strong>.</p>
+												<img src="img/screenshots/process/transformation.png" width="600px"/>
+												</li>
+												<li>Click <strong>Save</strong>.
+												<p>You exit the <strong>Transform</strong> page and return to the <strong>Data Association</strong> page.</p>
+													</li> 																				
+											</ol>
+										</li>
+	                            	</ol>
+	                            </li>
+                            </ol>
+                            <h3>Configure the Integration’s Output</h3>
+                            <ol>
+	                            <li><p>Select the <strong>Output</strong> tab.</p>
+	                            	<img src="img/screenshots/process/data-association-output-tab.png" width="600px"/>
+	                            </li>
+	                            <li>In the <strong>Data Objects</strong> tree, expand <strong>Data Object</strong>.</li>
+	                            <li>In the <strong>Data Objects</strong> tree, click <img src="img/add.png" alt="Add icon" style="height: 15px; width: 15px;"/>.</li>
+	                            <li><p>In the <strong>Add Data Object</strong> dialog, complete these entries:</p>
+		                            <ul>
+			                            <li>In the <strong>Name</strong>field, enter <code class="allow-copy"><span>updateBillLinesResponse</span></code>.</li>
+			                            <li>In the <strong>Data Type</strong> section, select <strong>Business</strong>.</li>
+			                            <li>Select <strong>OracleIntegrations.UpdateSubscriptionProductBillLines.Response
+			                            </strong>.</li>
+		                            </ul>
+		                            <img src="img/screenshots/process/add-data-object.png" width="350px"/>
+	                            </li>
+	                            <li>Click <strong>Add</strong>.</li>
+	                            <li><p>Click <img src="img/auto-map.png" alt="Auto Mapping icon" style="height: 17px; width: 17px;"/>.</p>
+	                            	<p>An association between <strong>bodyOutput</strong> and <strong>updateBillLinesResponse</strong> was automatically configured.</p>
+	                            	<img src="img/screenshots/process/auto-map-result.png" width="650px"/>
+	                            </li>
+	                            <li><p>Click <strong>Apply</strong>.</p>
+	                            	<p>All data associations are saved, and you return to the <strong>Process</strong> tab.
+</p>
+	                            </li>	                            	                            	                            
                         </section>                        
 <!-- ########## TEST THE PROCESS APPLICATION ########## -->                        
                         <section>
