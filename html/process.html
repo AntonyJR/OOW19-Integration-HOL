@@ -51,13 +51,13 @@
                             <h2>Before You Begin</h2>                           
                             <ul>	                            
                             	<li>Enter your user number:&nbsp;<input data-bind="value: user_number" type="text"/>&nbsp;<button>OK</button><br>
-                            		We'll use this user number to customize the integration names in this tutorial. If you leave this blank, these names will contain a placeholder that you can replace with your user number.
+                            		We'll use this user number to customize the process names in this tutorial. If you leave this blank, these names will contain a placeholder that you can replace with your user number.
                             	</li>
                             	<li>Some steps in this tutorial have a <img src="img/copy-to-clipboard.png" alt="Copy to Cliboard" height="19px" width="19px"> icon next to them. Click this icon to copy the name of snippet to your clipboard and then paste it in Oracle Integration.</li>														
                         </section>
                         <section>
 	                        <h2>Background</h2>
-	                        <p>In this hands-on lab, you'll create process to automate the updating of subscription usage data in Oracle Engagement Cloud Subscription Management.</p>
+	                        <p>In this hands-on lab, you'll create a process to automate the updating of subscription usage data in Oracle Engagement Cloud Subscription Management.</p>
                             <p>We'll base this lab on the subscription billing demo discussed during other  Oracle OpenWorld sessions, and on the previous lab where you created an integration.</p>
                             <p>The objective is to provide a self-service application for subscribers to update their subscription usage data and automate the process of updating the subscription billing summary. The process you'll create will let you update the subscription usage for a particular product under a subscription contract.</p>                     	                         	                      
                         </section>
@@ -164,7 +164,7 @@
                             <p>Here you’ll add two active integrations for use in your process.</p>
                             <ol>
 								<li>From the <strong>Navigation</strong> menu, select <strong>Integrations</strong>.</li>
-								<li>Click <strong>Browse Integrations</strong>.</li>
+								<li>Click <strong>Link to an Integration</strong>, and then select <strong>Browse Integrations</strong>.</li>
 								<li>In the <strong>Use an Integration</strong> dialog, search for and select <strong>Get Subscriptions</strong>, and then click <strong>Create</strong>.</li>
 								<li><p>On the <strong>Integrations</strong> page, click <strong>Create</strong>, and then click <strong>Use an Integration</strong>.</p>
 									<img src="img/screenshots/process/integrations-page.png" width="600px"/>
@@ -210,9 +210,9 @@
 								<li>In the <strong>Response</strong> section, in the <strong>Options List</strong> field, enter <code class="allow-copy"><span>response.items</span></code>.</li>
 								<li>In the <strong>Label Binding</strong> field, enter <code>product</code> and then select <strong>productName</strong>.</li>	
 								<li>In the <strong>Value Binding</strong> field, enter <code>subscription</code> and then select <strong>subscriptionProductPuid</strong>.</li>
-								<li>Click <img src="img/menu.png" alt="Preview icon" style="height: 15px; width: 15px;"/> Preview.</li>
+								<li>Click <img src="img/preview.png" alt="Preview icon" style="height: 15px; width: 15px;"/> Preview.</li>
 								<li><p>Click the <strong>Product</strong> list.</p>
-									<p>A message displays an error occurred retrieving the data.</p>
+									<p>A message shows that an error occurred retrieving the data.</p>
 								</li>
 								<li>Click <img src="img/close.png" alt="Close icon" style="height: 12px; width: 12px;"/> to close the preview.</li>
 								<li>On the form canvas, select the <strong>Product</strong> control.</li> 
@@ -223,13 +223,13 @@
 								<li>On the <strong>Form</strong> canvas, select the <strong>Subscription</strong> control.</li>						
 								<li><p>In the Properties pane, scroll down until you find the <strong>Events</strong> section.</li>
 								<li><p>Click <img src="img/add.png" alt="Add icon" style="height: 12px; width: 12px;"/>.</p>
-									<p>The <strong>On Change</strong> dialog appears.</p>
-									<img src="img/screenshots/process/action-editor.png" width="650px"/>
 								</li>
 								<li><p>From the list next to the <strong>Event Name</strong> field, select <strong>On Change</strong>.</p>
 									<img src="img/screenshots/process/on-change.png" width="250px"/>
 								</li>
-								<li>Click <img src="img/edit.png" alt="Edit icon" style="height: 15px; width: 15px;"/> to display the <strong>Expression Editor</strong> dialog.</li>
+								<li><p>Click <img src="img/edit.png" alt="Edit icon" style="height: 15px; width: 15px;"/> to display the <strong>Expression Editor</strong> dialog.</p>
+									<p>The <strong>On Change</strong> dialog appears.</p>									
+								</li>
 								<li><p>Add an action to load the <strong>Product</strong> list values when the user selects a subscription:</p>									
 									<ol type="a">
 										<li>Click <strong>+ Action</strong>.</li>
@@ -243,6 +243,7 @@
 										<li>From the <strong>Control Name</strong> list, select <strong>ProductPUID</strong>.</li>										
 										<li>From the <strong>Action</strong> list, select <strong>Show</strong>.</li>																				
 									</ol>
+									<img src="img/screenshots/process/action-editor.png" width="650px"/>
 								</li>
 								<li>Click <strong>OK</strong>.</li>
 								<li><p>Let's preview the behavior you just added to the form controls:</p>
@@ -289,7 +290,7 @@
 									<li>On the <strong>Form</strong> canvas, select the <strong>Product</strong> control.</li>
 									<li>In the Properties pane, scroll down until you find the <strong>Events</strong> section.</li>
 									<li>Click <img src="img/add.png" alt="Add icon" style="height: 12px; width: 12px;"/>.</li>
-									<li>From the list next to the <strong>Event Name</strong> field, select <strong>On Change</strong></li>
+									<li>From the list next to the <strong>Event Name</strong> field, select <strong>On Change</strong>.</li>
 									<li>Click <img src="img/edit.png" alt="Edit icon" style="height: 15px; width: 15px;"/> to display the <strong>Expression Editor</strong> dialog.</li>										
 									<li><p>Add an action that refreshes the table when the selected product value changes:</p>
 										<ol type="a">
@@ -309,8 +310,8 @@
 									</li>
 									<li>Click <strong>OK</strong>.</li>
 									<li><p>Let's preview the behavior you just added to the table control:</p>
-										<ol>
-											<li>On the <strong>Form</strong> canvas, click <img src="img/menu.png" alt="Preview icon" style="height: 15px; width: 15px;"/> Preview.</li>
+										<ol type="a">
+											<li>On the <strong>Form</strong> canvas, click <img src="img/preview.png" alt="Preview icon" style="height: 15px; width: 15px;"/> Preview.</li>
 											<li><p>On the <strong>Preview</strong> page, from the <strong>Subscription</strong> list, select <strong>Computer Service and Rentals -26009</strong>.</p> 
 												<p>Notice how the <stong>Product</stong> list displays its recently loaded values after the Subscription field changes.</p></li>
 											<li><p>From the <strong>Product</strong> list, select <strong>GE Top Control Dishwasher</strong>.</p>
@@ -348,13 +349,11 @@
                             <ol>
 	                            <li>Select the integration.</li>
 	                            <li>Click <img src="img/menu.png" alt="Menu icon" style="height: 15px; width: 15px;"/>.</li>
-	                            <li><p>Select <strong>Open Data Association</strong>.</p>
-	                            	<img src="img/screenshots/process/select-data-association.png" width="650px"/>
-	                            	<p>The <strong>Data Association</strong> page appears.</p>
-	                            	<img src="img/screenshots/process/data-association.png" width="650px"/>
+	                            <li><p>Select <strong>Open Data Association</strong>.</p>	                            	                            
+	                            	<img src="img/screenshots/process/select-data-association.png" width="650px"/>                            	
 	                            </li>
-	                            <li><p>Click <img src="img/auto-map.png" alt="Auto Mapping icon" style="height: 17px; width: 17px;"/>.</p>
-	                            	<img src="img/screenshots/process/auto-mapping.png" width="600px"/>
+	                            <li><p>On the <strong>Data Association</strong> page, click <img src="img/auto-map.png" alt="Auto Mapping icon" style="height: 17px; width: 17px;"/>.</p>
+	                            	<img src="img/screenshots/process/data-association.png" width="650px"/>
 	                            	<p>This action automatically maps the subscription and product values users select in the form to the corresponding source fields in Oracle Engagement Cloud:</p>
 	                            	<ul>
 		                            	<li>Process.Data Object.webFormDataObject.subscription &#x27F6; subscriptionPUID</li>
@@ -367,7 +366,6 @@
 										<li>Expand <strong>Data Object</strong>.</li>
 										<li>Expand <strong>webFormDataObject</strong>.</li>
 										<li>Drag and drop <strong>billLines</strong> to the <strong>New Association</strong> field in the <strong>Process</strong> section.</li>
-										<li>Under Update subscription product bill lines, open body.</li>
 										<li>In the <strong>Update subscription product bill lines</strong> tree, expand <strong>body</strong>.</li>
 										<li><p>Drag and drop <strong>billLine</strong> from the <strong>Update subscription product bill lines</strong> tree to the blank field that maps the value for <strong>webFormDataObject.billLines</strong>.</p>
 										<p>The data association icon turns red and an error is displayed indicating that the arrays cannot be mapped as is.</p>
@@ -380,12 +378,17 @@
 											<li><p>Select <strong>Transform</strong>.</p>
 												<p>The <strong>Transformation</strong> dialog appears.</p>					
 											</li>
-											<li>In the <strong>Transformation</strong> dialog, enter <code class="allow-copy"><span>Bill Line</span></code>												
+											<li><p>Click <strong>Create</strong>.<p>
+												<p>The Transform dialog appears.</p>
+											</li>
+											<li>In the <strong>Transformation</strong> dialog, enter <code class="allow-copy"><span>Bill Line</span></code>.</li>												
 											<li><p>Click <strong>Create</strong>.</p>
 												<p>The <strong>Data Association</strong> page changes to the <strong>Transform</strong> page.</p>
 											</li>
 											<li>Drag and drop to associate <strong>billLinePuid</strong> and <strong>billLinePUID</strong>.</li>			
-											<li><p>Drag and drop to associate <strong>string(usageQuantity)</strong> and <strong>usageQuantity</strong>.</p>
+											<li><p>In the <strong>New Association</strong> field next to the <strong>WebFormBillLines</strong> tree, enter <code class="allow-copy"><span>string(usageQuantity)</span></code>.</p>
+											<li><p>On the same row, in the field next to <img src="img/screenshots/process/transformation-equal-icon.png" alt="Equal icon" style="width: 35px;"/>, enter <code class="allow-copy"><span>usageQuantity</span></code>.</p>
+											
 											<img src="img/screenshots/process/transformation.png" width="600px"/>
 											</li>
 											<li>Click <strong>Save</strong>.
@@ -401,13 +404,13 @@
 	                            <li><p>Select the <strong>Output</strong> tab.</p>
 	                            	<img src="img/screenshots/process/data-association-output-tab.png" width="600px"/>
 	                            </li>
-	                            <li>In the <strong>Data Objects</strong> tree, expand <strong>Data Object</strong>.</li>
+	                            <li>In the <strong>Data Objects</strong> tree, expand <strong>Process</strong>, then expand <strong>Data Object</strong> and select it.</li>
 	                            <li>In the <strong>Data Objects</strong> tree, click <img src="img/add.png" alt="Add icon" style="height: 15px; width: 15px;"/>.</li>
 	                            <li><p>In the <strong>Add Data Object</strong> dialog, complete these entries:</p>
 		                            <ul>
-			                            <li>In the <strong>Name</strong>field, enter <code class="allow-copy"><span>updateBillLinesResponse</span></code>.</li>
+			                            <li>In the <strong>Name</strong> field, enter <code class="allow-copy"><span>updateBillLinesResponse</span></code>.</li>
 			                            <li>In the <strong>Data Type</strong> section, select <strong>Business</strong>.</li>
-			                            <li>Select <strong>OracleIntegrations.UpdateSubscriptionProductBillLines.Response
+			                            <li>Select <strong>OracleIntegrations.UpdateSubscriptionProductBillLines.Responsewrapper
 			                            </strong>.</li>
 		                            </ul>
 		                            <img src="img/screenshots/process/add-data-object.png" width="350px"/>
@@ -433,16 +436,16 @@
 								<li>Click <strong>Activate</strong>.</li>
 								<li><p>In the <strong>Activate to Test</strong> dialog, ensure that <strong>Add Me to All Roles</strong> is selected, and click <strong>Activate</strong>.</p>
 									<p>A confirmation message informing you that the application was successfully activated appears.</p></li> 
-								<li>Click OK.</li>
+								<li>Click <strong>OK</strong>.</li>
 								<li><p>Click <strong>Try in Test Mode</strong>.</p>
 									<p>The <strong>My Apps</strong> page appears in a new tab in your web browser.</p>
 								</li>
 								<li><p>In the <strong>Search</strong> field, enter <code class="allow-copy"><span>User <em data-bind="text:user_number"></em> Submit Subscription Update</span></code>, and select your process .<p>
-									<p>The form you edited displays as the first step in the process.</p></li>							
+									<p>The form you edited appears.</p></li>							
 									<li><p>From the <strong>Subscription</strong> list, select <strong>Computer Service and Rentals -26009</strong>.</p></li>
 									<li>From the <strong>Product</strong> list, select <strong>GE Top Control Dishwasher</strong>.</li>
 									<li>In the <strong>Bill Lines</strong> table, update the <strong>Usage Quantity</strong> for the first row to <code>100</code>, and the next row to <code>200</code>.</li>
-									<li><p>Click </strong>Submit</strong>.</p>
+									<li><p>Click <strong>Submit</strong>.</p>
 										<p>An instance was created.</p></li>
 									<li>From the <strong>Navigation</strong> menu, select <strong>My Tasks</strong>.</li>
 									<li><p>Select the task you just created.</p>
