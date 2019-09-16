@@ -180,6 +180,7 @@
                             <h2 id="section_5" role="button" style="text-align: left;">Call the Integrations</h2>
                             <p>Now you’ll configure the new controls to each call an integration and return values. The second control will depend on the first.</p>
                             <h3>Configure the Subscription List</h3>
+                            <p>Let’s configure this select control to call the integration and return subscription items in its response.</p>
                             <ol>
 								<li>Select the <strong>WebForm</strong> tab to display the form editor.</li>
 								<li>On the form canvas, select the <strong>Subscription</strong> control.</li>
@@ -198,6 +199,7 @@
 	
                             </ol> 
 							<h3>Configure the Product List</h3>
+							<p>Let’s configure this select control to return product items in its response. The control should be hidden when the form first appears. Once the user selects a subscription, this <strong>Product</strong> field should appear, and display product items for the selected subscription.</p>
                             <ol>
 								<li>On the <strong>Form</strong> canvas, select the <strong>Product</strong> control.</li>
 								<li>In the <strong>Properties</strong> pane, scroll down until you see the <strong>Options Source</strong> section, and select <strong>Connector</strong>.</li>
@@ -326,6 +328,7 @@
                             <h2 id="section_6" role="button" style="text-align: left;">Automate the Update Task</h2>
                             <p>Your last task is to configure an integration that updates the source system, Oracle Engagement Cloud, with all entries users make in the form.</p>
                             <h3>Link an Integration</h3>
+                            <p>Here you’ll link an integration, then place the integration onto the process flow as its final step: updating the subscription product bill lines.</p>
                             <ol>
 								<li>From the <strong>Navigation</strong> menu, select <strong>Integrations</strong>.</li>
 								<li>On the <strong>Application Home</strong> tab, click <strong>Create</strong>.</li>
@@ -342,6 +345,7 @@
 								</ol>
                             </ol> 
                             <h3>Configure the Integration’s Input</h3>
+                            <p>Let’s map data input from the web form into the integration.</p>
                             <ol>
 	                            <li>Select the integration.</li>
 	                            <li>Click <img src="img/menu.png" alt="Menu icon" style="height: 15px; width: 15px;"/>.</li>
@@ -393,6 +397,7 @@
 	                            </li>
                             </ol>
                             <h3>Configure the Integration’s Output</h3>
+                            <p>Let’s map data output from the integration back to the process.</p>
                             <ol>
 	                            <li><p>Select the <strong>Output</strong> tab.</p>
 	                            	<img src="img/screenshots/process/data-association-output-tab.png" width="600px"/>
