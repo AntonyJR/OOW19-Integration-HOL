@@ -58,9 +58,9 @@
                         </section>
                         <section>
 	                        <h2>Background</h2>
-	                        <p>In this hands-on lab, you'll create process to automate the updating of an invoice in Oracle Engagement Cloud.</p>
+	                        <p>In this hands-on lab, you'll create process to automate the updating of subscription usage data in Oracle Engagement Cloud Subscription Management.</p>
                             <p>We'll base this lab on the subscription billing demo discussed during other  Oracle OpenWorld sessions, and on the previous lab where you created an integration.</p>
-                            <p>The objective is to automate the update process to bill subscriptions for use of assets. The process you'll create will let you update the number of subscriptions for a particular product.</p>                     	                         	                      
+                            <p>The objective is to provide a self-service application for subscribers to update their subscription usage data and automate the process of updating the subscription billing summary. The process you'll create will let you update the subscription usage for a particular product under a subscription contract.</p>                     	                         	                      
                         </section>
 						<hr>
                         <!-- ========================================================================================================================= -->
@@ -89,7 +89,8 @@
 <!-- ########## CREATE PROCESS ########## -->                        
                         <section> 
                             <h2 id="section_2" role="button" style="text-align: left;">Create a Process</h2>
-                            <p>You’ll start with a predefined process and make changes to it.</p>
+                            <p>You’ll start with a pre-built process application and make changes to it.</p>
+                            <p>A quickStart app is a ready-to-use application with all the implementation details included for you to play, test, and activate the application.</p>
                             <ol>
 	                            <li>From the <strong>Home</strong> page’s <strong>Navigation menu</strong>, select <strong>Processes</strong>, and then select <strong>Process Applications</strong>.</li>
 	                            <li>Click <strong>Create</strong>.</li>
@@ -97,7 +98,7 @@
 								<li><p>Locate the <strong>Subscription Management QuickStart</strong>, and click its <strong>Create</strong> button.</p>
 								<img src="img/screenshots/process/quickstart-gallery.png" width="600px"/>
 								</li>
-								<li>In the <strong>Create Application</strong> dialog, in the name field, enter <code class="allow-copy"><span>My Subscriptions</span></code>.</li>
+								<li>In the <strong>Create Application</strong> dialog, in the name field, enter <code class="allow-copy"><span>My Subscriptions <em data-bind="text:user_number"></em></span></code>.</li>
 								<li><p>Click <strong>Create</strong>.</p>
 									<p>The quickstart application appears.</p>
 									<img src="img/screenshots/process/quickstart.png" width="600px"/>
@@ -158,18 +159,18 @@
                             </ol>                         
                         </section>
                         <hr>
-<!-- ########## ADD INTEGRATIONS ########## -->                        
+<!-- ########## LINK THE INTEGRATIONS ########## -->                        
                         <section> 
                             <h2 id="section_4" role="button" style="text-align: left;">Link the Integrations</h2>
                             <p>Here you’ll add two active integrations for use in your process.</p>
                             <ol>
 								<li>From the <strong>Navigation</strong> menu, select <strong>Integrations</strong>.</li>
 								<li>Click <strong>Browse Integrations</strong>.</li>
-								<li>In the <strong>Use an Integration</strong> dialog, select <strong>Get Subscriptions</strong> and click <strong>Create</strong>.</li>
+								<li>In the <strong>Use an Integration</strong> dialog, search for and select <strong>Get Subscriptions</strong>, and then click <strong>Create</strong>.</li>
 								<li><p>On the <strong>Integrations</strong> page, click <strong>Create</strong>, and then click <strong>Use an Integration</strong>.</p>
 									<img src="img/screenshots/process/integrations-page.png" width="600px"/>
 								</li>
-								<li>On the <strong>Use an Integration</strong> dialog, select <strong>Get Subscription Products by Subscription</strong>, and then click <strong>Create</strong>.</li>								
+								<li>In the <strong>Use an Integration</strong> dialog, search for and select <strong>Get Subscription Products by Subscription</strong>, and then click <strong>Create</strong>.</li>								
                             </ol> 
                             <p>Both integrations are now available.</p>
                         </section>
@@ -259,7 +260,7 @@
 									<li>From the <strong>Navigation</strong> menu, select <strong>Integrations</strong>.</li>
 									<li>On the <strong>Application Home</strong> tab, click <strong>Create</strong>.</li>
 									<li>Select <strong>Use an Integration</strong>.</li>
-									<li>In the <strong>Use an Integration</strong> dialog, select <strong>Get Subscription Product Bill Lines by Product</strong>.</li>
+									<li>In the <strong>Use an Integration</strong> dialog, search for and select <strong>Get Subscription Product Bill Lines by Product</strong>.</li>
 									<li>Click <strong>Create</strong>.</li>
 									<li>Select the <strong>WebForm</strong> tab to return to the <strong>Form Editor</strong> page.</li>
 									<li>Select the <strong>Bill Lines</strong> table control.</li> 
@@ -270,12 +271,12 @@
 											<li>From the <strong>Connector</strong> list, select <strong>GetSubscriptionProductBillLinesByProduct</strong>.</li>
 											<li>From the <strong>Resource</strong>, select <strong>resources</strong>.</li>
 											<li>From the <strong>Operation</strong> list, select <strong>getResource</strong>.</li>
-											<li>In the <strong>Template Parameters</strong> section, from the <strong>SubscriptionPUID</strong> field, select <strong>Control value</strong>.</li>
-											<li>From the field next to <strong>SubscriptionPUID</strong>, select <strong>ProductPUID</strong>.</li>											
+											<li>In the <strong>Template Parameters</strong> section, from the <strong>SubscriptionProductPUID</strong> field, select <strong>Control value</strong>.</li>
+											<li>From the field next to <strong>SubscriptionProductPUID</strong>, select <strong>ProductPUID</strong>.</li>											
 											<li>From the <strong>SubscriptionPUID</strong> field, select <strong>Control value</strong>.</li>
 											<li>From the field next to <strong>SubscriptionPUID</strong>, select <strong>SubscriptionPUID</strong>.</li>
 											<li>In the <strong>Response</strong> section, in the <strong>Options List</strong> field, enter <code class="allow-copy"><span>response.items</span></code>.</li>
-											<li>Click the <strong>BillLinePuid</strong> field, and select <strong>billLinePuid</strong>.</li>
+											<li>Click the <strong>BillLinePuid</strong> field, enter <code>billLine</code> and then select <strong>billLinePuid</strong>.</li>
 											<li>In the <strong>InvoiceText</strong> field, enter <code>invoice</code> and then select <strong>invoiceText</strong>.</li>
 											<li>In the <strong>UsageQuantity</strong> field, enter <code>usage</code> and then select <strong>usageQuantity</strong>.</li>
 											<li>Select <strong>Skip Upon Load</strong>.</li>
