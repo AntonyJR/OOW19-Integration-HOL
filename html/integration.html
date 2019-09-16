@@ -139,7 +139,7 @@ We also support other patterns such as publish and subscribe that let you distri
 										<li>In the <strong>operation name</strong> field, enter <code>AddLine</code>.</li>
 										<li><p>In the <strong>endpoint relative resource URI</strong> field, enter <code class="allow-copy"><span>/subscriptions/{SubscriptionPUID}/child/products/{SubscriptionProductPUID}/child/billLines</span></code></p>
 											<p class="comment">The URI is the path that you want to monitor for requests to start the integration.</p>
-											<p class="comment">The path parameters (surrounded with curly braces) are place holders for the IDs in the request.  These values can be different for every request, and will identify the specific product and subscription to update.</p>
+											<p class="comment">The path parameters (surrounded with curly braces) are placeholders for the IDs in the request.  These values can be different for every request, and will identify the specific product and subscription to update.</p>
 										</li>
 										<li>From the <strong>action to perform</strong> list, select <strong>PATCH</strong>.</li>
 										<li>Select <strong>Configure a request payload for this endpoint.</strong></li>
@@ -205,11 +205,11 @@ We also support other patterns such as publish and subscribe that let you distri
 										<li>Click <strong>Next</strong>.</li>																				
 									</ol>
 								</li>
-								<li><p class="comment">(Optional)On the <strong>Summary</strong> page, expand the endpoint summary to view the trigger for your integration. Check that everything looks right.</p>
+								<li><p class="comment">(Optional) On the <strong>Summary</strong> page, expand the endpoint summary to view the trigger for your integration. Check that everything looks right.</p>
 								<li><p>click <strong>Done</strong>.</p>
 								<p>The canvas with the new trigger appears.</p>	
 								</li>
-								<li><p class="comment">(Optional) Click <img src="img/reposition.png" alt="Reposition icon" style="height: 15px; width: 15px;"/> <strong>Reposition</strong> to change the layout of the activities</p>
+								<li><p class="comment">(Optional) Click <img src="img/reposition.png" alt="Reposition icon" style="height: 15px; width: 15px;"/> <strong>Reposition</strong> to change the layout of the activities.</p>
 									<p class="comment">This is useful for complex integrations where a particular layout helps you better understand the flow of the activities.</p>
 								<li>Click <strong>Save</strong>.</li>
                             </ol>
@@ -224,7 +224,7 @@ We also support other patterns such as publish and subscribe that let you distri
                             <ol>
                                 <li><p>On the canvas, hover over the line that connects the first two actions, and click <img src="img/add.png" alt="Add icon" style="height: 15px; width: 15px;"/>.</p>
                                 	<p><img src="img/screenshots/integration/iterate-plus.png" width="400px"/></p>
-                                	<p class="comment">Notice there are a lot of different activities to add. Click <img src="img/actions.png" alt="Actions icon" style="height: 15px; width: 15px;"/> to view all the available actions.</p>
+                                	<p class="comment">Notice you can add different activities. Click <img src="img/actions.png" alt="Actions icon" style="height: 15px; width: 15px;"/> to view all the available actions.</p>
                                 </li>
                                 <li><p>In the <strong>Search</strong> field, enter <code>For</code>.</p>
                                 	<p>The search results includes connections to other system (<strong>Invokes</strong>), and activities (<strong>Actions</strong>).</p>
@@ -248,7 +248,7 @@ We also support other patterns such as publish and subscribe that let you distri
                         <section> <!-- ########## UPDATE THE BILLING QUANTITY ########## -->
                             <h2 id="section_5" role="button" style="text-align: left;">Update the Billing Quantity</h2>
                             <p>The loop we just created will update the billing lines for the request in Oracle Engagement Cloud. To do this, we'll connect to Oracle Engagement Cloud.</p>
-                            <p class="comment">Oracle Engagement Cloud is part of Oracle Customer Experience Suite which is a suite of CRM products.</p>
+                            <p class="comment">Oracle Engagement Cloud is part of Oracle Customer Experience Suite, which is a suite of CRM products.</p>
                             <ol>
                                 <li>Hover over the outgoing arrow for the <strong>LoopBillLines</strong> action.</li>
                                 <li>In the <strong>Search</strong> field, enter <code>Oracle</code>.</li>
@@ -265,7 +265,7 @@ We also support other patterns such as publish and subscribe that let you distri
                                 <li>On the <strong>Configure the Request Query Parameters</strong>, click <strong>Next</strong>.</li>
                                 <li><p>On the <strong>Summary</strong> page, click <strong>Done</strong>.</p>
                                 	<p>The <strong>Integration</strong> canvas appears.</p>
-                                	<p class="comment">Notice that a new map was added to the flow.  We'll use this map in the following procedure.</p>
+                                	<p class="comment">Notice that a new map was added to the flow.  We'll use this map in the next procedure.</p>
                                 </li>
                                 <li>Click <strong>Save</strong>.</li> 
                             </ol>
@@ -275,8 +275,8 @@ We also support other patterns such as publish and subscribe that let you distri
 <!-- ########## ADD REQUEST MAPPING ########## -->                        
                         <section>
                             <h2 id="section_6" role="button" style="text-align: left;">Add Request Mapping</h2>
-                            <p class="comment">The data format often varies between applications, so we need to map the format from the source data, to the format required by the target application.</p>
-                            <p class="comment">In this case, we'll use the map from the previous procedure to transform the data from the source format, to the format Oracle Engagement Cloud requires. We'll map each individual field using the recommendations suggested by Oracle Integration.</p>
+                            <p class="comment">The data format often varies between applications, so we need to map the format from the source data to the format required by the target application.</p>
+                            <p class="comment">In this case, we'll use the map from the previous procedure to transform the data from the source format to the format Oracle Engagement Cloud requires. We'll map each individual field using the recommendations suggested by Oracle Integration.</p>
                             <p class="comment">You can edit maps at any point in your development process.</p>
                             <ol>
                                 <li><p>Click <strong>Map to UpdateBilling</strong>, and then click <img src="img/edit.png" alt="Edit icon" style="height: 18px; width: 18px;"/>.</p>
@@ -302,7 +302,7 @@ We also support other patterns such as publish and subscribe that let you distri
                                 	<p>The <strong>Integration</strong> canvas appears.</p>
                                 </li>
                                 <li><p>Click <strong>Save</strong>.</p>
-                                	<p class="comment">Notice how visually different the current map is from the map we started with.</p>
+                                	<p class="comment">Notice how much the map has changed.</p>
                                 </li>
                             </ol>
                         </section>
@@ -326,7 +326,7 @@ We also support other patterns such as publish and subscribe that let you distri
                                 	</ul>	                                
                                 </li>
                                 <li><p>(Optional) Click <img src="img/advanced.png" alt="Advanced view icon" style="height: 15px; width: 15px;"/> <strong>Advanced</strong> to view the <strong>for each</strong> loop that was automatically added when you mapped the <strong>BillLine</strong> element.</p>
-                                	<p class="comment">Each of the bill lines in the source data is mapped in the successive iterations of the for each loop that populates the target data.</p>
+                                	<p class="comment">Each of the bill lines in the source data is mapped through successive iterations of the for each loop to populate the target data.</p>
                                 </li>
                                 <li><p>Click <strong>&check; Apply Recommendations</strong>.</p>
                                 	<p>A <strong>Confirmation</strong> message appears informing you that the recommended mappings were applied.</p>
@@ -354,7 +354,7 @@ We also support other patterns such as publish and subscribe that let you distri
                                 	<p class="comment">The first field in the list is the primary tracking field. It's used as the primary index to find an integration instance.</p>
                                 </li>
 								<li><p>Drag the <strong>SubscriptionProductPUID</strong> to the second row of the <strong>Tracking Fields</strong> table.</p>
-									<p class="comment">The fields after the first field in the list are the secondary tracking fields. They act as as secondary indexes.</p>
+									<p class="comment">The fields after the first field in the list are the secondary tracking fields. They act as secondary indexes.</p>
 								    <p><img src="img/screenshots/integration/tracking-dialog.png" width="600px"/></p>
 								</li>
 								<li><p>Click <strong>Save</strong>.</p>
@@ -368,7 +368,7 @@ We also support other patterns such as publish and subscribe that let you distri
 <!-- ########## ACTIVATE INTEGRATION ########## -->	                        
                         <section> 
                             <h2 id="section_9" role="button" style="text-align: left;">Activate the Integration</h2>
-                            <p class="comment">We finished building our integration, but before using it, we need to activate it.</p>
+                            <p class="comment">We finished building our integration. Before using it, we need to activate it.</p>
                             <ol>
                                 <li>On the <strong>Integrations</strong> page, hover over <em data-bind="text:user_number"></em> Update Subscription Product Bill Lines. 
                                 <li><p>Click <img src="img/activate.png" alt="Activate icon" style="height: 17px; width: 17px;"/>.</p>
@@ -377,12 +377,12 @@ We also support other patterns such as publish and subscribe that let you distri
                                 <li><p>In the <strong>Activate Integration</strong> dialog select <strong>Enable Tracing</strong>, and then select <strong>Include Payload</strong>.</p>
                                 	<p class="comment">Select <strong>Enable Tracing</strong> to keep a record of all the steps the integration performed.</p>
                                 	<p class="comment">When you select the <strong>Include Payload</strong> option, the message payloads are also stored.</p>
-                                	<p class="comment">We strongly suggest that you don't enable this option in production environments. Enabling them will affect the performance of your system and may violate your company's data retention rules by storing sensitive information in the payload trace.</p>
+                                	<p class="comment">We strongly suggest that you don't enable this option in production environments. Including the payload in the tracing will affect the performance of your system, and may violate your company's data retention rules by storing sensitive information in the payload trace.</p>
                                 </li>
                                 <li><p>Click <strong>Activate</strong>.</p>
                                 	<p>A confirmation message informing you that the activation is in progress briefly appears. Then your integration status will change to <strong>Action in progress</strong>.</p></li>
                                 <li><p>Click <img src="img/refresh.png" alt="Refresh icon" style="height: 17px; width: 17px;"/> to refresh the status.</p>
-                                	<p class="comment">The activation process is an asynchronous so you'll need to refresh the <strong>Integrations</strong> page to monitor the activation status.</p>
+                                	<p class="comment">The activation process is asynchronous so you'll need to refresh the <strong>Integrations</strong> page to monitor the activation status.</p>
                                 	<p>When the status changes to <span style="color:#86BD66;">&#x25CF;</span> <strong>Active</strong>, the integration is ready to run.</p>
 								    <p><img src="img/screenshots/integration/active-integration.png" width="600px"/></p>                                	
                                 </li>                                
