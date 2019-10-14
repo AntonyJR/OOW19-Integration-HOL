@@ -49,7 +49,8 @@ require(['ojs/ojcore', 'knockout', 'ojs/ojknockout', 'ojs/ojbutton', 'ojs/ojtool
       var self = this;
       /* You should have one self.<binding> for each input field in your OBE. 
          username and password used here are just samples. */
-      self.user_number = ko.observable("user_number");
+      self.user_number = ko.observable("");
+      self.user_name_prefix = ko.observable("");
     }
 
 

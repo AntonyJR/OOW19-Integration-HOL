@@ -8,7 +8,7 @@
         <meta content="text/html; charset=utf-8" http-equiv="content-type">
         <!-- The title below is displayed on the browser tab, in search results, and in  history. It can be longer than the tutorial title in the <h1> element, below.-->
 		<!-- Use an imperative verb in the title. -->
-        <title>Oracle Integration Process - Oracle OpenWorld Hands-On Lab</title>
+        <title>Oracle Integration Process - Hands-On Lab</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <meta name="robots" content="INDEX, FOLLOW">
         <meta name="description" content="In this hands-on lab, you'll create process to automate the updating of subscription usage data in Oracle Engagement Cloud Subscription Management.">
@@ -31,8 +31,8 @@
 
             <!-- The title below is displayed as the title at the top of the OBE page. It can be shorter than the title in the <title> element, above. -->
 			<!-- Use an imperative verb in the title. -->
-			<h1><img src="img/o.png" align="middle" alt="Oracle">Oracle Integration Process - Oracle OpenWorld Hands-On Lab</h1>
-			<img src="img/header2.png" alt="Oracle Documentation" style="max-width: none;" height="10px" width="100%"></a>
+			<h1><img src="img/o.png" align="middle" alt="Oracle">Oracle Integration Process - Hands-On Lab</h1>
+			<img src="img/header2.png" alt="Oracle Documentation" style="max-width: none;" heierght="10px" width="100%"></a>
 
             <div class="w1024" style="clear:both; position:relative; margin-top:30px;">
                 <div class="navbackwide border-right"><!-- --></div>
@@ -50,36 +50,49 @@
                         <section>
                             <h2>Before You Begin</h2>                           
                             <ul>	                            
-                            	<li>Enter your user number:&nbsp;<input data-bind="value: user_number" type="text"/>&nbsp;<button>OK</button><br>
-                            		We'll use this user number to customize the process names in this tutorial. If you leave this blank, these names will contain a placeholder that you can replace with your user number.
+                            	<li>Enter the user number provided to you by your lab facilitator:&nbsp;<input data-bind="value: user_number" type="text" placeholder="User Number"/>&nbsp;<button>OK</button><br>
+                            		We'll use this user number to make certain names used throughout the lab unique to you. If you leave this blank, these names will contain a placeholder that you can replace with your user number.
                             	</li>
-                            	<li>Some steps in this tutorial have a <img src="img/copy-to-clipboard.png" alt="Copy to Cliboard" height="19px" width="19px"> icon next to them. Click this icon to copy the name of snippet to your clipboard and then paste it in Oracle Integration.</li>														
+                            	<li>Some steps in this tutorial have a <img src="img/copy-to-clipboard.png" alt="Copy to Cliboard" height="19px" width="19px"> icon next to them. Click this icon to copy the snippet of text to your clipboard and then paste where needed.</li>														
                         </section>
                         <section>
 	                        <h2>Background</h2>
 	                        <p>In this hands-on lab, you'll create a Process Application to automate updating subscription usage data in Oracle Engagement Cloud Subscription Management.</p>
-                            <p>This lab is a continuation of a companion lab where you create an integration used by the Process Application you will create in this lab. If you have completed the interation lab, feel free to use the integration you created. If you have not completed the integration lab, don't worry, a completed integration has been made available for you to use.</p>
-							<p>The business scenario is to provide subscribers of a good or service a self-service application to self report subscription usage. Once subscription data is reported, we will automate the review and approval of that data, and if approved, automate updating that data in Oracle Engagement Cloud Subscription Management.</p>
-                        </section>
+                            <p>This lab is a continuation of a companion lab where you create an integration used by the Process Application you will create in this lab. If you have completed the integration lab, feel free to use the integration you created. If you have not completed the integration lab, don't worry, a completed integration has been made available for you to use.</p>
+							<p>The business scenario is to provide subscribers of a good or service a self-service application to self report subscription usage. Once subscription data is reported, we will automate the review and approval of that data, and if approved, automate updating Oracle Engagement Cloud Subscription Management with the usage data.</p>
+							<p>This lab will highlight several key benfits of Oracle Integration Process:</p>
+							<ul>
+								<li>Automate end to end business processes that touch multiple stakeholders including requestors and decision makers.</li>
+								<li>Engage stakeholders where most effective, whether that be through self-service portals, dedicated task lists, actionalble emails, digial assistants, or SaaS applications.</li>
+								<li>Automate manual repetitive tasks by leveraging application integrations.</li>
+							</ul>
+						</section>
 						<hr>
                         <!-- ========================================================================================================================= -->
 <!-- ########## SIGN IN ########## -->
                         <section>    
                             <h2 id="section_1" role="button" style="text-align: left;">Sign In</h2>
-                            <p> Access to Oracle Integration is secured through Oracle Identity Cloud Service.  Users may be granted access to all the Oracle Integration environments in a cloud tenancy, or they may be restricted to specific environments. They may be assigned different roles in each environment.</p>
+							<p> Access to Oracle Integration is secured through Oracle Identity Cloud Service.  Users may be granted access to all the Oracle Integration environments in a cloud tenancy, or they may be restricted to specific environments. They may be assigned different roles in each environment.</p>
+							<p>Your lab facilitator will provide you the following information to access the Oracle Integration instance used for this lab:</p>
+							<ul>
+								<li><strong>url</strong>: used to access your Oracle Integration instance.</li>
+								<li><strong>user name prefix</strong>: used as the first part of your user name. The rest of your classmates will be using the same user name prefix.</li>
+								<li><strong>user number</strong>: used as the second part of your user name. The <strong>user name prefix</strong> followed by the <strong>user number</strong> will define your unique user name.</li>
+								<li><strong>password</strong>: your password.</li>
+							</ul>
+							<br>							
                             <ol>
-								<li>Click the <strong>Oracle Integration</strong> bookmark on your browser to open the Oracle Integration instance.</li>
-                                <li><p>Enter your user name and password.</p>  
-                                <ul>
-                                	<li>Your user name is <code class="allow-copy"><span>OICTraining1ic<em data-bind="text:user_number"></em></span></code><br/>
-                                	This is the prefix OICTraining1ic followed by the user number you were assigned.</li>                            
-	                                <li>Your password is listed in the document on your desktop.</li>
-	                                <li>Oracle Integration will log all your design activities with this user name.
-	                            </ul>
-	                            <p>The <strong>Welcome</strong> page appears. Check out the tour, videos, and links to learn more. Keep scrolling to find more useful links.</p>
-                                </li>
-                                <li><p>Click <strong>Open Home</strong>.</p>
-                                	<p>The <strong>Home</strong> page displays an overview with the current state of your instance. You can drill down to get information about available components, tasks, and instances.</p>
+								<li>Open a browser with the <strong>url</strong> provided by your lab facilitator to access your Oracle Integration instance.</li>
+								<li>Enter the <strong>user name prefix</strong> provided by your lab facilitator:&nbsp;<input data-bind="value: user_name_prefix" type="text" placeholder="User Name Prefix"/>&nbsp;<button>OK</button></li>
+								<li><p>Enter your user name.</p>
+                                	<p>Your user name is the <strong>user name prefix</strong> followed by the <strong>user number</strong> provided by your lab facilitator.</p>
+									<p>If you entered your <strong>user number</strong> and <strong>user name prefix</strong> above, your user name is <code class="allow-copy"><span><em data-bind="text:user_name_prefix() || '<User Name Prefix>'"></em><em data-bind="text:user_number() || '<User Number>'"></em></span></code></p>
+								</li>
+								<li><p>Enter your password provided by your lab facilitator and click Sign In.</p>
+									<p>The <strong>Welcome</strong> page appears. Check out the tour, videos, and links to learn more. Keep scrolling to find more useful links.</p>
+								</li>
+                                <li><p>Click <strong>Home</strong>.</p>
+                                	<p>The <strong>Home</strong> page displays an overview with the current state of your instance. You can drill down to get information about available Processes, Integrations, and Visual Applications.</p><br>
                                 	<img src="img/screenshots/integration/home-page.png" width="600px"/>
                                 </li>  
                             </ol>                                                           
@@ -97,7 +110,7 @@
 								<li><p>Locate the <strong>Subscription Management QuickStart</strong>, and click its <strong>Create</strong> button.</p>
 								<img src="img/screenshots/process/quickstart-gallery.png" width="600px"/>
 								</li>
-								<li>In the <strong>Create Application</strong> dialog, in the name field, enter <code class="allow-copy"><span>My Subscriptions <em data-bind="text:user_number"></em></span></code>.</li>
+								<li>In the <strong>Create Application</strong> dialog, in the name field, enter <code class="allow-copy"><span>My Subscriptions <em data-bind="text:user_number() || '<User Number>'"></em></span></code>.</li>
 								<li><p>Click <strong>Create</strong>.</p>
 									<p>The quickstart application appears.</p>
 									<img src="img/screenshots/process/quickstart.png" width="600px"/>
@@ -118,7 +131,7 @@
 								<li><p>Click <img src="img/menu.png" alt="Menu icon" style="height: 15px; width: 15px;"/> and select <strong>Open Properties</strong>.</p>
 									<img src="img/screenshots/process/process-canvas.png" width="600px"/>
 								</li>
-								<li><p>In the <strong>How will the end user identify the process?</strong> section, in the <strong>Title</strong> field, enter <code class="allow-copy"><span>User <em data-bind="text:user_number"></em> Submit Subscription Update</span></code>.</p>
+								<li><p>In the <strong>How will the end user identify the process?</strong> section, in the <strong>Title</strong> field, enter <code class="allow-copy"><span>User <em data-bind="text:user_number() || '<User Number>'"></em> Submit Subscription Update</span></code>.</p>
 									<p>Remember this name for later, when you run the process application.</p>
 								</li>
 								<li><p>Close the <strong>Properties</strong> pane and select the same activity again.</p>
@@ -442,7 +455,7 @@
 								<li><p>Click <strong>Try in Test Mode</strong>.</p>
 									<p>The <strong>My Apps</strong> page appears in a new tab in your web browser.</p>
 								</li>
-								<li><p>In the <strong>Search</strong> field, enter <code class="allow-copy"><span>User <em data-bind="text:user_number"></em> Submit Subscription Update</span></code>, and select your process .<p>
+								<li><p>In the <strong>Search</strong> field, enter <code class="allow-copy"><span>User <em data-bind="text:user_number() || '<User Number>'"></em> Submit Subscription Update</span></code>, and select your process .<p>
 									<p>The form you edited appears.</p></li>							
 									<li><p>From the <strong>Subscription</strong> list, select <strong>Computer Service and Rentals -26009</strong>.</p></li>
 									<li>From the <strong>Product</strong> list, select <strong>GE Top Control Dishwasher</strong>.</li>

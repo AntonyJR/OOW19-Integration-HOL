@@ -8,7 +8,7 @@
         <meta content="text/html; charset=utf-8" http-equiv="content-type">
         <!-- The title below is displayed on the browser tab, in search results, and in  history. It can be longer than the tutorial title in the <h1> element, below.-->
 		<!-- Use an imperative verb in the title. -->
-        <title>Oracle Integration - Oracle OpenWorld Hands-On Lab</title>
+        <title>Oracle Integration - Hands-On Lab</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <meta name="robots" content="INDEX, FOLLOW">
         <meta name="description" content="In this hands-on lab, you'll create an integration to update an invoice in Oracle Engagement Cloud.">
@@ -31,7 +31,7 @@
 
             <!-- The title below is displayed as the title at the top of the OBE page. It can be shorter than the title in the <title> element, above. -->
 			<!-- Use an imperative verb in the title. -->
-			<h1><img src="img/o.png" align="middle" alt="Oracle">Oracle Integration - Oracle OpenWorld Hands-On Lab</h1>
+			<h1><img src="img/o.png" align="middle" alt="Oracle">Oracle Integration - Hands-On Lab</h1>
 			<img src="img/header2.png" alt="Oracle Documentation" style="max-width: none;" height="10px" width="100%"></a>
 
             <div class="w1024" style="clear:both; position:relative; margin-top:30px;">
@@ -50,7 +50,7 @@
                         <section>
                             <h2>Before You Begin</h2>                           
                             <ul>	                            
-                            	<li>Enter your user number:&nbsp;<input data-bind="value: user_number" type="text"/>&nbsp;<button>OK</button></br>
+                            	<li>Enter your user number:&nbsp;<input data-bind="value: user_number" type="text" placeholder="User Number"/>&nbsp;<button>OK</button></br>
                             		We'll use this user number to customize the integration names in this tutorial. If you leave this blank, these names will contain a placeholder that you can replace with your user number.
                             	</li>
                             	<li>Some steps in this tutorial have a <img src="img/copy-to-clipboard.png" alt="Copy to Cliboard" height="19px" width="19px"> icon next to them. Click this icon to copy the snippet to your clipboard and then paste it in Oracle Integration.														
@@ -69,22 +69,31 @@
 <!-- ########## SIGN IN ########## -->
                             <h2 id="section_1" role="button" style="text-align: left;">Sign In</h2>
                             <p> Access to Oracle Integration is secured through Oracle Identity Cloud Service.  Users may be granted access to all the Oracle Integration environments in a cloud tenancy, or they may be restricted to specific environments. They may be assigned different roles in each environment.</p>
+                            <p>Your lab facilitator will provide you the following information to access the Oracle Integration instance used for this lab:</p>
+							<ul>
+								<li><strong>url</strong>: used to access your Oracle Integration instance.</li>
+								<li><strong>user name prefix</strong>: used as the first part of your user name. The rest of your classmates will be using the same user name prefix.</li>
+								<li><strong>user number</strong>: used as the second part of your user name. The <strong>user name prefix</strong> followed by the <strong>user number</strong> will define your unique user name.</li>
+								<li><strong>password</strong>: your password.</li>
+							</ul>
+                            <br>
+                            
                             <ol>
-								<li>Click the <strong>Oracle Integration</strong> bookmark on your browser to open the Oracle Integration instance.</li>
-                                <li><p>Enter your user name and password.</p>  
-                                <ul>
-                                	<li>Your user name is <code class="allow-copy"><span>OICTraining1ic<em data-bind="text:user_number"></em></span></code><br/>
-                                	This is the prefix OICTraining1ic followed by the user number you were assigned.</li>                            
-	                                <li>Your password is listed in the document on your desktop.</li>
-	                                <li>Oracle Integration will log all your design activities with this user name.
-	                            </ul>
-	                            <p>The <strong>Welcome</strong> page appears. Check out the tour, videos, and links to learn more. Keep scrolling to find more useful links.</p>
-                                </li>
-                                <li><p>Click <strong>Open Home</strong>.</p>
-                                	<p>The <strong>Home</strong> page displays an overview with the current state of your instance. You can drill down to get information about available components, tasks, and instances.</p>
+								<li>Open a browser with the <strong>url</strong> provided by your lab facilitator to access your Oracle Integration instance.</li>
+								<li>Enter the <strong>user name prefix</strong> provided by your lab facilitator:&nbsp;<input data-bind="value: user_name_prefix" type="text" placeholder="User Name Prefix"/>&nbsp;<button>OK</button></li>
+								<li><p>Enter your user name.</p>
+                                	<p>Your user name is the <strong>user name prefix</strong> followed by the <strong>user number</strong> provided by your lab facilitator.</p>
+									<p>If you entered your <strong>user number</strong> and <strong>user name prefix</strong> above, your user name is <code class="allow-copy"><span><em data-bind="text:user_name_prefix() || '<User Name Prefix>'"></em><em data-bind="text:user_number() || '<User Number>'"></em></span></code></p>
+								</li>
+								<li><p>Enter your password provided by your lab facilitator and click Sign In.</p>
+									<p>The <strong>Welcome</strong> page appears. Check out the tour, videos, and links to learn more. Keep scrolling to find more useful links.</p>
+								</li>
+                                <li><p>Click <strong>Home</strong>.</p>
+                                	<p>The <strong>Home</strong> page displays an overview with the current state of your instance. You can drill down to get information about available Processes, Integrations, and Visual Applications.</p><br>
                                 	<img src="img/screenshots/integration/home-page.png" width="600px"/>
                                 </li>  
                             </ol>                                                           
+                                                          
                         </section>
                         <hr>
 <!-- ########## CREATE INTEGRATION ########## -->
@@ -105,7 +114,7 @@ We also support other patterns such as publish and subscribe that let you distri
 								</li>
 								<li>Click <strong>Select</strong>.</li>
 								<li><p>Name your integration:&nbsp;
-								<code class="allow-copy"><span>User <em data-bind="text:user_number"></em> Update Subscription Product Bill Lines</span></code>.</p>
+								<code class="allow-copy"><span>User <em data-bind="text:user_number() || '<User Number>'"></em> Update Subscription Product Bill Lines</span></code>.</p>
 								<p>The name uniquely identifies your integration. Oracle Integration includes a version handling feature to handle multiple versions of an integration.</p>
 								</li>
 								<li><p>(Optional) Enter a package number. For example: com.oow.UXX.1.1</p>
@@ -369,7 +378,7 @@ We also support other patterns such as publish and subscribe that let you distri
                             <h2 id="section_9" role="button" style="text-align: left;">Activate the Integration</h2>
                             <p>We finished building our integration. Before using it, we need to activate it.</p>
                             <ol>
-                                <li>On the <strong>Integrations</strong> page, hover over <em data-bind="text:user_number"></em> Update Subscription Product Bill Lines. 
+                                <li>On the <strong>Integrations</strong> page, hover over <em data-bind="text:user_number() || '<User Number>'"></em> Update Subscription Product Bill Lines. 
                                 <li><p>Click <img src="img/activate.png" alt="Activate icon" style="height: 17px; width: 17px;"/>.</p>
                                 	<p><img src="img/screenshots/integration/activate-power.png" width="600px"/></p>
                                 </li>
@@ -393,7 +402,7 @@ We also support other patterns such as publish and subscribe that let you distri
                             <h2 id="section_10" role="button" style="text-align: left;">Test the Integration</h2>
                             <p>Now let's see if our integration works.  We'll use the test feature to call the integration from the development console.</p>
                             <ol>
-                                <li>On the <strong>Integrations</strong> page, hover over <em data-bind="text:user_number"></em> Update Subscription Product Bill Lines. 
+                                <li>On the <strong>Integrations</strong> page, hover over <em data-bind="text:user_number() || '<User Number>'"></em> Update Subscription Product Bill Lines. 
                                 <li>Click <img src="img/menu.png" alt="Menu icon" style="height: 15px; width: 15px;"/> and select <strong>Test</strong>.</li>
                                 <li><p>On the <strong>Test</strong> page, configure the following URI parameters:</p>
                                 	<ul>
