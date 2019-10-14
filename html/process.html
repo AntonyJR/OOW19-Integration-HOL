@@ -50,16 +50,19 @@
                         <section>
                             <h2>Before You Begin</h2>                           
                             <ul>	                            
-                            	<li>Enter the user number provided to you by your lab facilitator:&nbsp;<input data-bind="value: user_number" type="text" placeholder="User Number"/>&nbsp;<button>OK</button><br>
-                            		We'll use this user number to make certain names used throughout the lab unique to you. If you leave this blank, these names will contain a placeholder that you can replace with your user number.
+                            	<li>Enter the user number provided by your lab facilitator:&nbsp;<input data-bind="value: user_number" type="text" placeholder="User Number"/>&nbsp;<button>OK</button><br>
+                            		We'll use this <strong>user number</strong> to make certain names used throughout the lab unique to you. If you leave this blank, these names will contain a placeholder that you can replace with your <strong>user number</strong>.
                             	</li>
                             	<li>Some steps in this tutorial have a <img src="img/copy-to-clipboard.png" alt="Copy to Cliboard" height="19px" width="19px"> icon next to them. Click this icon to copy the snippet of text to your clipboard and then paste where needed.</li>														
                         </section>
                         <section>
 	                        <h2>Background</h2>
-	                        <p>In this hands-on lab, you'll create a Process Application to automate updating subscription usage data in Oracle Engagement Cloud Subscription Management.</p>
-                            <p>This lab is a continuation of a companion lab where you create an integration used by the Process Application you will create in this lab. If you have completed the integration lab, feel free to use the integration you created. If you have not completed the integration lab, don't worry, a completed integration has been made available for you to use.</p>
-							<p>The business scenario is to provide subscribers of a good or service a self-service application to self report subscription usage. Once subscription data is reported, we will automate the review and approval of that data, and if approved, automate updating Oracle Engagement Cloud Subscription Management with the usage data.</p>
+							<p>In this hands-on lab, you'll create a Process Application to automate updating subscription usage data in Oracle Engagement Cloud Subscription Management.</p>
+                            <p>This lab is a continuation of a companion lab where you create an integration used by the Process Application in this lab. If you have completed the integration lab, feel free to use the integration you created. If you have not completed the integration lab, don't worry, a completed integration has been made available for you to use.</p>
+							<p>The business scenario is to provide subscribers of a good or service a self-service application to self report subscription usage. Once subscription usage data is reported, we will automate the review and approval of that data, and if approved, automate updating Oracle Engagement Cloud Subscription Management with the usage data. This scenario represents a common business process where requests are made, reviewed, approved, and result in updates to an enterprise application. Digitizing and automating these types of business process can bring significant benefits.</p>
+							<h4>What is a Process Application?</h4>
+							<p>A Process Application orchestrates the activities necessary to execute an end-to-end business process. These activities are digital representations of the individual business process steps and include examples such a user's request that initiates a business process, automated decision services that define business process policies, tasks to engage business process stakeholders responsible for decisions and work, and integrations to interact with enterprise applications relevant to the business process.</p>
+			
 							<p>This lab will highlight several key benfits of Oracle Integration Process:</p>
 							<ul>
 								<li>Automate end to end business processes that touch multiple stakeholders including requestors and decision makers.</li>
@@ -101,26 +104,41 @@
 <!-- ########## CREATE PROCESS ########## -->                        
                         <section> 
                             <h2 id="section_2" role="button" style="text-align: left;">Create a Process</h2>
-                            <p>You’ll start with a pre-built process application and make changes to it.</p>
-                            <p>A quickStart app is a ready-to-use application with all the implementation details included for you to play, test, and activate the application.</p>
+                            <p>You’ll start with a pre-built Process Application and make changes to it.</p>
+                            <p>A QuickStart App is a ready-to-use application with all the implementation details included for you to play, test, and activate the application. QuickStart Apps can be configured within a pre-defined set of constraints defined by the QuickStart App author. The QuickStart App author can optionally allow the QuickStart App to be completely customized beyond the constraints they defined. This allows users to rapildly create ready-to-use applications that can be tailored to their specific needs.</p>
                             <ol>
 	                            <li>From the <strong>Home</strong> page’s <strong>Navigation menu</strong>, select <strong>Processes</strong>, and then select <strong>Process Applications</strong>.</li>
 	                            <li>Click <strong>Create</strong>.</li>
 								<li>Hover over the <strong>Start with a QuickStart</strong> box, and then click <strong>Browse</strong>.</li>
-								<li><p>Locate the <strong>Subscription Management QuickStart</strong>, and click its <strong>Create</strong> button.</p>
+								<li><p>Locate the <strong>Subscription Management QuickStart</strong>, and click its <strong>Create</strong> button.</p><br>
 								<img src="img/screenshots/process/quickstart-gallery.png" width="600px"/>
 								</li>
 								<li>In the <strong>Create Application</strong> dialog, in the name field, enter <code class="allow-copy"><span>My Subscriptions <em data-bind="text:user_number() || '<User Number>'"></em></span></code>.</li>
 								<li><p>Click <strong>Create</strong>.</p>
-									<p>The quickstart application appears.</p>
+									<p>The QuickStart Application appears.</p><br>
 									<img src="img/screenshots/process/quickstart.png" width="600px"/>
 								</li>																
                             </ol>                                                             
                         </section>
                         <hr>
+<!-- ########## CONFIGURE QUICKSTART APP ########## -->                        
+                        <section> 
+                            <h2 id="section_3" role="button" style="text-align: left;">Configure the QuickStart</h2>
+                            <p>You’ll start with a pre-built Process Application and make changes to it.</p>
+                            <p>A QuickStart App is a ready-to-use application with all the implementation details included for you to play, test, and activate the application. QuickStart Apps can be configured within a pre-defined set of constraints defined by the QuickStart App author. The QuickStart App author can optionally allow the QuickStart App to be completely customized beyond the constraints they defined. This allows users to rapildly create ready-to-use applications that can be tailored to their specific needs.</p>
+                        </section>
+                        <hr>
+<!-- ########## REVIEW THE PROCESS APP ########## -->                        
+                        <section> 
+                            <h2 id="section_4" role="button" style="text-align: left;">Review the Process App</h2>
+                            <p>You’ll start with a pre-built Process Application and make changes to it.</p>
+                            <p>A QuickStart App is a ready-to-use application with all the implementation details included for you to play, test, and activate the application. QuickStart Apps can be configured within a pre-defined set of constraints defined by the QuickStart App author. The QuickStart App author can optionally allow the QuickStart App to be completely customized beyond the constraints they defined. This allows users to rapildly create ready-to-use applications that can be tailored to their specific needs.</p>
+                        </section>
+                        <hr>
 <!-- ########## EDIT FORM ########## -->                        
                         <section> 	
-                            <h2 id="section_3" role="button" style="text-align: left;">Edit the Form</h2>
+                            <h2 id="section_5" role="button" style="text-align: left;">Edit the Form</h2>
+                            <p>The Process App The form that will be used by subscribers to submit their usage </p>
                             <p>You’ll add two controls to the form that each call the source system and return values for customers to choose from.</p>
                             <ol>
 	                            <li><p>On the <strong>QuickStart App</strong> page, click the <strong>Switch to Application View</strong> link.</p>
@@ -173,7 +191,7 @@
                         <hr>
 <!-- ########## LINK THE INTEGRATIONS ########## -->                        
                         <section> 
-                            <h2 id="section_4" role="button" style="text-align: left;">Link the Integrations</h2>
+                            <h2 id="section_6" role="button" style="text-align: left;">Link the Integrations</h2>
                             <p>Here you’ll add two active integrations for use in your process.</p>
                             <ol>
 								<li>From the <strong>Navigation</strong> menu, select <strong>Integrations</strong>.</li>
@@ -189,7 +207,7 @@
                         <hr>
 <!-- ########## CALL THE INTEGRATIONS ########## -->
                         <section> 
-                            <h2 id="section_5" role="button" style="text-align: left;">Call the Integrations</h2>
+                            <h2 id="section_7" role="button" style="text-align: left;">Call the Integrations</h2>
                             <p>Now you’ll configure the new controls to each call an integration and return values. The second control will depend on the first.</p>
                             <h3>Configure the Subscription List</h3>
                             <p>Let’s configure this select control to call the integration and return subscription items in its response.</p>
@@ -338,7 +356,7 @@
                         </section>     
 <!-- ########## AUTOMATE THE UPDATE TASK ########## -->                                                
                         <section>
-                            <h2 id="section_6" role="button" style="text-align: left;">Automate the Update Task</h2>
+                            <h2 id="section_8" role="button" style="text-align: left;">Automate the Update Task</h2>
                             <p>Your last task is to configure an integration that updates the source system, Oracle Engagement Cloud, with all entries users make in the form.</p>
                             <h3>Link an Integration</h3>
                             <p>Here you’ll link an integration, then place the integration onto the process flow as its final step: updating the subscription product bill lines.</p>
@@ -440,7 +458,7 @@
                         </section>                        
 <!-- ########## TEST THE PROCESS APPLICATION ########## -->                        
                         <section>
-                            <h2 id="section_7" role="button" style="text-align: left;">Test the Process Application</h2>
+                            <h2 id="section_9" role="button" style="text-align: left;">Test the Process Application</h2>
                             <p>Let’s see the subscription update process in action, as a user would.</p>
                             <ol>
 								<li><p>Click <strong>Test</strong>.</p>
