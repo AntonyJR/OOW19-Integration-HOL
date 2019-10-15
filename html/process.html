@@ -135,33 +135,33 @@
                             <h2 id="section_3" role="button" style="text-align: left;">Configure the QuickStart</h2>
                             <p>The Subscription Management Process App you just created comes ready to run but lacks some core functionality required by the business scenario. You will make the necessary modifications to complete this Process App.</p>
 							<p>We'll start by examining how a QuickStart App author can define specific configuration options that can be tailored with little understanding of the underlying Process App assets.</p>
-							<p>First, our QuickStart App contains two email notification activities that will send an email to the subscriber when their usage data has either been accepted or rejected. The Process App is configured to use a temporary email address however the QuickStart App author has exposed the send <strong>To</strong> field for these emails as a configuration option. You will update the send <strong>To</strong> field for both of these email notification activities with your email address. Of course in a real solution we would use the email address associated with the logged in user however, since you are using a training account we will specify this through the QuickStart App configuration.</p>
-							<p>Second, when it's time to run you Process App, you will need to be able to identify your application from your classmates. We will use the QuickStart App configuration to uniquely identify your Process App.</p>
+							<p>First, when it's time to run your Process App, you will need to be able to identify your application from your classmates. We will use QuickStart App configuration to uniquely identify your Process App with your <strong>user number</strong>.</p>
+							<p>Second, the Process App contains two email notification activities that will send an email to the subscriber when their usage data has either been accepted or rejected. The Process App is configured to use a temporary email address. We will use QuickStart configuration to update the send <strong>To</strong> email field for both of these email notification activities with your email address. Of course in a real solution we would use the email address associated with the logged in user however, since you are using a training account we will specify this through QuickStart App configuration.</p>
                             <ol>
 								<li><p>From the QuickStart <strong>Overview</strong> page, click <strong>Configure</strong>.</p>
 									<p>The QuickStart Configure page appears.</p><br>
 									<img src="img/screenshots/process/quickstart-configure.png" width="600px"/>
 								</li>
-								<li><p>Click <strong>Subscription Usage Accepted Notification</strong> configuration option to open the configuration editor.</p>
-									<p>The configuration editor appears.</p><br>
-									<img src="img/screenshots/process/quickstart-configure-editor.png" width="600px"/>
-								</li>
-								<li>Replace the temporary email address in the <strong>To</strong> field with your email address.</li>
-								<li><p>Click <img src="img/close.png" alt="Close icon" style="height: 15px; width: 15px;"/> to close the configuration editor.</p>
-									<p>The QuickStart Configure page appears.</p>
-								</li>
-								<li>Make the same change to the <strong>Subscription Usage Rejected Notification</strong> configuration option.</li>
-								<li><p>Click <strong>How will the end user identify the process</strong> configuration option to open the configuration editor.</p>
+								<li><p>Click the <strong>Configure Process Start Title</strong> configuration option to open the configuration editor.</p>
 									<p>The configuration editor appears.</p><br>
 									<img src="img/screenshots/process/quickstart-configure-startForm-editor.png" width="600px"/>
 								</li>
-
 								<li><p>Replace the <strong>Title</strong> text with <code class="allow-copy"><span>User <em data-bind="text:user_number() || '<User Number>'"></em> Submit Subscription Update</span></code>.</p>
 									<p>Remember this name for later, when you run the Process App.</p>
 								</li>
 								<li><p>Click <img src="img/close.png" alt="Close icon" style="height: 15px; width: 15px;"/> to close the configuration editor.</p>
 									<p>The QuickStart Configure page appears.</p>
 								</li>
+								<li><p>Click the <strong>Configure Usage Accepted Notification Email</strong> configuration option to open the configuration editor.</p>
+									<p>The configuration editor appears.</p><br>
+									<img src="img/screenshots/process/quickstart-configure-email-editor.png" width="600px"/>
+								</li>
+								<li>Replace the temporary email address in the send <strong>To</strong> email field with your email address.</li>
+								<li><p>Click <img src="img/close.png" alt="Close icon" style="height: 15px; width: 15px;"/> to close the configuration editor.</p>
+									<p>The QuickStart Configure page appears.</p>
+								</li>
+								<li>Make the same change to the <strong>Configure Usage Rejected Notification Email</strong> configuration option.</li>
+
 								<li><p>Click <strong>Publish</strong> to publish your changes. Enter a comment in the <strong>Publish Application</strong> dialog to note your changes and click <strong>Publish.</strong></p><br>
 									<img src="img/screenshots/process/quickstart-publish.png" width="600px"/>
 								</li>
@@ -182,6 +182,7 @@
 								</li>
 								<li><p>With the <strong>Processes</strong> navigation item selected, click the <strong>Process</strong> asset to open it in the structured process editor.</p>
 									<p>The Process Canvas page appears.</p>
+									<p><b><font color="red">TODO: Describe Process</font></b></p>
 									<p>Review the structure and flow of this process, starting with the <strong>Submit Subscription Update</strong> <strong>Form Start</strong> activity, the <strong>Approve Subscription Update</strong> <strong>Approve</strong> activity, the <strong>Approved?</strong> <strong>Gateway</strong> activity, the <strong>Update Subscription</strong> <strong>Submit</strong> activity, the <strong>Notify</strong> activities, and finally the <strong>Completed</strong> <strong>End Event</strong> activity. Explore the types of activites availble from the BPMN pallette.</p><br>
 									<p><b><em>Be Careful not to make any changes just yet!</em></b></p><br>
 									<p><img src="img/screenshots/process/process.png" width="600px"/></p>
@@ -191,8 +192,8 @@
                         <hr>
 <!-- ########## EDIT FORM ########## -->                        
                         <section> 	
-                            <h2 id="section_5" role="button" style="text-align: left;">Edit the Form</h2>
-                            <p>The Process Application The form that will be used by subscribers to submit their usage </p>
+							<h2 id="section_5" role="button" style="text-align: left;">Edit the Form</h2>
+							<p><b><font color="red">TODO: Describe Web Forms</font></b></p>
                             <p>You’ll add two controls to the form that each call the source system and return values for customers to choose from.</p>
                             <ol>
 								<li>Click the purple Start activity titled <strong>Submit Subscription Update</strong>.</li>
