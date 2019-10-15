@@ -57,16 +57,16 @@
                         </section>
                         <section>
 	                        <h2>Background</h2>
-							<p>In this hands-on lab, you'll create a Process Application to automate updating subscription usage data in Oracle Engagement Cloud Subscription Management.</p>
-                            <p>This lab is a continuation of a companion lab where you create an integration used by the Process Application in this lab. If you have completed the integration lab, feel free to use the integration you created. If you have not completed the integration lab, don't worry, a completed integration has been made available for you to use.</p>
-							<p>The business scenario is to provide subscribers of a good or service a self-service application to self report subscription usage. Once subscription usage data is reported, we will automate the review and approval of that data, and if approved, automate updating Oracle Engagement Cloud Subscription Management with the usage data. This scenario represents a common business process where requests are made, reviewed, approved, and result in updates to an enterprise application. Digitizing and automating these types of business process can bring significant benefits.</p>
-							<h4>What is a Process Application?</h4>
-							<p>A Process Application orchestrates the activities necessary to execute an end-to-end business process. These activities are digital representations of the individual business process steps and include examples such a user's request that initiates a business process, automated decision services that define business process policies, tasks to engage business process stakeholders responsible for decisions and work, and integrations to interact with enterprise applications relevant to the business process.</p>
+							<p>In this hands-on lab, you'll create a Process App to automate updating subscription usage data in Oracle Engagement Cloud Subscription Management.</p>
+                            <p>This lab is a continuation of a companion lab where you create an integration used by the Process App in this lab. If you've completed the integration lab, feel free to use the integration you created. If you have not completed the integration lab, don't worry, a completed integration has been made available for you to use.</p>
+							<p>The business scenario is to provide a Subscription Management application that allows subscribers of a good or service to self report subscription usage. Once subscription usage data is reported, the application will automate the review and approval of that data, and if approved, automate updating Oracle Engagement Cloud Subscription Management with the usage data. This scenario represents a common business process where requests are made, reviewed, approved, and result in updates to an enterprise application. Digitizing and automating these types of business process can yield significant benefits.</p>
+							<h4>What is a Process App?</h4>
+							<p>A Process App orchestrates the activities necessary to execute an end-to-end business process. These activities are digital representations of the individual business process steps and include examples such a user's request that initiates a business process, automated decision services that define business process policies, tasks to engage business process stakeholders responsible for decisions and work, and integrations to interact with enterprise applications relevant to the business process.</p>
 			
 							<p>This lab will highlight several key benfits of Oracle Integration Process:</p>
 							<ul>
-								<li>Automate end to end business processes that touch multiple stakeholders including requestors and decision makers.</li>
-								<li>Engage stakeholders where most effective, whether that be through self-service portals, dedicated task lists, actionalble emails, digial assistants, or SaaS applications.</li>
+								<li>Automate end-to-end business processes that touch multiple stakeholders including requestors and decision makers.</li>
+								<li>Engage stakeholders where most effective, whether that be through self-service portals, dedicated task lists, actionalble emails, digial assistants, mobile apps, or SaaS applications.</li>
 								<li>Automate manual repetitive tasks by leveraging application integrations.</li>
 							</ul>
 						</section>
@@ -91,23 +91,27 @@
                                 	<p>Your user name is the <strong>user name prefix</strong> followed by the <strong>user number</strong> provided by your lab facilitator.</p>
 									<p>If you entered your <strong>user number</strong> and <strong>user name prefix</strong> above, your user name is <code class="allow-copy"><span><em data-bind="text:user_name_prefix() || '<User Name Prefix>'"></em><em data-bind="text:user_number() || '<User Number>'"></em></span></code></p>
 								</li>
-								<li><p>Enter your password provided by your lab facilitator and click Sign In.</p>
+								<li><p>Enter your password provided by your lab facilitator and click <strong>Sign In</strong>.</p>
 									<p>The <strong>Welcome</strong> page appears. Check out the tour, videos, and links to learn more. Keep scrolling to find more useful links.</p>
 								</li>
                                 <li><p>Click <strong>Home</strong>.</p>
                                 	<p>The <strong>Home</strong> page displays an overview with the current state of your instance. You can drill down to get information about available Processes, Integrations, and Visual Applications.</p><br>
                                 	<img src="img/screenshots/integration/home-page.png" width="600px"/>
                                 </li>  
-                            </ol>                                                           
+							</ol>
+							<p>You are now logged in and ready to use Oracle Integration. In the next section we will create a Process App.</p>                                                          
                         </section>
                         <hr>                        
 <!-- ########## CREATE PROCESS ########## -->                        
                         <section> 
                             <h2 id="section_2" role="button" style="text-align: left;">Create a Process</h2>
-                            <p>You’ll start with a pre-built Process Application and make changes to it.</p>
-                            <p>A QuickStart App is a ready-to-use application with all the implementation details included for you to play, test, and activate the application. QuickStart Apps can be configured within a pre-defined set of constraints defined by the QuickStart App author. The QuickStart App author can optionally allow the QuickStart App to be completely customized beyond the constraints they defined. This allows users to rapildly create ready-to-use applications that can be tailored to their specific needs.</p>
+                            <p>Oracle Integration Process simplifies the effort and skillsets required to create Process Apps that digitize and automate end-to-end business processes. We will create our Process App from a QuickStart App that provides us a good starting point.</p>
+							<h4>What is a QuickStart App?</h4>
+							<p>A QuickStart App a ready to run Process App with all the implementation details included for you to play, test, and activate the application. QuickStart Apps can be configured within a pre-defined set of constraints defined by the QuickStart App author. The QuickStart App author can optionally allow the QuickStart App to be completely customized beyond the constraints they defined. In short, a QuickStart App is a template to create a fully functioning Process App. This allows users to rapildly create ready to run Process Apps that can be tailored to their specific needs.</p>
                             <ol>
-	                            <li>From the <strong>Home</strong> page’s <strong>Navigation menu</strong>, select <strong>Processes</strong>, and then select <strong>Process Applications</strong>.</li>
+								<li><p>From the <strong>Home</strong> page’s <strong>Navigation menu</strong>, select <strong>Processes</strong>, and then select <strong>Process Apps</strong>.</p>
+									<p>This is where you create Process Apps. Depending on previous activity in your environment you may already have some Process Apps listed. If you do, just ignore them, we will create our own.</p>
+								</li>
 	                            <li>Click <strong>Create</strong>.</li>
 								<li>Hover over the <strong>Start with a QuickStart</strong> box, and then click <strong>Browse</strong>.</li>
 								<li><p>Locate the <strong>Subscription Management QuickStart</strong>, and click its <strong>Create</strong> button.</p><br>
@@ -115,30 +119,52 @@
 								</li>
 								<li>In the <strong>Create Application</strong> dialog, in the name field, enter <code class="allow-copy"><span>My Subscriptions <em data-bind="text:user_number() || '<User Number>'"></em></span></code>.</li>
 								<li><p>Click <strong>Create</strong>.</p>
-									<p>The QuickStart Application appears.</p><br>
+									<p>The QuickStart App appears.</p>
+									<p>Notice how the options in this design mode are limited to <strong>Configure</strong>, <strong>Test</strong>, and <strong>Activate</strong>. This provides a simplified interface to quicky get Process Apps up and running.</p><br>
 									<img src="img/screenshots/process/quickstart.png" width="600px"/>
 								</li>																
-                            </ol>                                                             
+							</ol>   
+							<p>You have successfully create a Process App using a QuickStart App. In the next section we will configure our new application.</p>                                                          
                         </section>
                         <hr>
 <!-- ########## CONFIGURE QUICKSTART APP ########## -->                        
                         <section> 
                             <h2 id="section_3" role="button" style="text-align: left;">Configure the QuickStart</h2>
-                            <p>You’ll start with a pre-built Process Application and make changes to it.</p>
-                            <p>A QuickStart App is a ready-to-use application with all the implementation details included for you to play, test, and activate the application. QuickStart Apps can be configured within a pre-defined set of constraints defined by the QuickStart App author. The QuickStart App author can optionally allow the QuickStart App to be completely customized beyond the constraints they defined. This allows users to rapildly create ready-to-use applications that can be tailored to their specific needs.</p>
-                        </section>
+                            <p>The Subscription Management Process App you just created comes ready to run but lacks some core functionality required by the business scenario. You will make the necessary modifications to complete this Process App.</p>
+							<p>We'll start by examining how a QuickStart App author can define specific configuration options that can be tailored with little understanding of the underlying Process App assets. In our case, the QuickStart App contains two email notification activities that will send an email to the subscriber when their usage data has either been accepted or rejected. The Process App is configured to use a temporary email address however the QuickStart App author has exposed the send <strong>To</strong> field for these emails as a configuration option.</p>
+							<p>You will update the send <strong>To</strong> field for both of these email notification activities with your email address. Of course in a real solution we would use the email address associated with the logged in user however, since you are using a training account we will specify this through the QuickStart App configuration.</p>
+                            <ol>
+								<li><p>From the QuickStart <strong>Overview</strong> page, click <strong>Configure</strong>.</p>
+									<p>The QuickStart Configure page appears.</p><br>
+									<img src="img/screenshots/process/quickstart-configure.png" width="600px"/>
+								</li>
+								<li><p>Click <strong>Subscription Usage Accepted Notification</strong> configuration option to open the configuration editor.</p>
+									<p>The configuration editor appears.</p><br>
+									<img src="img/screenshots/process/quickstart-configure-editor.png" width="600px"/>
+								</li>
+								<li>Replace the temporary email address in the <strong>To</strong> field with your email address.</li>
+								<li><p>Click <img src="img/close.png" alt="Close icon" style="height: 15px; width: 15px;"/> to close the configuration editor.</p>
+									<p>The QuickStart Configure page appears.</p>
+								</li>
+								<li>Make the same change to the <strong>Subscription Usage Rejected Notification</strong> configuration option.</li>
+								<li><p>Click <strong>Publish</strong> to publish your changes. Enter a comment in the <strong>Publish Application</strong> dialog to note your changes and click <strong>Publish.</strong></p><br>
+									<img src="img/screenshots/process/quickstart-publish.png" width="600px"/>
+								</li>
+							</ol>
+							<p>You have completed the QuickStart App configurations. In the next section we will expose the underlying Process App assets and make some more extensive customizations.</p>
+						</section>
                         <hr>
 <!-- ########## REVIEW THE PROCESS APP ########## -->                        
                         <section> 
-                            <h2 id="section_4" role="button" style="text-align: left;">Review the Process App</h2>
+                            <h2 id="section_4" role="button" style="text-align: left;">Review the Process Application</h2>
                             <p>You’ll start with a pre-built Process Application and make changes to it.</p>
-                            <p>A QuickStart App is a ready-to-use application with all the implementation details included for you to play, test, and activate the application. QuickStart Apps can be configured within a pre-defined set of constraints defined by the QuickStart App author. The QuickStart App author can optionally allow the QuickStart App to be completely customized beyond the constraints they defined. This allows users to rapildly create ready-to-use applications that can be tailored to their specific needs.</p>
+                            <p>A QuickStart Application a ready to run application with all the implementation details included for you to play, test, and activate the application. QuickStart Applications can be configured within a pre-defined set of constraints defined by the QuickStart Application author. The QuickStart Application author can optionally allow the QuickStart Application to be completely customized beyond the constraints they defined. This allows users to rapildly create ready to run applications that can be tailored to their specific needs.</p>
                         </section>
                         <hr>
 <!-- ########## EDIT FORM ########## -->                        
                         <section> 	
                             <h2 id="section_5" role="button" style="text-align: left;">Edit the Form</h2>
-                            <p>The Process App The form that will be used by subscribers to submit their usage </p>
+                            <p>The Process Application The form that will be used by subscribers to submit their usage </p>
                             <p>You’ll add two controls to the form that each call the source system and return values for customers to choose from.</p>
                             <ol>
 	                            <li><p>On the <strong>QuickStart App</strong> page, click the <strong>Switch to Application View</strong> link.</p>
