@@ -5,7 +5,7 @@
     "version" : "v01",
     "title" : "OW_HOL_SWAGGER_GENERATO"
   },
-  "host" : "<ENGAGEMENT_CLOUD_HOSTNAME>",
+  "host" : "ucf6-zggf-fa-ext.oracledemos.com",
   "basePath" : "/crmRestApi/resources/11.13.18.05",
   "schemes" : [ "https" ],
   "paths" : {
