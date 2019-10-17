@@ -49,12 +49,21 @@
                     <article>
                         <section>
                             <h2>Before You Begin</h2>                           
-                            <ul>	                            
-                            	<li>Enter the <strong>user number</strong> provided by your lab facilitator:&nbsp;<input data-bind="value: user_number" type="text" placeholder="User Number"/>&nbsp;<button>OK</button></br>
-                            		We'll use this <strong>user number</strong> to make certain names used  throughout the lab unique to you. If you leave this blank, these names will contain a placeholder that you can replace with your <strong>user number</strong>.
-                            	</li>
-                                <li>Some steps in this tutorial have a <img src="img/copy-to-clipboard.png" alt="Copy to Cliboard" height="19px" width="19px"> icon next to them. Click this icon to copy the snippet to your clipboard and then paste it in Oracle Integration.</li>
-                                <li>Your Orcale Integration instance is: <a href="https://oictraining1-oicpm.integration.ocp.oraclecloud.com/ic/home/">https://oictraining1-oicpm.integration.ocp.oraclecloud.com/ic/home/</a></li>
+							<p>Your lab facilitator will provide you the following information to access the environments used in this lab.</p>
+
+							<p>Select your <strong>OIC Environment</strong>:&nbsp;
+								<select data-bind="options: availableOICEnvironments,
+									optionsText: 'name',
+									value: selectedOICEnvironment,
+									optionsCaption: 'Select...'">
+								</select>
+							</p>
+							<p>Enter your <strong>User Number</strong>:&nbsp;<input data-bind="value: user_number" type="text" placeholder="User Number"/>&nbsp;<button>OK</button></p>                         
+							<p><strong>OIC URL</strong>: <code class="allow-copy"><span><em data-bind="text: selectedOICEnvironment() ? selectedOICEnvironment().url : '[Select your OIC Environment]'"></em></span></code></p>
+							<p><strong>OIC User Name</strong>: <code class="allow-copy"><span><em data-bind="text: selectedOICEnvironment() ? selectedOICEnvironment().usernamePrefix : '[Select your OIC Environment]'"></em><em data-bind="text:user_number() || '[Enter your User Number]'"></em></span></code></p>
+							<p>Your OIC Password will be provided by your lab facilitator.</p>
+							<p>Some steps in this tutorial have a <img src="img/copy-to-clipboard.png" alt="Copy to Cliboard" height="19px" width="19px"> icon next to them. Click this icon to copy the snippet of text to your clipboard and then paste where needed.</p>						
+
                         </section>
                         <section>
 	                        <h2>Background</h2>
@@ -69,32 +78,24 @@
                             <hr>
 <!-- ########## SIGN IN ########## -->
                             <h2 id="section_1" role="button" style="text-align: left;">Sign In</h2>
-                            <p> Access to Oracle Integration is secured through Oracle Identity Cloud Service.  Users may be granted access to all the Oracle Integration environments in a cloud tenancy, or they may be restricted to specific environments. They may be assigned different roles in each environment.</p>
-                            <p>Your lab facilitator will provide you the following information to access the Oracle Integration instance used for this lab:</p>
-							<ul>
-								<li><strong>url</strong>: used to access your Oracle Integration instance.</li>
-								<li><strong>user name prefix</strong>: used as the first part of your user name. The rest of your classmates will be using the same user name prefix.</li>
-								<li><strong>user number</strong>: used as the second part of your user name. The <strong>user name prefix</strong> followed by the <strong>user number</strong> will define your unique user name.</li>
-								<li><strong>password</strong>: your password.</li>
-							</ul>
-                            <br>
-                            
+							<p> Access to Oracle Integration is secured through Oracle Identity Cloud Service.  Users may be granted access to all the Oracle Integration environments in a cloud tenancy, or they may be restricted to specific environments. They may be assigned different roles in each environment.</p>
+
                             <ol>
-								<li>Open a browser with the <strong>url</strong> provided by your lab facilitator to access your Oracle Integration instance.</li>
-								<li>Enter the <strong>user name prefix</strong> provided by your lab facilitator:&nbsp;<input data-bind="value: user_name_prefix" type="text" placeholder="User Name Prefix"/>&nbsp;<button>OK</button></li>
-								<li><p>Enter your user name.</p>
-                                	<p>Your user name is the <strong>user name prefix</strong> followed by the <strong>user number</strong> provided by your lab facilitator.</p>
-									<p>If you entered your <strong>user number</strong> and <strong>user name prefix</strong> above, your user name is <code class="allow-copy"><span><em data-bind="text:user_name_prefix() || '<User Name Prefix>'"></em><em data-bind="text:user_number() || '<User Number>'"></em></span></code></p>
+								<li><p>Open a browser to the <strong>OIC URL</strong>.
+									<p><strong>OIC URL</strong>: <code class="allow-copy"><span><em data-bind="text: selectedOICEnvironment() ? selectedOICEnvironment().url : '[Select your OIC Environment]'"></em></span></code></p>
 								</li>
-								<li><p>Enter your password provided by your lab facilitator and click Sign In.</p>
+								<li><p>Enter your <strong>OIC User Name</strong>.</p>
+									<p><strong>OIC User Name</strong>: <code class="allow-copy"><span><em data-bind="text: selectedOICEnvironment() ? selectedOICEnvironment().usernamePrefix : '[Select your OIC Environment]'"></em><em data-bind="text:user_number() || '[Enter your User Number]'"></em></span></code></p>
+								</li>
+								<li><p>Enter your <strong>OIC Password</strong> provided by your lab facilitator and click <strong>Sign In</strong>.</p>
 									<p>The <strong>Welcome</strong> page appears. Check out the tour, videos, and links to learn more. Keep scrolling to find more useful links.</p>
 								</li>
                                 <li><p>Click <strong>Home</strong>.</p>
                                 	<p>The <strong>Home</strong> page displays an overview with the current state of your instance. You can drill down to get information about available Processes, Integrations, and Visual Applications.</p><br>
                                 	<img src="img/screenshots/integration/home-page.png" width="600px"/>
                                 </li>  
-                            </ol>                                                           
-                                                          
+							</ol>
+							<p>You are now logged in and ready to use Oracle Integration. In the next section we will create a Process App.</p>                                                          
                         </section>
                         <hr>
 <!-- ########## CREATE INTEGRATION ########## -->

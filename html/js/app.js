@@ -51,8 +51,24 @@ require(['ojs/ojcore', 'knockout', 'ojs/ojknockout', 'ojs/ojbutton', 'ojs/ojtool
          username and password used here are just samples. */
       self.user_number = ko.observable("");
       self.user_name_prefix = ko.observable("OICTraining1ic");
-    }
 
+      self.userName = ko.observable("");
+      
+      class OICEnvironment {
+        constructor(name, url, usernamePrefix) {
+          this.name = name;
+          this.url = url;
+          this.usernamePrefix = usernamePrefix;
+        }
+      }
+      self.availableOICEnvironments = ko.observableArray([
+        new OICEnvironment("Training1", "https://oictraining1-oicpm.integration.ocp.oraclecloud.com/ic/home/", "OICTraining1ic"),
+        new OICEnvironment("Training2", "https://oictraining2-oicpm.integration.ocp.oraclecloud.com/ic/home/", "OICTraining2ic"),
+        new OICEnvironment("Training3", "https://oictraining3-oicpm.integration.ocp.oraclecloud.com/ic/home/", "OICTraining3ic")
+      ]),
+      self.selectedOICEnvironment = ko.observable()
+
+    }
 
     $(function() {
       function init() {
